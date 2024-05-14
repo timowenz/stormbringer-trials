@@ -1,3 +1,9 @@
+Camera2D
+AnimationPlayer
+TileMap
+CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
 Label
 RichTextLabel
 Control
@@ -7,4 +13,3 @@ ScrollContainer
 Button
 Panel
 ColorRect
-TextureRect
