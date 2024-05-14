@@ -1,0 +1,292 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715688943
+README.md::TextFile::-1::1715685402::0::1::::<><>::
+::res://assets/::1715688870
+icon.svg::CompressedTexture2D::8654417974049968910::1715684194::1715685589::1::::<><>::
+::res://assets/Fantasy Knight Pixelart/::1715688894
+Comparison2x.png::CompressedTexture2D::7641827535192999549::1633521364::1715688873::1::::<><>::
+::res://assets/Fantasy Knight Pixelart/Colour1/::1633516034
+::res://assets/Fantasy Knight Pixelart/Colour1/NoOutline/::1633522674
+::res://assets/Fantasy Knight Pixelart/Colour1/NoOutline/120x80_gifs/::1633522686
+::res://assets/Fantasy Knight Pixelart/Colour1/NoOutline/120x80_PNGSheets/::1633522686
+_Attack2.png::::-1::0::0::0::::<><>::
+_Attack2NoMovement.png::::-1::0::0::0::::<><>::
+_Attack.png::::-1::0::0::0::::<><>::
+_AttackCombo.png::::-1::0::0::0::::<><>::
+_AttackComboNoMovement.png::::-1::0::0::0::::<><>::
+_AttackNoMovement.png::::-1::0::0::0::::<><>::
+_Crouch.png::::-1::0::0::0::::<><>::
+_CrouchAttack.png::::-1::0::0::0::::<><>::
+_CrouchFull.png::::-1::0::0::0::::<><>::
+_CrouchTransition.png::::-1::0::0::0::::<><>::
+_CrouchWalk.png::::-1::0::0::0::::<><>::
+_Dash.png::::-1::0::0::0::::<><>::
+_Death.png::::-1::0::0::0::::<><>::
+_DeathNoMovement.png::::-1::0::0::0::::<><>::
+_Fall.png::::-1::0::0::0::::<><>::
+_Hit.png::::-1::0::0::0::::<><>::
+_Idle.png::::-1::0::0::0::::<><>::
+_Jump.png::::-1::0::0::0::::<><>::
+_JumpFallInbetween.png::::-1::0::0::0::::<><>::
+_Roll.png::::-1::0::0::0::::<><>::
+_Run.png::::-1::0::0::0::::<><>::
+_Slide.png::::-1::0::0::0::::<><>::
+_SlideFull.png::::-1::0::0::0::::<><>::
+_SlideTransitionEnd.png::::-1::0::0::0::::<><>::
+_SlideTransitionStart.png::::-1::0::0::0::::<><>::
+_TurnAround.png::::-1::0::0::0::::<><>::
+_WallClimb.png::::-1::0::0::0::::<><>::
+_WallClimbNoMovement.png::::-1::0::0::0::::<><>::
+_WallHang.png::::-1::0::0::0::::<><>::
+_WallSlide.png::::-1::0::0::0::::<><>::
+::res://assets/Fantasy Knight Pixelart/Colour1/Outline/::1633522686
+::res://assets/Fantasy Knight Pixelart/Colour1/Outline/120x80_gifs/::1633522708
+::res://assets/Fantasy Knight Pixelart/Colour1/Outline/120x80_PNGSheets/::1633522708
+_Attack2.png::::-1::0::0::0::::<><>::
+_Attack2NoMovement.png::::-1::0::0::0::::<><>::
+_Attack.png::::-1::0::0::0::::<><>::
+_AttackCombo2hit.png::::-1::0::0::0::::<><>::
+_AttackComboNoMovement.png::::-1::0::0::0::::<><>::
+_AttackNoMovement.png::::-1::0::0::0::::<><>::
+_Crouch.png::::-1::0::0::0::::<><>::
+_CrouchAttack.png::::-1::0::0::0::::<><>::
+_CrouchFull.png::::-1::0::0::0::::<><>::
+_CrouchTransition.png::::-1::0::0::0::::<><>::
+_CrouchWalk.png::::-1::0::0::0::::<><>::
+_Dash.png::::-1::0::0::0::::<><>::
+_Death.png::::-1::0::0::0::::<><>::
+_DeathNoMovement.png::::-1::0::0::0::::<><>::
+_Fall.png::::-1::0::0::0::::<><>::
+_Hit.png::::-1::0::0::0::::<><>::
+_Idle.png::::-1::0::0::0::::<><>::
+_Jump.png::::-1::0::0::0::::<><>::
+_JumpFallInbetween.png::::-1::0::0::0::::<><>::
+_Roll.png::::-1::0::0::0::::<><>::
+_Run.png::::-1::0::0::0::::<><>::
+_Slide.png::::-1::0::0::0::::<><>::
+_SlideFull.png::::-1::0::0::0::::<><>::
+_SlideTransitionEnd.png::::-1::0::0::0::::<><>::
+_SlideTransitionStart.png::::-1::0::0::0::::<><>::
+_TurnAround.png::::-1::0::0::0::::<><>::
+_WallClimb.png::::-1::0::0::0::::<><>::
+_WallClimbNoMovement.png::::-1::0::0::0::::<><>::
+_WallHang.png::::-1::0::0::0::::<><>::
+_WallSlide.png::::-1::0::0::0::::<><>::
+::res://assets/Fantasy Knight Pixelart/Colour2/::1633517564
+::res://assets/Fantasy Knight Pixelart/Colour2/NoOutline/::1633522694
+::res://assets/Fantasy Knight Pixelart/Colour2/NoOutline/120x80_gifs/::1633522708
+::res://assets/Fantasy Knight Pixelart/Colour2/NoOutline/120x80_PNGSheets/::1633522708
+_Attack2.png::::-1::0::0::0::::<><>::
+_Attack2NoMovement.png::::-1::0::0::0::::<><>::
+_Attack.png::::-1::0::0::0::::<><>::
+_AttackCombo.png::::-1::0::0::0::::<><>::
+_AttackComboNoMovement.png::::-1::0::0::0::::<><>::
+_AttackNoMovement.png::::-1::0::0::0::::<><>::
+_Crouch.png::::-1::0::0::0::::<><>::
+_CrouchAll.png::::-1::0::0::0::::<><>::
+_CrouchAttack.png::::-1::0::0::0::::<><>::
+_CrouchTransition.png::::-1::0::0::0::::<><>::
+_CrouchWalk.png::::-1::0::0::0::::<><>::
+_Dash.png::::-1::0::0::0::::<><>::
+_Death.png::::-1::0::0::0::::<><>::
+_DeathNoMovement.png::::-1::0::0::0::::<><>::
+_Fall.png::::-1::0::0::0::::<><>::
+_Hit.png::::-1::0::0::0::::<><>::
+_Idle.png::::-1::0::0::0::::<><>::
+_Jump.png::::-1::0::0::0::::<><>::
+_JumpFallInbetween.png::::-1::0::0::0::::<><>::
+_Roll.png::::-1::0::0::0::::<><>::
+_Run.png::::-1::0::0::0::::<><>::
+_Slide.png::::-1::0::0::0::::<><>::
+_SlideAll.png::::-1::0::0::0::::<><>::
+_SlideTransitionEnd.png::::-1::0::0::0::::<><>::
+_SlideTransitionStart.png::::-1::0::0::0::::<><>::
+_TurnAround.png::::-1::0::0::0::::<><>::
+_WallClimb.png::::-1::0::0::0::::<><>::
+_WallClimbNoMovement.png::::-1::0::0::0::::<><>::
+_WallHang.png::::-1::0::0::0::::<><>::
+_WallSlide.png::::-1::0::0::0::::<><>::
+::res://assets/Fantasy Knight Pixelart/Colour2/Outline/::1633522702
+::res://assets/Fantasy Knight Pixelart/Colour2/Outline/120x80_gifs/::1633522728
+::res://assets/Fantasy Knight Pixelart/Colour2/Outline/120x80_PNGSheets/::1633522728
+_Attack2.png::::-1::0::0::0::::<><>::
+_Attack2NoMovement.png::::-1::0::0::0::::<><>::
+_Attack.png::::-1::0::0::0::::<><>::
+_AttackCombo.png::::-1::0::0::0::::<><>::
+_AttackComboNoMovement.png::::-1::0::0::0::::<><>::
+_AttackNoMovement.png::::-1::0::0::0::::<><>::
+_Crouch.png::::-1::0::0::0::::<><>::
+_CrouchAll.png::::-1::0::0::0::::<><>::
+_CrouchAttack.png::::-1::0::0::0::::<><>::
+_CrouchTransition.png::::-1::0::0::0::::<><>::
+_CrouchWalk.png::::-1::0::0::0::::<><>::
+_Dash.png::::-1::0::0::0::::<><>::
+_Death.png::::-1::0::0::0::::<><>::
+_DeathNoMovement.png::::-1::0::0::0::::<><>::
+_Fall.png::::-1::0::0::0::::<><>::
+_Hit.png::::-1::0::0::0::::<><>::
+_Idle.png::::-1::0::0::0::::<><>::
+_Jump.png::::-1::0::0::0::::<><>::
+_JumpFallInbetween.png::::-1::0::0::0::::<><>::
+_Roll.png::::-1::0::0::0::::<><>::
+_Run.png::::-1::0::0::0::::<><>::
+_Slide.png::::-1::0::0::0::::<><>::
+_SlideAll.png::::-1::0::0::0::::<><>::
+_SlideTransitionEnd.png::::-1::0::0::0::::<><>::
+_SlideTransitionStart.png::::-1::0::0::0::::<><>::
+_TurnAround.png::::-1::0::0::0::::<><>::
+_WallClimb.png::::-1::0::0::0::::<><>::
+_WallClimbNoMovement.png::::-1::0::0::0::::<><>::
+_WallHang.png::::-1::0::0::0::::<><>::
+_WallSlide.png::::-1::0::0::0::::<><>::
+::res://assets/icons/::1715688825
+Play Round icon.png::CompressedTexture2D::1203591566687711735::1715686328::1715686331::1::::<><>::
+::res://assets/icons/Fantasy Knight Pixelart/::1715688823
+Comparison2x.png::CompressedTexture2D::983683071755765678::1715688810::1715688810::1::::<><>::
+::res://assets/icons/Fantasy Knight Pixelart/Colour1/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour1/NoOutline/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour1/NoOutline/120x80_gifs/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour1/NoOutline/120x80_PNGSheets/::1715688810
+_Attack2.png::CompressedTexture2D::3604800262798507125::1715688810::1715688810::1::::<><>::
+_Attack2NoMovement.png::CompressedTexture2D::6499029594430283740::1715688810::1715688810::1::::<><>::
+_Attack.png::CompressedTexture2D::3766645653691581839::1715688810::1715688810::1::::<><>::
+_AttackCombo.png::CompressedTexture2D::4932370695850538525::1715688810::1715688810::1::::<><>::
+_AttackComboNoMovement.png::CompressedTexture2D::2426124470142358780::1715688810::1715688810::1::::<><>::
+_AttackNoMovement.png::CompressedTexture2D::3499181240120502476::1715688810::1715688810::1::::<><>::
+_Crouch.png::CompressedTexture2D::3783335036251693564::1715688810::1715688810::1::::<><>::
+_CrouchAttack.png::CompressedTexture2D::8416211312821151103::1715688810::1715688810::1::::<><>::
+_CrouchFull.png::CompressedTexture2D::158829349680308658::1715688810::1715688810::1::::<><>::
+_CrouchTransition.png::CompressedTexture2D::4664979789248643669::1715688810::1715688810::1::::<><>::
+_CrouchWalk.png::CompressedTexture2D::2314243693184919376::1715688810::1715688810::1::::<><>::
+_Dash.png::CompressedTexture2D::5397704879346899594::1715688810::1715688810::1::::<><>::
+_Death.png::CompressedTexture2D::1188340286136789588::1715688810::1715688810::1::::<><>::
+_DeathNoMovement.png::CompressedTexture2D::1363036466923794898::1715688810::1715688810::1::::<><>::
+_Fall.png::CompressedTexture2D::164642555314683955::1715688810::1715688810::1::::<><>::
+_Hit.png::CompressedTexture2D::2525912089979786069::1715688810::1715688810::1::::<><>::
+_Idle.png::CompressedTexture2D::7559788468342180707::1715688810::1715688810::1::::<><>::
+_Jump.png::CompressedTexture2D::7314775719545013688::1715688810::1715688810::1::::<><>::
+_JumpFallInbetween.png::CompressedTexture2D::1345972580816639827::1715688810::1715688810::1::::<><>::
+_Roll.png::CompressedTexture2D::1497499813797930160::1715688810::1715688810::1::::<><>::
+_Run.png::CompressedTexture2D::7308280440670036523::1715688810::1715688810::1::::<><>::
+_Slide.png::CompressedTexture2D::5467876016579985763::1715688810::1715688810::1::::<><>::
+_SlideFull.png::CompressedTexture2D::5481229154515112456::1715688810::1715688810::1::::<><>::
+_SlideTransitionEnd.png::CompressedTexture2D::7053890978436374374::1715688810::1715688810::1::::<><>::
+_SlideTransitionStart.png::CompressedTexture2D::2021443598216272704::1715688810::1715688810::1::::<><>::
+_TurnAround.png::CompressedTexture2D::5566873191847395::1715688810::1715688810::1::::<><>::
+_WallClimb.png::CompressedTexture2D::6387529339165201502::1715688810::1715688810::1::::<><>::
+_WallClimbNoMovement.png::CompressedTexture2D::8709698381164668017::1715688810::1715688810::1::::<><>::
+_WallHang.png::CompressedTexture2D::3596648714800286488::1715688810::1715688810::1::::<><>::
+_WallSlide.png::CompressedTexture2D::8912293052171189084::1715688810::1715688810::1::::<><>::
+::res://assets/icons/Fantasy Knight Pixelart/Colour1/Outline/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour1/Outline/120x80_gifs/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour1/Outline/120x80_PNGSheets/::1715688810
+_Attack2.png::CompressedTexture2D::7150407700998062529::1715688810::1715688810::1::::<><>::
+_Attack2NoMovement.png::CompressedTexture2D::5674646043303988270::1715688810::1715688810::1::::<><>::
+_Attack.png::CompressedTexture2D::8644235112622135272::1715688810::1715688810::1::::<><>::
+_AttackCombo2hit.png::CompressedTexture2D::8577079367011513411::1715688810::1715688810::1::::<><>::
+_AttackComboNoMovement.png::CompressedTexture2D::7874411130332405394::1715688810::1715688810::1::::<><>::
+_AttackNoMovement.png::CompressedTexture2D::8515550960828868016::1715688810::1715688810::1::::<><>::
+_Crouch.png::CompressedTexture2D::2132285618861819387::1715688810::1715688810::1::::<><>::
+_CrouchAttack.png::CompressedTexture2D::4255071033507024807::1715688810::1715688810::1::::<><>::
+_CrouchFull.png::CompressedTexture2D::1848822770148455565::1715688810::1715688810::1::::<><>::
+_CrouchTransition.png::CompressedTexture2D::6734880583054137772::1715688810::1715688810::1::::<><>::
+_CrouchWalk.png::CompressedTexture2D::2855572906775485544::1715688810::1715688810::1::::<><>::
+_Dash.png::CompressedTexture2D::3845805338140460303::1715688810::1715688810::1::::<><>::
+_Death.png::CompressedTexture2D::4159520968132882107::1715688810::1715688810::1::::<><>::
+_DeathNoMovement.png::CompressedTexture2D::3409294361655593342::1715688810::1715688810::1::::<><>::
+_Fall.png::CompressedTexture2D::2424813021818352428::1715688810::1715688810::1::::<><>::
+_Hit.png::CompressedTexture2D::7060286963832586035::1715688810::1715688810::1::::<><>::
+_Idle.png::CompressedTexture2D::3860639697908750746::1715688810::1715688810::1::::<><>::
+_Jump.png::CompressedTexture2D::8136853659315361210::1715688810::1715688810::1::::<><>::
+_JumpFallInbetween.png::CompressedTexture2D::4896865335473303287::1715688810::1715688810::1::::<><>::
+_Roll.png::CompressedTexture2D::7988189202947502182::1715688810::1715688810::1::::<><>::
+_Run.png::CompressedTexture2D::1766432764895938674::1715688810::1715688810::1::::<><>::
+_Slide.png::CompressedTexture2D::5831521984037992675::1715688810::1715688810::1::::<><>::
+_SlideFull.png::CompressedTexture2D::209896002900224801::1715688810::1715688810::1::::<><>::
+_SlideTransitionEnd.png::CompressedTexture2D::4528972794681228450::1715688810::1715688810::1::::<><>::
+_SlideTransitionStart.png::CompressedTexture2D::8535791086804522338::1715688810::1715688810::1::::<><>::
+_TurnAround.png::CompressedTexture2D::3439194175431828775::1715688810::1715688810::1::::<><>::
+_WallClimb.png::CompressedTexture2D::7661836226169517990::1715688810::1715688810::1::::<><>::
+_WallClimbNoMovement.png::CompressedTexture2D::8733597102872363908::1715688810::1715688810::1::::<><>::
+_WallHang.png::CompressedTexture2D::1224287444123822212::1715688810::1715688810::1::::<><>::
+_WallSlide.png::CompressedTexture2D::2520196617834561508::1715688810::1715688810::1::::<><>::
+::res://assets/icons/Fantasy Knight Pixelart/Colour2/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour2/NoOutline/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour2/NoOutline/120x80_gifs/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour2/NoOutline/120x80_PNGSheets/::1715688810
+_Attack2.png::CompressedTexture2D::2388351929441920008::1715688810::1715688810::1::::<><>::
+_Attack2NoMovement.png::CompressedTexture2D::8040743534238576976::1715688810::1715688810::1::::<><>::
+_Attack.png::CompressedTexture2D::8825179083644387593::1715688810::1715688810::1::::<><>::
+_AttackCombo.png::CompressedTexture2D::2956229144380097313::1715688810::1715688810::1::::<><>::
+_AttackComboNoMovement.png::CompressedTexture2D::9159714850155065551::1715688810::1715688810::1::::<><>::
+_AttackNoMovement.png::CompressedTexture2D::3098131103781996388::1715688810::1715688810::1::::<><>::
+_Crouch.png::CompressedTexture2D::7391080819949423657::1715688810::1715688810::1::::<><>::
+_CrouchAll.png::CompressedTexture2D::5376231111152536414::1715688810::1715688810::1::::<><>::
+_CrouchAttack.png::CompressedTexture2D::6983954165997415740::1715688810::1715688810::1::::<><>::
+_CrouchTransition.png::CompressedTexture2D::8353127526201460247::1715688810::1715688810::1::::<><>::
+_CrouchWalk.png::CompressedTexture2D::4885163472728270723::1715688810::1715688810::1::::<><>::
+_Dash.png::CompressedTexture2D::168236359442378990::1715688810::1715688810::1::::<><>::
+_Death.png::CompressedTexture2D::5396064248288181738::1715688810::1715688810::1::::<><>::
+_DeathNoMovement.png::CompressedTexture2D::5220264912925504401::1715688810::1715688810::1::::<><>::
+_Fall.png::CompressedTexture2D::1566556380626499758::1715688810::1715688810::1::::<><>::
+_Hit.png::CompressedTexture2D::2085737406974922400::1715688810::1715688810::1::::<><>::
+_Idle.png::CompressedTexture2D::4007077972882263983::1715688810::1715688810::1::::<><>::
+_Jump.png::CompressedTexture2D::6841455664669499929::1715688810::1715688810::1::::<><>::
+_JumpFallInbetween.png::CompressedTexture2D::9076672550272106808::1715688810::1715688810::1::::<><>::
+_Roll.png::CompressedTexture2D::7151125547546966555::1715688810::1715688810::1::::<><>::
+_Run.png::CompressedTexture2D::5636890799269988098::1715688810::1715688810::1::::<><>::
+_Slide.png::CompressedTexture2D::2734168139441021878::1715688810::1715688810::1::::<><>::
+_SlideAll.png::CompressedTexture2D::1375223561854419000::1715688810::1715688810::1::::<><>::
+_SlideTransitionEnd.png::CompressedTexture2D::3634280437659994075::1715688810::1715688810::1::::<><>::
+_SlideTransitionStart.png::CompressedTexture2D::2423564578610861379::1715688810::1715688810::1::::<><>::
+_TurnAround.png::CompressedTexture2D::8149311963578158409::1715688810::1715688810::1::::<><>::
+_WallClimb.png::CompressedTexture2D::4907186805358899368::1715688810::1715688810::1::::<><>::
+_WallClimbNoMovement.png::CompressedTexture2D::4715326751235875614::1715688810::1715688810::1::::<><>::
+_WallHang.png::CompressedTexture2D::3377023173750618895::1715688810::1715688810::1::::<><>::
+_WallSlide.png::CompressedTexture2D::5173513852862941335::1715688810::1715688810::1::::<><>::
+::res://assets/icons/Fantasy Knight Pixelart/Colour2/Outline/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour2/Outline/120x80_gifs/::1715688810
+::res://assets/icons/Fantasy Knight Pixelart/Colour2/Outline/120x80_PNGSheets/::1715688810
+_Attack2.png::CompressedTexture2D::1568030916874990528::1715688810::1715688810::1::::<><>::
+_Attack2NoMovement.png::CompressedTexture2D::3094964641125315671::1715688810::1715688810::1::::<><>::
+_Attack.png::CompressedTexture2D::581241443879362851::1715688810::1715688810::1::::<><>::
+_AttackCombo.png::CompressedTexture2D::2078733768551753006::1715688810::1715688810::1::::<><>::
+_AttackComboNoMovement.png::CompressedTexture2D::631511728830747350::1715688810::1715688810::1::::<><>::
+_AttackNoMovement.png::CompressedTexture2D::1058449300035988580::1715688810::1715688810::1::::<><>::
+_Crouch.png::CompressedTexture2D::2635877027115700305::1715688810::1715688810::1::::<><>::
+_CrouchAll.png::CompressedTexture2D::7120167047432305580::1715688810::1715688810::1::::<><>::
+_CrouchAttack.png::CompressedTexture2D::4579291843719967581::1715688810::1715688810::1::::<><>::
+_CrouchTransition.png::CompressedTexture2D::6806608667270928433::1715688810::1715688810::1::::<><>::
+_CrouchWalk.png::CompressedTexture2D::4863375957541360633::1715688810::1715688810::1::::<><>::
+_Dash.png::CompressedTexture2D::4228524695793840313::1715688810::1715688810::1::::<><>::
+_Death.png::CompressedTexture2D::7542162731889463497::1715688810::1715688810::1::::<><>::
+_DeathNoMovement.png::CompressedTexture2D::6387851175902776027::1715688810::1715688810::1::::<><>::
+_Fall.png::CompressedTexture2D::2808916717775496837::1715688810::1715688810::1::::<><>::
+_Hit.png::CompressedTexture2D::8303281495624734682::1715688810::1715688810::1::::<><>::
+_Idle.png::CompressedTexture2D::2593095299945420124::1715688810::1715688810::1::::<><>::
+_Jump.png::CompressedTexture2D::3425703899465495899::1715688810::1715688810::1::::<><>::
+_JumpFallInbetween.png::CompressedTexture2D::7300638525975007339::1715688810::1715688810::1::::<><>::
+_Roll.png::CompressedTexture2D::2548960791039909753::1715688810::1715688810::1::::<><>::
+_Run.png::CompressedTexture2D::1173072919328434453::1715688810::1715688810::1::::<><>::
+_Slide.png::CompressedTexture2D::5192133586082903726::1715688810::1715688810::1::::<><>::
+_SlideAll.png::CompressedTexture2D::9202834624733083623::1715688810::1715688810::1::::<><>::
+_SlideTransitionEnd.png::CompressedTexture2D::6169461950411552783::1715688810::1715688810::1::::<><>::
+_SlideTransitionStart.png::CompressedTexture2D::5325102624764956132::1715688810::1715688810::1::::<><>::
+_TurnAround.png::CompressedTexture2D::3174861041988889085::1715688810::1715688810::1::::<><>::
+_WallClimb.png::CompressedTexture2D::8885921664832296080::1715688810::1715688810::1::::<><>::
+_WallClimbNoMovement.png::CompressedTexture2D::3039279555275247446::1715688810::1715688810::1::::<><>::
+_WallHang.png::CompressedTexture2D::5527156445376090900::1715688810::1715688810::1::::<><>::
+_WallSlide.png::CompressedTexture2D::5168805206946653179::1715688810::1715688810::1::::<><>::
+::res://assets/tileset/::1715685589
+BG1.png::CompressedTexture2D::8711655632979412877::1715684372::1715685589::1::::<><>::
+BG2.png::CompressedTexture2D::6866508304675800088::1715684372::1715685589::1::::<><>::
+BG3.png::CompressedTexture2D::1251968719120139599::1715684372::1715685589::1::::<><>::
+Decors.png::CompressedTexture2D::1517288712387622547::1715684372::1715685589::1::::<><>::
+ExampleTiles.png::CompressedTexture2D::2307865532839903861::1715684372::1715685589::1::::<><>::
+Mockup2x.png::CompressedTexture2D::3004640279185899760::1715684372::1715685589::1::::<><>::
+Tileset.png::CompressedTexture2D::1018575907095201636::1715684372::1715685589::1::::<><>::
+::res://scenes/::1715688944
+Game.tscn::PackedScene::6804085053932952430::1715688723::0::1::::<><>::
+Menu.tscn::PackedScene::491125799154943402::1715688944::0::1::::<><>::uid://dwd8xv8npm6gv::::res://assets/tileset/BG1.png<>res://scripts/Menu.gd
+::res://scripts/::1715688665
+Menu.gd::GDScript::-1::1715688150::0::1::::Menu<>Control<>::
