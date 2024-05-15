@@ -1,3 +1,4 @@
+Control
 AnimationTree
 Camera2D
 AnimationPlayer
@@ -7,9 +8,7 @@ AnimatedSprite2D
 CharacterBody2D
 Label
 RichTextLabel
-Control
 HBoxContainer
 VBoxContainer
 ScrollContainer
 Button
-Panel
