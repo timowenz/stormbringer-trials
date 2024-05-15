@@ -49,3 +49,14 @@ func _physics_process(delta):
 		anim.play("fall")
 	elif not is_on_floor() and velocity.y <0:
 		anim.play("jump")
+
+func update_anim_params():
+	if velocity == Vector2.ZERO:
+		anim_tree["parameters/conditions/idle"] = true
+		anim_tree["parameters/conditions/is_moving"] = false
+	else:
+		anim_tree["parameters/conditions/idle"] = false
+		anim_tree["parameters/conditions/is_moving"] = true
+	
+	if Input.is_action_just_pressed("attack"):
+		anim_tree["parameters/conditions/attack"] = true
