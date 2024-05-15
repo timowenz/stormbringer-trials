@@ -1,3 +1,4 @@
+AnimationTree
 Camera2D
 AnimationPlayer
 TileMap
@@ -12,4 +13,3 @@ VBoxContainer
 ScrollContainer
 Button
 Panel
-ColorRect

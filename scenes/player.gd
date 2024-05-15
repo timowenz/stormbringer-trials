@@ -9,7 +9,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Animation variables
 @onready var anim = get_node("AnimationPlayer")
+@onready var anim_tree : AnimationTree = $AnimationTree
 
+var is_attacking: bool = false;
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -36,11 +38,14 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if is_on_floor():
 			anim.play("idle")
-
+	
 	move_and_slide()
 	
+	if Input.is_action_just_pressed("attack"):
+		anim.play("attack")
 	
 	# Handle falling animation
 	if not is_on_floor() and velocity.y > 0:
 		anim.play("fall")
-
+	elif not is_on_floor() and velocity.y <0:
+		anim.play("jump")
