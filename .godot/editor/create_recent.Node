@@ -1,3 +1,6 @@
+CanvasLayer
+Timer
+ProgressBar
 Control
 AnimationTree
 Camera2D
@@ -10,5 +13,3 @@ Label
 RichTextLabel
 HBoxContainer
 VBoxContainer
-ScrollContainer
-Button

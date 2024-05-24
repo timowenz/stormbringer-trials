@@ -14,8 +14,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking: bool = false;
 var is_crouching: bool = false;
 var can_jump: bool = true
+var health
+var damage
+
 
 func _ready():
+	health = 100
+	damage = 50
 	can_jump = true
 	is_crouching = false
 	anim_tree.active = true
@@ -51,12 +56,36 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	#handle death
+	if health <= 0:
+		_die()
+	
 	# Handle falling animation
 	if not is_on_floor() and velocity.y > 0:
 		anim.play("fall")
 	elif not is_on_floor() and velocity.y <0 and can_jump:
 		anim.play("jump")
 
+func _set_health(value):
+	health = value
+	if health <= 0:
+		_die()
+
+func _heal(value):
+	if health + value > 100:
+		health = 100
+	health = health + value
+
+func _set_damage(value):
+	damage = value
+
+func _increase_damage(value):
+	damage = damage + value
+
+func _die():
+	if health <= 0:
+		queue_free()
+		
 
 func update_anim_params():
 	if velocity == Vector2.ZERO:
