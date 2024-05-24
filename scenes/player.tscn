@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://c60h63oqga3qw"]
+[gd_scene load_steps=240 format=3 uid="uid://c60h63oqga3qw"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_32n5c"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="1_rkhau"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://b2du1cmlsva6b" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_WallClimbNoMovement.png" id="28_q72oo"]
 [ext_resource type="Texture2D" uid="uid://mquce0lkghm3" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_WallHang.png" id="29_nppi6"]
 [ext_resource type="Texture2D" uid="uid://b2qrqld2d8imd" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_WallSlide.png" id="30_5jswo"]
+[ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://health_bar.tscn" id="32_sdord"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekyxk"]
 atlas = ExtResource("1_rkhau")
@@ -2080,3 +2081,12 @@ parameters/conditions/hit = false
 parameters/conditions/idle = false
 parameters/conditions/is_crouch_walking = false
 parameters/conditions/is_moving = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("32_sdord")]
+offset_left = 11.0
+offset_top = 18.0
+offset_right = 234.0
+offset_bottom = 34.0
+metadata/_edit_use_anchors_ = true

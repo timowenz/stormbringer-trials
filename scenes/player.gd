@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Animation variables
 @onready var anim = get_node("AnimationPlayer")
 @onready var anim_tree : AnimationTree = $AnimationTree
+@onready var healthbar = $CanvasLayer/HealthBar
 
 var is_attacking: bool = false;
 var is_crouching: bool = false;
@@ -25,6 +26,7 @@ func _ready():
 	is_crouching = false
 	anim_tree.active = true
 	#state_machine = $AnimationTree.get("parameters/playback")
+	healthbar.init_health(health)
 
 func _process(delta):
 	update_anim_params()
@@ -70,6 +72,8 @@ func _set_health(value):
 	health = value
 	if health <= 0:
 		_die()
+		
+	healthbar.health = health
 
 func _heal(value):
 	if health + value > 100:
