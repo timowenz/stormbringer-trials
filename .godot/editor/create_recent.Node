@@ -1,3 +1,8 @@
+CharacterBody2D
+CollisionShape2D
+Area2D
+Sprite2D
+AnimatedSprite2D
 CanvasLayer
 Timer
 ProgressBar
@@ -6,10 +11,4 @@ AnimationTree
 Camera2D
 AnimationPlayer
 TileMap
-CollisionShape2D
-AnimatedSprite2D
-CharacterBody2D
 Label
-RichTextLabel
-HBoxContainer
-VBoxContainer

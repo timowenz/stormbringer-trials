@@ -1,7 +1,12 @@
+res://scripts/Menu.gd
+res://scenes/Game.gd
+res://HealthBar.gd
 res://scenes/Menu.tscn
 res://scenes/Game.tscn
 res://scenes/player.tscn
-res://HealthBar.gd
 res://health_bar.tscn
-res://scenes/Game.gd
-res://scenes/player.gd
+res://scripts/Game.gd
+res://scripts/Player.gd
+res://scenes/Enemy.tscn
+res://scripts/Enemy.gd
+res://scenes/Player.tscn
