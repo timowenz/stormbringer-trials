@@ -63,7 +63,6 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
-	
 	#handle death
 	if health <= 0:
 		_die()
@@ -80,6 +79,11 @@ func _set_health(value):
 		_die()
 		
 	healthbar.health = health
+
+func take_damage(value):
+	health -= value
+	if health <= 0:
+		_die()
 
 func _heal(value):
 	if health + value > 100:
