@@ -1,3 +1,7 @@
+TileMap
+Sprite2D
+ParallaxLayer
+ParallaxBackground
 CanvasLayer
 Timer
 ProgressBar
@@ -5,11 +9,6 @@ Control
 AnimationTree
 Camera2D
 AnimationPlayer
-TileMap
 CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
-Label
-RichTextLabel
-HBoxContainer
-VBoxContainer
