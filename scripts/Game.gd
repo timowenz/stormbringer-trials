@@ -6,6 +6,8 @@ var playerhealth
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Enemies/NightBorn.connect("dead", add_boss_killed)
+	$Enemies/Necromancer.connect("dead", add_boss_killed)
 	get_tree().paused = false
 	$GameOver.get_node("MainMenu").pressed.connect(main_menu)
 	$GameOver.get_node("Restart").pressed.connect(new_game)
@@ -14,12 +16,20 @@ func _ready():
 	$Pause.get_node("MainMenu").pressed.connect(main_menu)
 	$Pause.get_node("Restart").pressed.connect(new_game)
 	$Pause.get_node("Quit").pressed.connect(quit)
+	$WonGame.get_node("MainMenu").pressed.connect(main_menu)
+	$WonGame.get_node("Restart").pressed.connect(new_game)
+	$WonGame.get_node("Quit").pressed.connect(quit)
 	$GameOver.hide()
 	$Pause.hide()
+	$WonGame.hide()
 
+func add_boss_killed():
+	$Player.bosses_killed += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if $Player.bosses_killed == 2:
+		$Player.can_win = true
 	playerhealth = $Player.health
 	if playerhealth <= 0:
 		#gameOverTimer.start()
@@ -29,6 +39,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		$Pause.show()
 		get_tree().paused = true
+	
 
 func quit():
 	get_tree().quit()

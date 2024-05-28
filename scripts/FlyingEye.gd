@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 const SPEED = 200
-var health = 100
+var health = 60
 var player = null
 var player_chase = false
-var damage = 50
+var damage = 20
 
 func _physics_process(_delta):
 	if (player_chase):

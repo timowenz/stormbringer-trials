@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch2nnudsm6lxx"]
+
+[ext_resource type="Script" path="res://scenes/viod.gd" id="1_5e88a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmajc"]
+size = Vector2(966, 1570)
+
+[node name="Void" type="Area2D"]
+script = ExtResource("1_5e88a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(485, 783)
+shape = SubResource("RectangleShape2D_dmajc")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -483.0
+offset_top = -781.0
+offset_right = 481.0
+offset_bottom = 788.0
+color = Color(0.105882, 0, 0.0941176, 1)
+
+[node name="VoidTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 const SPEED = 200
-var health = 100
+var health = 200
 var player = null
 var player_chase = false
 var projectile_instance = preload ("res://scenes/Projectile.tscn")
+signal dead
 
 func _physics_process(_delta):
 	if (player_chase):
@@ -43,6 +44,7 @@ func set_health(value):
 func take_damage(damage):
 	health -= damage
 	if (health <= 0):
+		dead.emit()
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
