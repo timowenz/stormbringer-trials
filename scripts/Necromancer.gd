@@ -22,6 +22,7 @@ func _physics_process(_delta):
 		else:
 			$AnimatedSprite2D.play("flight")
 			player_chase = true
+
 func _on_detection_area_2d_body_entered(body):
 	player = body
 	player_chase = true

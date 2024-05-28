@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://3pylflq2imsx"]
+[gd_scene load_steps=41 format=3 uid="uid://3pylflq2imsx"]
 
 [ext_resource type="Script" path="res://scripts/Necromancer.gd" id="1_gqrbj"]
 [ext_resource type="Texture2D" uid="uid://cpknty328u1p0" path="res://assets/enemy_asset/necromancer/Necromancer by CreativeKind.png" id="1_rn2gl"]
@@ -54,6 +54,62 @@ region = Rect2(1760, 256, 160, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dg8yo"]
 atlas = ExtResource("1_rn2gl")
 region = Rect2(1920, 256, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fj68"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(0, 640, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqxan"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(160, 640, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npsm2"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(320, 640, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcayk"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(480, 640, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_youve"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(640, 640, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qin7j"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(0, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxpee"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(160, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg8m2"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(320, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2h7o"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(480, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5ipb"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(640, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_176qu"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(800, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxmqj"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(960, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad3um"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(1120, 768, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awx8g"]
+atlas = ExtResource("1_rn2gl")
+region = Rect2(1280, 768, 160, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qe6xp"]
 atlas = ExtResource("1_rn2gl")
@@ -135,6 +191,58 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1fj68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqxan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npsm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcayk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_youve")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qin7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxpee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg8m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2h7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5ipb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_176qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxmqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad3um")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awx8g")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qe6xp")
 }, {
 "duration": 1.0,
@@ -174,7 +282,7 @@ script = ExtResource("1_gqrbj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1af3c")
-animation = &"attack"
+animation = &"damage"
 autoplay = "flight"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
