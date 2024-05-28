@@ -2051,7 +2051,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-367, -181.686)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ckjb"]
-radius = 18.0
+radius = 23.0
 height = 46.0
 
 [sub_resource type="Animation" id="Animation_83cn5"]
@@ -2126,6 +2126,9 @@ libraries = {
 autoplay = "attack"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_llg3l")
+}
 tree_root = SubResource("AnimationNodeStateMachine_oxf18")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
@@ -2152,7 +2155,7 @@ metadata/_edit_use_anchors_ = true
 [node name="AttackArea" type="Area2D" parent="Node2D"]
 
 [node name="AttackColRight" type="CollisionShape2D" parent="Node2D/AttackArea"]
-position = Vector2(49, -3)
+position = Vector2(43, -3)
 shape = SubResource("CapsuleShape2D_2ckjb")
 
 [node name="Effects" type="AnimationPlayer" parent="."]

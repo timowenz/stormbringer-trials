@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dl67y2qtmmg0s"]
+[gd_scene load_steps=62 format=3 uid="uid://cwyw5f86k3kd7"]
 
 [ext_resource type="Script" path="res://scripts/NightBorn.gd" id="1_y46ik"]
 [ext_resource type="Texture2D" uid="uid://cqqwwb5lrb7wt" path="res://assets/enemy_asset/NightBorne Warrior/NightBorne.png" id="2_2jonl"]
