@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://b4ahma1cub6ar"]
 
-[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_abbvh"]
+[ext_resource type="Script" path="res://scripts/FlyingEye.gd" id="1_abbvh"]
 [ext_resource type="Texture2D" uid="uid://rgtvpqodun4h" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="2_kprva"]
 [ext_resource type="Texture2D" uid="uid://dxnnnluavnixx" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="2_rugrf"]
 
@@ -135,7 +135,7 @@ size = Vector2(29, 37)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lf8gk"]
 radius = 186.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="FlyingEye" type="CharacterBody2D"]
 position = Vector2(65, 63)
 script = ExtResource("1_abbvh")
 
