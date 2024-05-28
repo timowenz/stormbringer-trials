@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://g851gkjp4fxq"]
+[gd_scene load_steps=13 format=3 uid="uid://g851gkjp4fxq"]
 
 [ext_resource type="Texture2D" uid="uid://dwd8xv8npm6gv" path="res://assets/tileset/BG1.png" id="1_uq56c"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
+[ext_resource type="AudioStream" uid="uid://hkm203sc233e" path="res://assets/music/Platformer Music 8-bit Arcade Mode.mp3" id="3_qoq06"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6xwg"]
 bg_color = Color(0.321569, 0.505882, 0.827451, 1)
@@ -205,6 +206,9 @@ theme_override_colors/default_color = Color(0.421731, 0.421731, 0.421731, 1)
 bbcode_enabled = true
 text = "- Tileset: [url]https://aamatniekss.itch.io/free-pixelart-tileset-cute-forest[/url]
 - Knight Asset: [url]https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character[/url]
+- Enemy Asset: [url]https://luizmelo.itch.io/monsters-creatures-fantasy[/url]
+- Boss Assets: [url]https://creativekind.itch.io/necromancer-free[/url] [url]https://creativekind.itch.io/nightborne-warrior[/url] 
+- Music Assets: [url]https://pixabay.com/music/search/platformer/[/url]
 "
 metadata/_edit_use_anchors_ = true
 
@@ -220,6 +224,11 @@ text = "Maintainers: Slaven Dzinic & Timo Wenz"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qoq06")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="BottomControl/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BottomControl/CreditsButton" to="." method="_on_credits_button_pressed"]

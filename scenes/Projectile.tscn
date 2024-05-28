@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqnjmon3j0dg7"]
+
+[ext_resource type="Script" path="res://scripts/Projectile.gd" id="1_oxu41"]
+[ext_resource type="Texture2D" uid="uid://c216m6ahtfy1u" path="res://assets/enemy_asset/projectile/Erana Iasana_assets_FXes/0.0001/heavy_turret_prototype.fx.flame/flame7-2.png" id="2_hwg1k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_10gp5"]
+radius = 9.21954
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3diyn"]
+radius = 165.37
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a0icw"]
+
+[node name="Projectile" type="CharacterBody2D"]
+scale = Vector2(1, 1.08995)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_oxu41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35901, 0.35901)
+texture = ExtResource("2_hwg1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_10gp5")
+
+[node name="DetectionArea2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
+shape = SubResource("CircleShape2D_3diyn")
+
+[node name="HitArea2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
+shape = SubResource("CircleShape2D_a0icw")
+
+[connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]
+[connection signal="body_entered" from="HitArea2D" to="." method="_on_hit_area_2d_body_entered"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bscw25rurw8r2"]
+
+[ext_resource type="Script" path="res://scenes/viodStatic.gd" id="1_pmcev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgm61"]
+size = Vector2(8529, 793)
+
+[node name="ViodStatic" type="Area2D"]
+script = ExtResource("1_pmcev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4254.5, 386.5)
+shape = SubResource("RectangleShape2D_sgm61")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -4265.0
+offset_top = -392.0
+offset_right = 4282.0
+offset_bottom = 404.0
+color = Color(0.14902, 0, 0.14902, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
