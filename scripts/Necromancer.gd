@@ -4,6 +4,7 @@ const SPEED = 200
 var health = 100
 var player = null
 var player_chase = false
+var projectile_instance = preload ("res://scenes/Projectile.tscn")
 
 func _physics_process(_delta):
 	if (player_chase):
@@ -17,6 +18,17 @@ func _physics_process(_delta):
 		
 		if (player.position.distance_to(position) < 50):
 			$AnimatedSprite2D.play("attack")
+<<<<<<< Updated upstream
+=======
+			# stop chasing
+			player_chase = false
+			
+			# create projectile
+			var projectile = projectile_instance.instantiate()
+
+			add_child(projectile)
+			
+>>>>>>> Stashed changes
 		else:
 			$AnimatedSprite2D.play("flight")
 
@@ -36,4 +48,8 @@ func take_damage(damage):
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
+<<<<<<< Updated upstream
 	player.take_damage(10)
+=======
+	player_chase = true
+>>>>>>> Stashed changes
