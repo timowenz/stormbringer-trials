@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vu8r2cjp1s8j" path="res://assets/tileset/Decors.png" id="4_p74ua"]
 [ext_resource type="Texture2D" uid="uid://bi2p8skbssuj5" path="res://assets/tileset/Mockup2x.png" id="5_cdtrw"]
 [ext_resource type="AudioStream" uid="uid://swdeyex32o80" path="res://assets/music/Platformer Music 158815.mp3" id="7_fenwb"]
-[ext_resource type="PackedScene" uid="uid://3pylflq2imsx" path="res://scenes/Necromancer.tscn" id="8_5poje"]
+[ext_resource type="PackedScene" uid="uid://dl67y2qtmmg0s" path="res://scenes/NightBorn.tscn" id="8_s60dt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcxmo"]
 texture = ExtResource("1_iralc")
@@ -320,5 +320,5 @@ stream = ExtResource("7_fenwb")
 volume_db = -12.5
 autoplay = true
 
-[node name="Necromancer" parent="." instance=ExtResource("8_5poje")]
-position = Vector2(621, 127)
+[node name="NightBorn" parent="." instance=ExtResource("8_s60dt")]
+position = Vector2(662, 211)
