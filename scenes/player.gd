@@ -19,6 +19,9 @@ var health
 var damage
 var jump_count = 0
 var max_jumps = 2
+const wall_slide_acceleration = 10
+const max_slide_speed = 120
+
 
 
 func _ready():
@@ -39,12 +42,14 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	if is_on_floor():
+		can_jump = true
 		jump_count = 0
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
+			
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -102,6 +107,8 @@ func _die():
 	if health <= 0:
 		queue_free()
 		
+
+
 
 func update_anim_params():
 	if velocity == Vector2.ZERO:
