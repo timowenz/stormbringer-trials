@@ -130,7 +130,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ut0kv"]
-size = Vector2(185, 141)
+size = Vector2(29, 37)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lf8gk"]
 radius = 186.0
@@ -140,13 +140,12 @@ position = Vector2(65, 63)
 script = ExtResource("1_abbvh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_bympy")
 animation = &"attack"
 autoplay = "flight"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16.5, 5.5)
+position = Vector2(3.5, 1.5)
 shape = SubResource("RectangleShape2D_ut0kv")
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
