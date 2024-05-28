@@ -46,8 +46,4 @@ func take_damage(damage):
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
-< < < < < < < HEAD
-== == == =
-	player.take_damage(10)
-> > > > > > > ff7e7a8685b1aa131682a2433758ebea9991b014
 	player_chase = true
