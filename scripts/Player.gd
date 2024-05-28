@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Animation variables
 @onready var anim = get_node("AnimationPlayer")
-@onready var anim_tree : AnimationTree = $AnimationTree
+@onready var anim_tree: AnimationTree = $AnimationTree
 @onready var healthbar = $CanvasLayer/HealthBar
 
 var is_attacking: bool = false;
@@ -17,7 +17,6 @@ var is_crouching: bool = false;
 var can_jump: bool = true
 var health
 var damage
-
 
 func _ready():
 	health = 100
@@ -43,7 +42,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction == -1:
+	if direction == - 1:
 		get_node("AnimatedSprite2D").flip_h = true
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
@@ -65,7 +64,7 @@ func _physics_process(delta):
 	# Handle falling animation
 	if not is_on_floor() and velocity.y > 0:
 		anim.play("fall")
-	elif not is_on_floor() and velocity.y <0 and can_jump:
+	elif not is_on_floor() and velocity.y < 0 and can_jump:
 		anim.play("jump")
 
 func _set_health(value):
@@ -89,7 +88,13 @@ func _increase_damage(value):
 func _die():
 	if health <= 0:
 		queue_free()
-		
+
+func take_damage(value):
+	health -= value
+
+	if health <= 0:
+		_die()
+	healthbar.health = health
 
 func update_anim_params():
 	if velocity == Vector2.ZERO:
@@ -97,7 +102,7 @@ func update_anim_params():
 		if Input.is_action_just_pressed("stand_up"):
 			stand_up()
 			can_jump = true
-		if Input.is_action_just_pressed("crouch") || is_crouching:
+		if Input.is_action_just_pressed("crouch")||is_crouching:
 			crouch()
 			can_jump = false
 	else:
@@ -105,7 +110,6 @@ func update_anim_params():
 			crouch_walk()
 		else:
 			run()
-	
 	
 	if Input.is_action_just_pressed("attack"):
 		if is_crouching:
