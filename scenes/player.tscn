@@ -1,6 +1,6 @@
 [gd_scene load_steps=240 format=3 uid="uid://c60h63oqga3qw"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_32n5c"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_32n5c"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="1_rkhau"]
 [ext_resource type="Texture2D" uid="uid://b8ipvqrm3t33e" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack2.png" id="2_lxfcy"]
 [ext_resource type="Texture2D" uid="uid://c5vjf6lu68ilk" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack2NoMovement.png" id="3_sls76"]
@@ -2048,6 +2048,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-522, -180.686)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_32n5c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -2067,9 +2068,6 @@ libraries = {
 autoplay = "idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_llg3l")
-}
 tree_root = SubResource("AnimationNodeStateMachine_oxf18")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
