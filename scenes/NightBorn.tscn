@@ -429,10 +429,10 @@ script = ExtResource("1_y46ik")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ytg0v")
-animation = &"dead"
+animation = &"idle"
 autoplay = "idle"
-frame = 21
-frame_progress = 0.0569163
+frame = 7
+frame_progress = 0.436183
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 5.5)
@@ -453,6 +453,16 @@ shape = SubResource("CircleShape2D_d0d6k")
 position = Vector2(-11, 6)
 shape = SubResource("CircleShape2D_m2jx3")
 
+[node name="BigTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="SmallTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="BigTimer" to="." method="_on_big_timer_timeout"]
+[connection signal="timeout" from="SmallTimer" to="." method="_on_small_timer_timeout"]

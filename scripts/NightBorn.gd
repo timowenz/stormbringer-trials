@@ -44,9 +44,18 @@ func take_damage(damage):
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
-	player.take_damage(10)
+	if (scale == Vector2(1.5, 1.5)):
+		player.take_damage(20)
+	else:
+		player.take_damage(10)
 
 func _on_area_2d_body_entered(body):
 	# jump
 	if (body.name == "TileMap"):
 		velocity.y = -JUMP_HEIGHT
+
+func _on_big_timer_timeout():
+	scale = Vector2(1.5, 1.5)
+
+func _on_small_timer_timeout():
+	scale = Vector2(1, 1)
