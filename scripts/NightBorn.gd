@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
-const SPEED = 200
+const SPEED = 30
+const GRAVITY = 25
 var health = 100
 var player = null
 var player_chase = false
 
 func _physics_process(_delta):
+	velocity.y += GRAVITY
 	if (player_chase):
 
-		position += (player.position - position) / SPEED
+		var direction = (player.position - position).normalized()
+		velocity.x = direction.x * SPEED
 
 		if (player.position.x < position.x):
 			$AnimatedSprite2D.flip_h = true
@@ -19,6 +22,7 @@ func _physics_process(_delta):
 			$AnimatedSprite2D.play("attack")
 		else:
 			$AnimatedSprite2D.play("idle")
+	move_and_slide()
 
 func _on_detection_area_2d_body_entered(body):
 	player = body
