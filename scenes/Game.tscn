@@ -7,10 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vu8r2cjp1s8j" path="res://assets/tileset/Decors.png" id="4_p74ua"]
 [ext_resource type="Texture2D" uid="uid://bi2p8skbssuj5" path="res://assets/tileset/Mockup2x.png" id="5_cdtrw"]
 [ext_resource type="AudioStream" uid="uid://swdeyex32o80" path="res://assets/music/Platformer Music 158815.mp3" id="7_fenwb"]
-<<<<<<< Updated upstream
-=======
 [ext_resource type="PackedScene" uid="uid://3pylflq2imsx" path="res://scenes/Necromancer.tscn" id="8_54yj0"]
->>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcxmo"]
 texture = ExtResource("1_iralc")
@@ -321,9 +318,6 @@ texture = ExtResource("5_cdtrw")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fenwb")
 autoplay = true
-<<<<<<< Updated upstream
-=======
 
 [node name="Necromancer" parent="." instance=ExtResource("8_54yj0")]
 position = Vector2(472, 117)
->>>>>>> Stashed changes
