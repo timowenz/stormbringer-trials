@@ -99,8 +99,8 @@ func take_damage(value):
 	if health <= 0:
 		has_died = true
 		die()
-		
-	healthbar.health = health
+	else:
+		healthbar.health = health
 
 func _heal(value):
 	if health + value > 100:

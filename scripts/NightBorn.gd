@@ -6,6 +6,7 @@ const JUMP_HEIGHT = 400
 var health = 100
 var player = null
 var player_chase = false
+var damage = 50
 
 func _physics_process(_delta):
 	velocity.y += GRAVITY
@@ -44,7 +45,7 @@ func take_damage(damage):
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
-	player.take_damage(10)
+	player.take_damage(damage)
 
 func _on_area_2d_body_entered(body):
 	# jump
