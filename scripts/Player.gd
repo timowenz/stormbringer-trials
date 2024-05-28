@@ -54,17 +54,16 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
-			
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction == - 1 and is_attacking == false:
 		get_node("AnimatedSprite2D").flip_h = true
-		$Node2D.scale = Vector2(-1,1)
+		$Node2D.scale = Vector2( - 1, 1)
 	elif direction == 1 and is_attacking == false:
 		get_node("AnimatedSprite2D").flip_h = false
-		$Node2D.scale = Vector2(1,1)
+		$Node2D.scale = Vector2(1, 1)
 	if direction:
 		if is_crouching and is_attacking == false:
 			velocity.x = direction * SPEED / 1.5
@@ -76,7 +75,6 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	#handle death
-	
 	
 	# Handle falling animation
 	if not is_on_floor() and velocity.y > 0:
@@ -197,7 +195,7 @@ func run():
 
 func _on_attack_area_body_entered(body):
 	print(body)
-	if body.name == "Enemy":
+	if body.name != "TileMap":
 		print("damage taken")
 		body.take_damage(damage)
 
