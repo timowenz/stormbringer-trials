@@ -89,13 +89,6 @@ func _die():
 	if health <= 0:
 		queue_free()
 
-func take_damage(value):
-	health -= value
-
-	if health <= 0:
-		_die()
-	healthbar.health = health
-
 func update_anim_params():
 	if velocity == Vector2.ZERO:
 		idle()
