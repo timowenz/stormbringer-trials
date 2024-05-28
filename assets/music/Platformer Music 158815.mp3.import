@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://swdeyex32o80"
+path="res://.godot/imported/Platformer Music 158815.mp3-bf257a0a399a0dac0555e9279c8ef131.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Platformer Music 158815.mp3"
+dest_files=["res://.godot/imported/Platformer Music 158815.mp3-bf257a0a399a0dac0555e9279c8ef131.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
