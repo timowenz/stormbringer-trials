@@ -4,6 +4,7 @@ const SPEED = 200
 var health = 100
 var player = null
 var player_chase = false
+var damage = 50
 
 func _physics_process(_delta):
 	if (player_chase):
@@ -36,4 +37,8 @@ func take_damage(damage):
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
-	player.take_damage(10)
+	if player.health <= 0:
+		player = null
+		player_chase  =false
+	else:
+		player.take_damage(damage)

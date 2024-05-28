@@ -2054,21 +2054,6 @@ graph_offset = Vector2(-367, -181.686)
 radius = 18.0
 height = 46.0
 
-[sub_resource type="Animation" id="Animation_83cn5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.984314, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_e6t6t"]
 resource_name = "hurtBlink"
 length = 0.4
@@ -2085,6 +2070,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.984314, 0, 0, 0.533333), Color(1, 1, 1, 0.968627)]
+}
+
+[sub_resource type="Animation" id="Animation_83cn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.984314, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w8012"]
@@ -2126,6 +2126,9 @@ libraries = {
 autoplay = "attack"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_llg3l")
+}
 tree_root = SubResource("AnimationNodeStateMachine_oxf18")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
@@ -2161,7 +2164,6 @@ libraries = {
 }
 
 [node name="HurtTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
