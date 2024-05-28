@@ -15,11 +15,13 @@ func _physics_process(_delta):
 		else:
 			$AnimatedSprite2D.flip_h = false
 		
-		if (player.position.distance_to(position) < 50):
+		if (player.position.distance_to(position) < 150):
 			$AnimatedSprite2D.play("attack")
+			# stop chasing
+			player_chase = false
 		else:
 			$AnimatedSprite2D.play("flight")
-
+			player_chase = true
 func _on_detection_area_2d_body_entered(body):
 	player = body
 	player_chase = true
@@ -37,3 +39,4 @@ func take_damage(damage):
 
 func _on_animated_sprite_2d_animation_finished():
 	player.take_damage(10)
+	player_chase = true
