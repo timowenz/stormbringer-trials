@@ -39,6 +39,6 @@ func take_damage(damage):
 func _on_animated_sprite_2d_animation_finished():
 	if player.health <= 0:
 		player = null
-		player_chase  =false
+		player_chase = false
 	else:
 		player.take_damage(damage)
