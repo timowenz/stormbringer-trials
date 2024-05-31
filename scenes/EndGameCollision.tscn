@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cb06f586f51m3"]
 
-[ext_resource type="Script" path="res://scenes/end_game_collision.gd" id="1_uwvvh"]
+[ext_resource type="Script" path="res://scripts/EndGameCollision.gd" id="1_uwvvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnfr1"]
 size = Vector2(20, 47)
