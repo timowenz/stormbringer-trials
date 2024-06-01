@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://b4ahma1cub6ar"]
+[gd_scene load_steps=34 format=3 uid="uid://b4ahma1cub6ar"]
 
 [ext_resource type="Script" path="res://scripts/FlyingEye.gd" id="1_abbvh"]
 [ext_resource type="Texture2D" uid="uid://rgtvpqodun4h" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="2_kprva"]
 [ext_resource type="Texture2D" uid="uid://dxnnnluavnixx" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="2_rugrf"]
 [ext_resource type="Texture2D" uid="uid://clyvbpcu0nfjr" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Death.png" id="3_6o33v"]
 [ext_resource type="Texture2D" uid="uid://dg1muwc3mckew" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="5_bnfnu"]
+[ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="6_bfymn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhiec"]
 atlas = ExtResource("2_kprva")
@@ -215,6 +216,12 @@ autoplay = "flight"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 1.5)
 shape = SubResource("RectangleShape2D_ut0kv")
+
+[node name="HealthBar" parent="." instance=ExtResource("6_bfymn")]
+offset_left = -20.0
+offset_top = -28.0
+offset_right = 26.0
+offset_bottom = -24.0
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
 collision_layer = 2

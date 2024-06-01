@@ -1,7 +1,8 @@
-[gd_scene load_steps=62 format=3 uid="uid://cwyw5f86k3kd7"]
+[gd_scene load_steps=63 format=3 uid="uid://cwyw5f86k3kd7"]
 
 [ext_resource type="Script" path="res://scripts/NightBorn.gd" id="1_y46ik"]
 [ext_resource type="Texture2D" uid="uid://cqqwwb5lrb7wt" path="res://assets/enemy_asset/NightBorne Warrior/NightBorne.png" id="2_2jonl"]
+[ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="3_5n7vn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlxb3"]
 atlas = ExtResource("2_2jonl")
@@ -438,6 +439,12 @@ frame_progress = 0.436183
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 5.5)
 shape = SubResource("RectangleShape2D_l7wok")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_5n7vn")]
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 24.0
+offset_bottom = -13.0
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
 collision_layer = 2
