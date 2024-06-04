@@ -1,4 +1,4 @@
-[gd_scene load_steps=245 format=3 uid="uid://c60h63oqga3qw"]
+[gd_scene load_steps=246 format=3 uid="uid://c60h63oqga3qw"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ys2wg"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_4gxhw"]
@@ -2051,8 +2051,11 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-367, -181.686)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ckjb"]
-radius = 23.0
-height = 46.0
+radius = 22.0
+height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhru4"]
+size = Vector2(48.5, 9)
 
 [sub_resource type="Animation" id="Animation_83cn5"]
 length = 0.001
@@ -2123,12 +2126,8 @@ shape = SubResource("CapsuleShape2D_drsp7")
 libraries = {
 "": SubResource("AnimationLibrary_llg3l")
 }
-autoplay = "attack"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_llg3l")
-}
 tree_root = SubResource("AnimationNodeStateMachine_oxf18")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
@@ -2154,9 +2153,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AttackArea" type="Area2D" parent="Node2D"]
 
-[node name="AttackColRight" type="CollisionShape2D" parent="Node2D/AttackArea"]
+[node name="AttackCol" type="CollisionShape2D" parent="Node2D/AttackArea"]
 position = Vector2(43, -3)
 shape = SubResource("CapsuleShape2D_2ckjb")
+
+[node name="AttackCol2" type="CollisionShape2D" parent="Node2D/AttackArea"]
+position = Vector2(43, 1)
+rotation = -2.96706
+shape = SubResource("RectangleShape2D_xhru4")
 
 [node name="Effects" type="AnimationPlayer" parent="."]
 libraries = {

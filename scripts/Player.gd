@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var direction2 : Vector2 = Vector2.ZERO
 # Animation variables
 @onready var anim = get_node("AnimationPlayer")
 @onready var anim_tree: AnimationTree = $AnimationTree
@@ -26,17 +26,20 @@ const max_slide_speed = 120
 var enemy = null
 var is_damaged = false
 var has_died = false
+var bosses_killed = 0
+var can_win = false
 
 func _ready():
 	effects.play("RESET")
 	health = 100
-	damage = 50
+	damage = 20
 	can_jump = true
 	is_crouching = false
 	anim_tree.active = true
 	#state_machine = $AnimationTree.get("parameters/playback")
 	healthbar.init_health(health)
-	$Node2D/AttackArea/AttackColRight.disabled = true
+	$Node2D/AttackArea/AttackCol.disabled = true
+	$Node2D/AttackArea/AttackCol2.disabled = true
 
 func _process(delta):
 	update_anim_params()
@@ -57,6 +60,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction == - 1 and is_attacking == false:
 		get_node("AnimatedSprite2D").flip_h = true
@@ -72,6 +76,7 @@ func _physics_process(delta):
 				velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	direction2 = $Node2D.scale
 	
 	move_and_slide()
 	#handle death
@@ -142,11 +147,11 @@ func update_anim_params():
 	if Input.is_action_just_pressed("attack"):
 		if is_crouching:
 			anim_tree["parameters/conditions/crouch_attack"] = true
-			$Node2D/AttackArea/AttackColRight.disabled = false
+			$Node2D/AttackArea/AttackCol2.disabled = false
 			is_attacking = true
 		else:
 			anim_tree["parameters/conditions/attack"] = true
-			$Node2D/AttackArea/AttackColRight.disabled = false
+			$Node2D/AttackArea/AttackCol2.disabled = false
 			is_attacking = true
 	else:
 		anim_tree["parameters/conditions/attack"] = false
@@ -155,7 +160,7 @@ func update_anim_params():
 	
 	if Input.is_action_just_pressed("attack2"):
 		anim_tree["parameters/conditions/attack2"] = true
-		$Node2D/AttackArea/AttackColRight.disabled = false
+		$Node2D/AttackArea/AttackCol.disabled = false
 		is_attacking = true
 	else:
 		anim_tree["parameters/conditions/attack2"] = false
@@ -195,9 +200,12 @@ func run():
 
 func _on_attack_area_body_entered(body):
 	print(body)
+	if body.name == "EndGame":
+		return
 	if body.name != "TileMap":
 		print("damage taken")
 		body.take_damage(damage)
+	
 
 func hit():
 	if is_damaged:
@@ -209,7 +217,8 @@ func hit():
 
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "attack" or anim_name == "attack2" or anim_name == "crouchAttack":
-		$Node2D/AttackArea/AttackColRight.disabled = true
+		$Node2D/AttackArea/AttackCol.disabled = true
+		$Node2D/AttackArea/AttackCol2.disabled = true
 	if anim_name == "hit":
 		anim_tree["parameters/conditions/idle"] = true
 		is_damaged = false

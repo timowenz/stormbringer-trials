@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://g851gkjp4fxq"]
+[gd_scene load_steps=14 format=3 uid="uid://g851gkjp4fxq"]
 
 [ext_resource type="Texture2D" uid="uid://dwd8xv8npm6gv" path="res://assets/tileset/BG1.png" id="1_uq56c"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
+[ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="3_1hjbe"]
 [ext_resource type="AudioStream" uid="uid://hkm203sc233e" path="res://assets/music/Platformer Music 8-bit Arcade Mode.mp3" id="3_qoq06"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6xwg"]
@@ -10,6 +11,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0xdm"]
 bg_color = Color(0.413201, 0.585919, 0.884277, 1)
@@ -17,6 +19,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkxfi"]
 bg_color = Color(0.321569, 0.505882, 0.827451, 1)
@@ -24,6 +27,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mmtq"]
 bg_color = Color(0.411765, 0.584314, 0.882353, 1)
@@ -31,6 +35,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wrxo"]
 bg_color = Color(0.321569, 0.505882, 0.827451, 1)
@@ -38,6 +43,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdgf"]
 bg_color = Color(0.654902, 0.811765, 0.917647, 1)
@@ -45,6 +51,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3m5n"]
 bg_color = Color(1, 0, 0, 1)
@@ -52,6 +59,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh8o3"]
 bg_color = Color(1, 0.434811, 0.36614, 1)
@@ -59,6 +67,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmnjn"]
 bg_color = Color(1, 0, 0, 1)
@@ -66,6 +75,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+corner_detail = 1
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -93,15 +103,19 @@ grow_horizontal = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TopControl"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.795455
+anchor_top = -0.0105263
+anchor_right = 1.79545
+anchor_bottom = 2.13158
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 40
+theme_override_fonts/normal_font = ExtResource("3_1hjbe")
+theme_override_fonts/bold_font = ExtResource("3_1hjbe")
+theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
 text = "[center]Welcome to
-[b][font_size=70][pulse freq=1][wave amp=60]Void Run![/wave][/pulse][/font_size][/b][/center]
+[b][font_size=150][pulse freq=1][wave amp=60]Stormbringer Trials![/wave][/pulse][/font_size][/b][/center]
 "
 metadata/_edit_use_anchors_ = true
 
@@ -129,7 +143,8 @@ offset_right = 97.0
 offset_bottom = 102.0
 grow_horizontal = 2
 theme_override_constants/icon_max_width = 30
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_c6xwg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j0xdm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kkxfi")
@@ -146,7 +161,8 @@ offset_right = 97.0
 offset_bottom = 156.0
 grow_horizontal = 2
 theme_override_constants/icon_max_width = 30
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_c6xwg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1mmtq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7wrxo")
@@ -169,17 +185,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1qdgf")
 [node name="CloseButton" type="Button" parent="CreditSheet"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.870518
-anchor_top = 0.0394737
-anchor_right = 0.977092
-anchor_bottom = 0.107456
+anchor_left = 0.946833
+anchor_top = 0.0386473
+anchor_right = 0.979638
+anchor_bottom = 0.10628
 offset_left = 2.36034e-05
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_f3m5n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lh8o3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wmnjn")
-text = "Close"
+text = "X"
 metadata/_edit_use_anchors_ = true
 
 [node name="CreditsLabel" type="Label" parent="CreditSheet"]
@@ -188,6 +205,7 @@ anchor_left = 0.0189243
 anchor_top = 0.0241228
 anchor_right = 0.108566
 anchor_bottom = 0.114035
+theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 30
 text = "CREDITS"
 metadata/_edit_use_anchors_ = true
@@ -203,13 +221,15 @@ offset_right = 1.28746e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.421731, 0.421731, 0.421731, 1)
+theme_override_fonts/normal_font = ExtResource("3_1hjbe")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "- Tileset: [url]https://aamatniekss.itch.io/free-pixelart-tileset-cute-forest[/url]
 - Knight Asset: [url]https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character[/url]
 - Enemy Asset: [url]https://luizmelo.itch.io/monsters-creatures-fantasy[/url]
 - Boss Assets: [url]https://creativekind.itch.io/necromancer-free[/url] [url]https://creativekind.itch.io/nightborne-warrior[/url] 
 - Music Assets: [url]https://pixabay.com/music/search/platformer/[/url]
-"
+- Font Asset: [url]https://fonts.google.com/specimen/VT323?preview.text=Hel[/url]"
 metadata/_edit_use_anchors_ = true
 
 [node name="MaintainersLabel" type="Label" parent="CreditSheet"]
@@ -220,6 +240,8 @@ anchor_top = 0.031401
 anchor_right = 0.671946
 anchor_bottom = 0.125604
 theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
+theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 20
 text = "Maintainers: Slaven Dzinic & Timo Wenz"
 horizontal_alignment = 1
 vertical_alignment = 1

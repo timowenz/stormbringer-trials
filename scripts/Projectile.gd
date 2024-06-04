@@ -20,7 +20,7 @@ func _on_detection_area_2d_body_entered(body: Node2D):
 
 func _on_hit_area_2d_body_entered(body: Node2D):
 	if (body.name == "Player"):
-		player.take_damage(10)
+		player.take_damage(20)
 		queue_free()
 	if (body.name == "TileMap"):
 		queue_free()

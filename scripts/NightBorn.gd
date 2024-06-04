@@ -3,9 +3,15 @@ extends CharacterBody2D
 const SPEED = 150
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
-var health = 100
+var health = 200
 var player = null
 var player_chase = false
+var damage = 15
+signal dead
+@onready var healthbar = $HealthBar
+
+func _ready():
+	healthbar.init_health(health)
 
 func _physics_process(_delta):
 	velocity.y += GRAVITY
@@ -40,14 +46,16 @@ func set_health(value):
 
 func take_damage(damage):
 	health -= damage
+	healthbar.health = health
 	if (health <= 0):
+		dead.emit()
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
 	if (scale == Vector2(1.5, 1.5)):
-		player.take_damage(20)
+		player.take_damage(damage + 10)
 	else:
-		player.take_damage(10)
+		player.take_damage(damage)
 
 func _on_area_2d_body_entered(body):
 	# jump

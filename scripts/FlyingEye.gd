@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
 const SPEED = 200
-var health = 100
+var health = 60
 var player = null
 var player_chase = false
-var damage = 50
+var damage = 20
+@onready var healthbar = $HealthBar
+
+func _ready():
+	healthbar.init_health(health)
 
 func _physics_process(_delta):
 	if (player_chase):
@@ -33,12 +37,13 @@ func set_health(value):
 
 func take_damage(damage):
 	health -= damage
+	healthbar.health = health
 	if (health <= 0):
 		queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
 	if player.health <= 0:
 		player = null
-		player_chase  =false
+		player_chase = false
 	else:
 		player.take_damage(damage)
