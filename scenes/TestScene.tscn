@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://btpygyl0iql1m"]
+[gd_scene load_steps=28 format=3 uid="uid://0bhg2mepgr6a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_kvokn"]
 [ext_resource type="PackedScene" uid="uid://cb06f586f51m3" path="res://scenes/EndGameCollision.tscn" id="2_p8cra"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://vu8r2cjp1s8j" path="res://assets/tileset/Decors.png" id="4_4adn4"]
 [ext_resource type="Texture2D" uid="uid://bj3gfcx77pf1" path="res://assets/Jozo2assets/AlchemyBundle.png" id="5_sg7ju"]
 [ext_resource type="Texture2D" uid="uid://by1iq2w3y7stt" path="res://assets/Jozo2assets/TilesetJozo2.png" id="6_mwhaw"]
+[ext_resource type="Script" path="res://scenes/Sapling.gd" id="8_r3a45"]
+[ext_resource type="Texture2D" uid="uid://cktatkbc8jycs" path="res://setzling.png" id="9_db6ui"]
 [ext_resource type="Texture2D" uid="uid://dg7evlocf15rc" path="res://clock.png" id="11_ok8sy"]
 [ext_resource type="PackedScene" uid="uid://cyu5h3xt5xhjf" path="res://scenes/Background.tscn" id="12_8kqpt"]
 [ext_resource type="PackedScene" uid="uid://c60h63oqga3qw" path="res://scenes/Player.tscn" id="13_626vs"]
@@ -473,11 +475,21 @@ texture = ExtResource("6_mwhaw")
 [sub_resource type="TileSet" id="TileSet_6tfv5"]
 sources/0 = SubResource("TileSetAtlasSource_rev71")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d3hv2"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(-1, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 200, 0)
+color = Color(0.121569, 0.490196, 0.890196, 1)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kvokn")
 
 [node name="EndGame" parent="." instance=ExtResource("2_p8cra")]
-position = Vector2(2599, 250)
+position = Vector2(2600, 250)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -518,6 +530,13 @@ layer_0/tile_data = PackedInt32Array(655525, 65536, 0, 655526, 131072, 0, 655527
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("12_8kqpt")]
 
+[node name="Sapling" type="Node2D" parent="."]
+position = Vector2(149, 280)
+script = ExtResource("8_r3a45")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sapling"]
+texture = ExtResource("9_db6ui")
+
 [node name="Player" parent="." instance=ExtResource("13_626vs")]
 position = Vector2(120, 250)
 
@@ -525,12 +544,22 @@ position = Vector2(120, 250)
 position = Vector2(1, -3)
 zoom = Vector2(2, 2)
 
-[node name="Button" type="Button" parent="Player"]
-offset_left = 253.0
-offset_top = -154.0
-offset_right = 277.0
-offset_bottom = -130.0
+[node name="WeatherButton" type="Button" parent="Player"]
+offset_left = 248.0
+offset_top = -157.0
+offset_right = 280.0
+offset_bottom = -125.0
 icon = ExtResource("11_ok8sy")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Rain" type="GPUParticles2D" parent="Player"]
+position = Vector2(0, -200)
+scale = Vector2(7, 2)
+amount = 4000
+process_material = SubResource("ParticleProcessMaterial_d3hv2")
+lifetime = 5.0
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
