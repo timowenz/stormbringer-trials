@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://0bhg2mepgr6a"]
+[gd_scene load_steps=42 format=3 uid="uid://0bhg2mepgr6a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_kvokn"]
 [ext_resource type="Script" path="res://scripts/Weather.gd" id="2_fl8lx"]
@@ -8,13 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://bj3gfcx77pf1" path="res://assets/Jozo2assets/AlchemyBundle.png" id="5_sg7ju"]
 [ext_resource type="Texture2D" uid="uid://by1iq2w3y7stt" path="res://assets/Jozo2assets/TilesetJozo2.png" id="6_mwhaw"]
 [ext_resource type="Script" path="res://scenes/Sapling.gd" id="8_r3a45"]
-[ext_resource type="Texture2D" uid="uid://cktatkbc8jycs" path="res://selfdrawn/setzling.png" id="9_db6ui"]
-[ext_resource type="Texture2D" uid="uid://4r7hg71p8p7k" path="res://selfdrawn/tree.png" id="10_mydob"]
+[ext_resource type="Texture2D" uid="uid://cajp7aig2dk0l" path="res://selfdrawn/setzling_2.png" id="10_nv6c1"]
+[ext_resource type="Texture2D" uid="uid://c8vqgx85ekghg" path="res://selfdrawn/tree_2.png" id="11_givup"]
 [ext_resource type="Texture2D" uid="uid://dg7evlocf15rc" path="res://selfdrawn/clock.png" id="11_ok8sy"]
 [ext_resource type="PackedScene" uid="uid://cyu5h3xt5xhjf" path="res://scenes/Background.tscn" id="12_8kqpt"]
 [ext_resource type="PackedScene" uid="uid://c60h63oqga3qw" path="res://scenes/Player.tscn" id="13_626vs"]
 [ext_resource type="Texture2D" uid="uid://bi2p8skbssuj5" path="res://assets/tileset/Mockup2x.png" id="14_csmg3"]
+[ext_resource type="Texture2D" uid="uid://nw8du8dg1b56" path="res://selfdrawn/coin_anim.png" id="14_plo8s"]
 [ext_resource type="AudioStream" uid="uid://swdeyex32o80" path="res://assets/music/Platformer Music 158815.mp3" id="15_e5rl0"]
+[ext_resource type="Script" path="res://scenes/Coin.gd" id="15_um8nq"]
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="16_tk14o"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="17_dq3xh"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="18_a33hq"]
@@ -490,6 +492,71 @@ spread = 0.0
 gravity = Vector3(0, 200, 0)
 color = Color(0.121569, 0.490196, 0.890196, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjk48"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j04a"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pgl0"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sojiw"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffa0l"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1t2r"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3occn"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12jfw"]
+atlas = ExtResource("14_plo8s")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsv2o"]
+resource_name = "Blink"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjk48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j04a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pgl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sojiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffa0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1t2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3occn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12jfw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kvokn")
 
@@ -545,12 +612,12 @@ script = ExtResource("8_r3a45")
 
 [node name="Sapling" type="Sprite2D" parent="Sapling"]
 position = Vector2(0, -8)
-texture = ExtResource("9_db6ui")
+texture = ExtResource("10_nv6c1")
 
 [node name="Tree" type="Sprite2D" parent="Sapling"]
 visible = false
 position = Vector2(0, -32)
-texture = ExtResource("10_mydob")
+texture = ExtResource("11_givup")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sapling/Tree"]
 
@@ -586,6 +653,13 @@ scale = Vector2(7, 2)
 amount = 4000
 process_material = SubResource("ParticleProcessMaterial_d3hv2")
 lifetime = 5.0
+
+[node name="Coin" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(264, -106)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_xsv2o")
+frame_progress = 0.441443
+script = ExtResource("15_um8nq")
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
