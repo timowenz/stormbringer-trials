@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cktatkbc8jycs"
-path="res://.godot/imported/setzling.png-05119d686df63c9a0dd5fb7c3b55f7a0.ctex"
+uid="uid://blyaufndna3ri"
+path="res://.godot/imported/acorn.png-cde5f1a2e02d26bf4ee4dcfe59078ad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://setzling.png"
-dest_files=["res://.godot/imported/setzling.png-05119d686df63c9a0dd5fb7c3b55f7a0.ctex"]
+source_file="res://selfdrawn/acorn.png"
+dest_files=["res://.godot/imported/acorn.png-cde5f1a2e02d26bf4ee4dcfe59078ad8.ctex"]
 
 [params]
 
