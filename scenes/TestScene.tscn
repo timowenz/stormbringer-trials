@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://0bhg2mepgr6a"]
+[gd_scene load_steps=43 format=3 uid="uid://0bhg2mepgr6a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_kvokn"]
 [ext_resource type="Script" path="res://scripts/Weather.gd" id="2_fl8lx"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://nw8du8dg1b56" path="res://selfdrawn/coin_anim.png" id="14_plo8s"]
 [ext_resource type="AudioStream" uid="uid://swdeyex32o80" path="res://assets/music/Platformer Music 158815.mp3" id="15_e5rl0"]
 [ext_resource type="Script" path="res://scenes/Coin.gd" id="15_um8nq"]
+[ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="16_of5bn"]
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="16_tk14o"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="17_dq3xh"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="18_a33hq"]
@@ -655,11 +656,20 @@ process_material = SubResource("ParticleProcessMaterial_d3hv2")
 lifetime = 5.0
 
 [node name="Coin" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(264, -106)
+position = Vector2(265, -106)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_xsv2o")
-frame_progress = 0.441443
+frame_progress = 0.656223
 script = ExtResource("15_um8nq")
+
+[node name="Label" type="Label" parent="Player/Coin"]
+offset_left = -24.0
+offset_top = -10.0
+offset_right = -8.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
+text = "00"
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
