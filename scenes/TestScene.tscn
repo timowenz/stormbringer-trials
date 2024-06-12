@@ -694,6 +694,19 @@ visible = false
 wait_time = 0.3
 
 [node name="Coin" parent="." instance=ExtResource("22_ij715")]
-position = Vector2(228, 262)
+position = Vector2(312, 264)
+
+[node name="Coin2" parent="." instance=ExtResource("22_ij715")]
+position = Vector2(336, 264)
+
+[node name="Coin3" parent="." instance=ExtResource("22_ij715")]
+position = Vector2(360, 264)
+
+[node name="Coin4" parent="." instance=ExtResource("22_ij715")]
+position = Vector2(384, 264)
 
 [connection signal="pressed" from="Player/WeatherButton" to="WeatherMechanics" method="_on_weather_button_pressed"]
+[connection signal="body_entered" from="Coin" to="Player" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Coin2" to="Player" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Coin3" to="Player" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Coin4" to="Player" method="_on_coin_body_entered"]
