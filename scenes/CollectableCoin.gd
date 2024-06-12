@@ -1,6 +1,6 @@
 extends Area2D
 
-
+var sound = preload("res://scenes/coin_sound.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,5 +13,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		$AudioStreamPlayer2D.play()
+		var newsound = sound.instantiate()
+		$"..".add_child(newsound)
 		queue_free()

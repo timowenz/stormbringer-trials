@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://0bhg2mepgr6a"]
+[gd_scene load_steps=45 format=3 uid="uid://0bhg2mepgr6a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_kvokn"]
 [ext_resource type="Script" path="res://scripts/Weather.gd" id="2_fl8lx"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scenes/Coin.gd" id="15_um8nq"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="16_of5bn"]
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="16_tk14o"]
+[ext_resource type="Texture2D" uid="uid://covi8uf5gvly5" path="res://assets/Free RPG asset Pack/PACK/separate files/shield_02.png" id="17_01e02"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="17_dq3xh"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="18_a33hq"]
 [ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="22_ij715"]
@@ -652,7 +653,7 @@ process_material = SubResource("ParticleProcessMaterial_d3hv2")
 lifetime = 5.0
 
 [node name="Coin" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(265, -106)
+position = Vector2(264, -106)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_xsv2o")
 frame_progress = 0.656223
@@ -663,6 +664,20 @@ offset_left = -24.0
 offset_top = -10.0
 offset_right = -8.0
 offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="ArmorSprite" type="Sprite2D" parent="Player"]
+position = Vector2(264, -74)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_01e02")
+
+[node name="Label2" type="Label" parent="Player/ArmorSprite"]
+offset_left = -24.0
+offset_top = -10.6667
+offset_right = -8.0
+offset_bottom = 9.33333
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 20
 text = "00"
