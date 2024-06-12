@@ -13,4 +13,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		$AudioStreamPlayer2D.play()
 		queue_free()
