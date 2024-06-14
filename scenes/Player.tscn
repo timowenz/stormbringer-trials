@@ -1,4 +1,4 @@
-[gd_scene load_steps=263 format=3 uid="uid://c60h63oqga3qw"]
+[gd_scene load_steps=265 format=3 uid="uid://c60h63oqga3qw"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ys2wg"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_4gxhw"]
@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://mquce0lkghm3" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_WallHang.png" id="30_rxih3"]
 [ext_resource type="Texture2D" uid="uid://b2qrqld2d8imd" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_WallSlide.png" id="31_g3mkj"]
 [ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="32_sf7b6"]
+[ext_resource type="Script" path="res://scenes/abilities/player/player_use_ability_component.gd" id="33_s0sr5"]
+[ext_resource type="Resource" uid="uid://581g1aei1cvg" path="res://scenes/abilities/player/fire_spin_ability.tres" id="34_adecb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekyxk"]
 atlas = ExtResource("2_4gxhw")
@@ -2262,6 +2264,11 @@ one_shot = true
 [node name="CanDashTimer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
+
+[node name="PlayerUseAbilityComponent" type="Node" parent="." node_paths=PackedStringArray("user")]
+script = ExtResource("33_s0sr5")
+ability = ExtResource("34_adecb")
+user = NodePath("..")
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="Node2D/AttackArea" to="." method="_on_attack_area_body_entered"]
