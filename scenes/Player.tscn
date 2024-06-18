@@ -1,4 +1,4 @@
-[gd_scene load_steps=265 format=3 uid="uid://c60h63oqga3qw"]
+[gd_scene load_steps=267 format=3 uid="uid://c60h63oqga3qw"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ys2wg"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_4gxhw"]
@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="32_sf7b6"]
 [ext_resource type="Script" path="res://scenes/abilities/player/player_use_ability_component.gd" id="33_s0sr5"]
 [ext_resource type="Resource" uid="uid://581g1aei1cvg" path="res://scenes/abilities/player/fire_spin_ability.tres" id="34_adecb"]
+[ext_resource type="Script" path="res://scenes/abilities/player/fire_ball_spell.gd" id="35_wklvx"]
+[ext_resource type="Resource" uid="uid://dqrwweqnr1nr8" path="res://scenes/abilities/player/fire_ball_ability.tres" id="36_jabmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekyxk"]
 atlas = ExtResource("2_4gxhw")
@@ -2268,6 +2270,11 @@ one_shot = true
 [node name="PlayerUseAbilityComponent" type="Node" parent="." node_paths=PackedStringArray("user")]
 script = ExtResource("33_s0sr5")
 ability = ExtResource("34_adecb")
+user = NodePath("..")
+
+[node name="FireBallSpell" type="Node" parent="." node_paths=PackedStringArray("user")]
+script = ExtResource("35_wklvx")
+ability = ExtResource("36_jabmn")
 user = NodePath("..")
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
