@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var direction : float = 0
 var direction2 : Vector2 = Vector2.ZERO
 # Animation variables
 @onready var anim = get_node("AnimationPlayer")
@@ -77,7 +78,7 @@ func _physics_process(delta):
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	direction = Input.get_axis("ui_left", "ui_right")
 	if direction == - 1 and is_attacking == false:
 		get_node("AnimatedSprite2D").flip_h = true
 		$Node2D.scale = Vector2( - 1, 1)
@@ -95,7 +96,7 @@ func _physics_process(delta):
 					velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	direction2 = $Node2D.scale
+	##direction2 = $Node2D.scale
 	
 	move_and_slide()
 

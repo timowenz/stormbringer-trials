@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwql213vifn6e"]
+
+[ext_resource type="SpriteFrames" uid="uid://ct630i6asdvn8" path="res://scenes/abilities/player/fire_ball_projectile.tres" id="1_h52xn"]
+[ext_resource type="Script" path="res://scenes/abilities/projectile.gd" id="1_hhx6c"]
+[ext_resource type="Script" path="res://scenes/abilities/replace_on_timeout.gd" id="3_coudg"]
+[ext_resource type="Script" path="res://scenes/abilities/replace_on_area_entered.gd" id="4_ad7l6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fc1q8"]
+radius = 21.0
+
+[node name="FireBallProjectile" type="Node2D"]
+script = ExtResource("1_hhx6c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("1_h52xn")
+animation = &"fireball"
+autoplay = "fireball"
+frame_progress = 0.933021
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 33
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_fc1q8")
+
+[node name="ReplaceOnTimeout" type="Node" parent="." node_paths=PackedStringArray("replace_timer", "replace_target")]
+script = ExtResource("3_coudg")
+replace_timer = NodePath("Timer")
+replace_target = NodePath("..")
+replacement_scene_path = "res://scenes/abilities/player/fire_ball_explosion.tscn"
+
+[node name="Timer" type="Timer" parent="ReplaceOnTimeout"]
+autostart = true
+
+[node name="ReplaceOnAreaEntered" type="Node" parent="." node_paths=PackedStringArray("enter_area", "replace_target")]
+script = ExtResource("4_ad7l6")
+enter_area = NodePath("../Area2D")
+replace_target = NodePath("..")
+replacement_scene_path = "res://scenes/abilities/player/fire_ball_explosion.tscn"
+
+[connection signal="body_entered" from="Area2D" to="ReplaceOnAreaEntered" method="_on_body_entered"]
