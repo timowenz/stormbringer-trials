@@ -724,12 +724,12 @@ attack damage"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Player/Shop/Sprite2D4"]
-offset_left = -6.40001
-offset_top = 8.0
-offset_right = 31.6
-offset_bottom = 39.0
-scale = Vector2(0.347444, 0.359923)
-text = "Buy"
+offset_left = -8.00001
+offset_top = 9.6
+offset_right = 91.0
+offset_bottom = 40.6
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Shop"]
 position = Vector2(96, 56)
@@ -841,6 +841,7 @@ position = Vector2(384, 264)
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_trader_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Player" method="_on_trader_body_exited"]
 [connection signal="pressed" from="Player/WeatherButton" to="WeatherMechanics" method="_on_weather_button_pressed"]
+[connection signal="pressed" from="Player/Shop/Sprite2D4/Button" to="Player" method="_on_shop1_pressed" binds= [3]]
 [connection signal="body_entered" from="Coin" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coin2" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coin3" to="Player" method="_on_coin_body_entered"]

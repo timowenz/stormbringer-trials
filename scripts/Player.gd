@@ -296,3 +296,11 @@ func _on_trader_body_exited(body):
 	if(body.name == "Player"):
 		%Shop.visible = false
 	pass # Replace with function body.
+
+
+
+func _on_shop1_pressed(extra_arg_0):
+	if(coins >= extra_arg_0):
+		coins = coins-extra_arg_0
+		damage = damage * 1.2
+	pass # Replace with function body.
