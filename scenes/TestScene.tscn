@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://0bhg2mepgr6a"]
+[gd_scene load_steps=51 format=3 uid="uid://0bhg2mepgr6a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_kvokn"]
 [ext_resource type="Script" path="res://scripts/Weather.gd" id="2_fl8lx"]
@@ -21,8 +21,15 @@
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="16_tk14o"]
 [ext_resource type="Texture2D" uid="uid://covi8uf5gvly5" path="res://assets/Free RPG asset Pack/PACK/separate files/shield_02.png" id="17_01e02"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="17_dq3xh"]
+[ext_resource type="Texture2D" uid="uid://dvki88sr5wc7w" path="res://assets/icon.svg" id="18_8pvsc"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="18_a33hq"]
+[ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_wtltt"]
+[ext_resource type="Texture2D" uid="uid://cga320uwwu7qb" path="res://assets/Free RPG asset Pack/PACK/separate files/headgear_01.png" id="19_cywa4"]
+[ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_n4hm8"]
+[ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_k0kxb"]
 [ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="22_ij715"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40208"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcxmo"]
 texture = ExtResource("3_g4epo")
@@ -563,6 +570,17 @@ animations = [{
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kvokn")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(472, 264)
+
+[node name="Trader" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.372137, 0.372137)
+texture = ExtResource("18_8pvsc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(7.75803, 4.60004)
+shape = SubResource("RectangleShape2D_40208")
+
 [node name="WeatherMechanics" type="Node2D" parent="."]
 script = ExtResource("2_fl8lx")
 
@@ -682,6 +700,106 @@ theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 20
 text = "00"
 
+[node name="Shop" type="Panel" parent="Player"]
+unique_name_in_owner = true
+visible = false
+offset_left = -120.0
+offset_top = -146.0
+offset_right = 128.0
+offset_bottom = -34.0
+
+[node name="Sprite2D4" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(32, 56)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("18_wtltt")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D4"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 20% 
+attack damage"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Player/Shop/Sprite2D4"]
+offset_left = -6.40001
+offset_top = 8.0
+offset_right = 31.6
+offset_bottom = 39.0
+scale = Vector2(0.347444, 0.359923)
+text = "Buy"
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(96, 56)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("19_cywa4")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 20% 
+armor"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Player/Shop/Sprite2D"]
+offset_left = -6.40001
+offset_top = 8.0
+offset_right = 31.6
+offset_bottom = 39.0
+scale = Vector2(0.347444, 0.359923)
+text = "Buy"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(160, 56)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("20_n4hm8")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D2"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 40% 
+armor"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Player/Shop/Sprite2D2"]
+offset_left = -6.40001
+offset_top = 8.0
+offset_right = 31.6
+offset_bottom = 39.0
+scale = Vector2(0.347444, 0.359923)
+text = "Buy"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(224, 54)
+scale = Vector2(2.5, 2.48257)
+texture = ExtResource("21_k0kxb")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D3"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 20% 
+speed"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Player/Shop/Sprite2D3"]
+offset_left = -6.40001
+offset_top = 8.0
+offset_right = 31.6
+offset_bottom = 39.0
+scale = Vector2(0.347444, 0.359923)
+text = "Buy"
+
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.172549)
@@ -720,6 +838,8 @@ position = Vector2(360, 264)
 [node name="Coin4" parent="." instance=ExtResource("22_ij715")]
 position = Vector2(384, 264)
 
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_trader_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Player" method="_on_trader_body_exited"]
 [connection signal="pressed" from="Player/WeatherButton" to="WeatherMechanics" method="_on_weather_button_pressed"]
 [connection signal="body_entered" from="Coin" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coin2" to="Player" method="_on_coin_body_entered"]

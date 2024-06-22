@@ -285,3 +285,14 @@ func _on_coin_body_entered(body):
 	print("Coin collected")
 	coins+=1
 	pass 
+
+func _on_trader_body_entered(body):
+	if(body.name == "Player"):
+		%Shop.visible = true
+	pass # Replace with function body.
+
+
+func _on_trader_body_exited(body):
+	if(body.name == "Player"):
+		%Shop.visible = false
+	pass # Replace with function body.
