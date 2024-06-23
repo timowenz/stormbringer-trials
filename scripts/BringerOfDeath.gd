@@ -55,10 +55,11 @@ func take_damage(damage):
 		dead.emit()
 		queue_free()
 
-func _on_animated_sprite_2d_animation_finished():
-	player.take_damage(damage)
-
 func _on_area_2d_body_entered(body):
 	# jump
 	if (body.name == "TileMap"):
 		velocity.y = -JUMP_HEIGHT
+
+func _on_animated_sprite_2d_animation_finished():
+	print("animation finished")
+	player.take_damage(damage)

@@ -220,7 +220,7 @@ offset_top = -28.0
 offset_right = 26.0
 offset_bottom = -24.0
 
-[node name="HealthBar" parent="." instance=ExtResource("6_bfymn")]
+[node name="HealthBar2" parent="." instance=ExtResource("6_bfymn")]
 offset_left = -20.0
 offset_top = -28.0
 offset_right = 26.0
