@@ -6,8 +6,8 @@ const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var direction : float = 0
-var direction2 : Vector2 = Vector2.ZERO
+var direction: float = 0
+var direction2: Vector2 = Vector2.ZERO
 # Animation variables
 @onready var anim = get_node("AnimationPlayer")
 @onready var anim_tree: AnimationTree = $AnimationTree
@@ -74,7 +74,6 @@ func _physics_process(delta):
 		#anim.play("fall")
 	#elif not is_on_floor() and velocity.y < 0 and can_jump:
 		#anim.play("jump")
-	
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -167,7 +166,6 @@ func update_anim_params():
 						jump()
 					else:
 						run()
-
 	
 	if Input.is_action_just_pressed("attack"):
 		if is_crouching:
@@ -211,7 +209,6 @@ func crouch_walk():
 	anim_tree["parameters/conditions/is_crouch_walking"] = true
 	anim_tree["parameters/conditions/crouch"] = false
 
-
 func idle():
 	anim_tree["parameters/conditions/idle"] = true
 	anim_tree["parameters/conditions/is_moving"] = false
@@ -254,7 +251,7 @@ func _on_attack_area_body_entered(body):
 	if body.name != "TileMap":
 		print("damage taken")
 		body.take_damage(damage)
-	
+		body.animation.play("hurt")
 
 func hit():
 	if is_damaged:
@@ -272,10 +269,8 @@ func _on_animation_tree_animation_finished(anim_name):
 		anim_tree["parameters/conditions/idle"] = true
 		is_damaged = false
 
-
 func _on_dash_timer_timeout() -> void:
 	dashing = false
-
 
 func _on_can_dash_timer_timeout() -> void:
 	canDash = true
