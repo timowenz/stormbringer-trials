@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 150
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
-var health = 100
+var health = 200
 var player = null
 var player_chase = false
 var damage = 15
@@ -66,6 +66,5 @@ func _on_area_2d_body_entered(body):
 func _on_animated_sprite_2d_animation_finished():
 	if ($AnimatedSprite2D.animation == "hurt" and player.position.distance_to(position) < 50):
 		$AnimatedSprite2D.play("attack")
-	elif ($AnimatedSprite2D.animation == "attack"):
-		$AnimatedSprite2D.play("attack")
+	if ($AnimatedSprite2D.animation != "hurt"):
 		player.take_damage(damage)

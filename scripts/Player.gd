@@ -251,7 +251,9 @@ func _on_attack_area_body_entered(body):
 	if body.name != "TileMap":
 		print("damage taken")
 		body.take_damage(damage)
-		body.animation.play("hurt")
+		# TODO: do this for all enemies
+		if body.name == "BringerOfDeath":
+			body.animation.play("hurt")
 
 func hit():
 	if is_damaged:
