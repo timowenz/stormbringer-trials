@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://gv80ord7mbd1"]
+
+[ext_resource type="Script" path="res://scripts/SoundSlider.gd" id="1_fxpou"]
+
+[node name="HSlider" type="HSlider"]
+offset_right = 200.0
+offset_bottom = 20.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_fxpou")
+bus = "Master"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://g851gkjp4fxq"]
+[gd_scene load_steps=15 format=3 uid="uid://g851gkjp4fxq"]
 
 [ext_resource type="Texture2D" uid="uid://dwd8xv8npm6gv" path="res://assets/tileset/BG1.png" id="1_uq56c"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="3_1hjbe"]
 [ext_resource type="AudioStream" uid="uid://hkm203sc233e" path="res://assets/music/Platformer Music 8-bit Arcade Mode.mp3" id="3_qoq06"]
+[ext_resource type="PackedScene" uid="uid://gv80ord7mbd1" path="res://scenes/SoundSlider.tscn" id="5_qlpxr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6xwg"]
 bg_color = Color(0.321569, 0.505882, 0.827451, 1)
@@ -251,6 +252,52 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("3_qoq06")
 volume_db = -15.0
 autoplay = true
+bus = &"Music"
+
+[node name="MasterVolume" parent="." instance=ExtResource("5_qlpxr")]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 495.0
+offset_right = 1118.0
+offset_bottom = 515.0
+
+[node name="Label" type="Label" parent="MasterVolume"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 84.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("3_1hjbe")
+text = "Master Volume"
+
+[node name="MusicVolume" parent="." instance=ExtResource("5_qlpxr")]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 536.0
+offset_right = 1118.0
+offset_bottom = 556.0
+bus = "Music"
+
+[node name="Label" type="Label" parent="MusicVolume"]
+offset_top = -15.0
+offset_right = 77.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("3_1hjbe")
+text = "Music Volume"
+
+[node name="SoundEffectVolume" parent="." instance=ExtResource("5_qlpxr")]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 576.0
+offset_right = 1118.0
+offset_bottom = 596.0
+bus = "SFX"
+
+[node name="Label" type="Label" parent="SoundEffectVolume"]
+offset_top = -14.0
+offset_right = 116.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("3_1hjbe")
+text = "Sound Effect Volume"
 
 [connection signal="pressed" from="BottomControl/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BottomControl/CreditsButton" to="." method="_on_credits_button_pressed"]

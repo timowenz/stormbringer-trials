@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bdy2duaeltjsv" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_5.png" id="6_aqb6n"]
 [ext_resource type="Texture2D" uid="uid://by1iq2w3y7stt" path="res://assets/Jozo2assets/TilesetJozo2.png" id="6_mwhaw"]
 [ext_resource type="Texture2D" uid="uid://cvvsajbvrx80m" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_6.png" id="7_bfn13"]
-[ext_resource type="Script" path="res://scenes/Sapling.gd" id="8_r3a45"]
+[ext_resource type="Script" path="res://scripts/Sapling.gd" id="8_r3a45"]
 [ext_resource type="Texture2D" uid="uid://cajp7aig2dk0l" path="res://selfdrawn/setzling_2.png" id="10_nv6c1"]
 [ext_resource type="Texture2D" uid="uid://c8vqgx85ekghg" path="res://selfdrawn/tree_2.png" id="11_givup"]
 [ext_resource type="Texture2D" uid="uid://dg7evlocf15rc" path="res://selfdrawn/clock.png" id="11_ok8sy"]
@@ -843,6 +843,8 @@ text = "Buy (3 gold)"
 
 [node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("28_su8pe")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
@@ -854,6 +856,7 @@ texture = ExtResource("14_csmg3")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_e5rl0")
 volume_db = -15.0
+bus = &"Music"
 
 [node name="WonGame" parent="." instance=ExtResource("16_tk14o")]
 process_mode = 2
