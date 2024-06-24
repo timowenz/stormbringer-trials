@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #var state_machine
-const SPEED = 190.0
+var SPEED = 190.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -303,4 +303,27 @@ func _on_shop1_pressed(extra_arg_0):
 	if(coins >= extra_arg_0):
 		coins = coins-extra_arg_0
 		damage = damage * 1.2
+		$BuySound.play()
 	pass # Replace with function body.
+
+
+func _on_shop2_pressed(extra_arg_0):
+	if(coins >= extra_arg_0):
+		coins = coins-extra_arg_0
+		health = health * 1.2
+	pass # Replace with function body.
+
+
+func _on_button_3_pressed(extra_arg_0):
+	if(coins >= extra_arg_0):
+		coins = coins-extra_arg_0
+		health = health * 1.4
+	pass # Replace with function body.
+
+
+func _on_shop4_pressed(extra_arg_0):
+	if(coins >= extra_arg_0):
+		coins = coins-extra_arg_0
+		SPEED = SPEED * 1.2
+	pass # Replace with function body.
+

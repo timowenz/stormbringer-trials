@@ -1,12 +1,18 @@
-[gd_scene load_steps=51 format=3 uid="uid://0bhg2mepgr6a"]
+[gd_scene load_steps=58 format=3 uid="uid://0bhg2mepgr6a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_kvokn"]
 [ext_resource type="Script" path="res://scripts/Weather.gd" id="2_fl8lx"]
 [ext_resource type="PackedScene" uid="uid://cb06f586f51m3" path="res://scenes/EndGameCollision.tscn" id="2_p8cra"]
+[ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="2_swmyr"]
 [ext_resource type="Texture2D" uid="uid://orn2cuxk40ma" path="res://assets/tileset/Tileset.png" id="3_g4epo"]
+[ext_resource type="Texture2D" uid="uid://bbv5nb1mfntfm" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="3_s7omu"]
 [ext_resource type="Texture2D" uid="uid://vu8r2cjp1s8j" path="res://assets/tileset/Decors.png" id="4_4adn4"]
+[ext_resource type="Texture2D" uid="uid://bw7oy1ufe55pg" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="4_ghit8"]
+[ext_resource type="Texture2D" uid="uid://cve532knyavsf" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_4.png" id="5_r8wee"]
 [ext_resource type="Texture2D" uid="uid://bj3gfcx77pf1" path="res://assets/Jozo2assets/AlchemyBundle.png" id="5_sg7ju"]
+[ext_resource type="Texture2D" uid="uid://bdy2duaeltjsv" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_5.png" id="6_aqb6n"]
 [ext_resource type="Texture2D" uid="uid://by1iq2w3y7stt" path="res://assets/Jozo2assets/TilesetJozo2.png" id="6_mwhaw"]
+[ext_resource type="Texture2D" uid="uid://cvvsajbvrx80m" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_6.png" id="7_bfn13"]
 [ext_resource type="Script" path="res://scenes/Sapling.gd" id="8_r3a45"]
 [ext_resource type="Texture2D" uid="uid://cajp7aig2dk0l" path="res://selfdrawn/setzling_2.png" id="10_nv6c1"]
 [ext_resource type="Texture2D" uid="uid://c8vqgx85ekghg" path="res://selfdrawn/tree_2.png" id="11_givup"]
@@ -21,13 +27,39 @@
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="16_tk14o"]
 [ext_resource type="Texture2D" uid="uid://covi8uf5gvly5" path="res://assets/Free RPG asset Pack/PACK/separate files/shield_02.png" id="17_01e02"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="17_dq3xh"]
-[ext_resource type="Texture2D" uid="uid://dvki88sr5wc7w" path="res://assets/icon.svg" id="18_8pvsc"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="18_a33hq"]
 [ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_wtltt"]
 [ext_resource type="Texture2D" uid="uid://cga320uwwu7qb" path="res://assets/Free RPG asset Pack/PACK/separate files/headgear_01.png" id="19_cywa4"]
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_n4hm8"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_k0kxb"]
 [ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="22_ij715"]
+[ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="28_su8pe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvbds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_swmyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s7omu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ghit8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r8wee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aqb6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bfn13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40208"]
 
@@ -570,14 +602,16 @@ animations = [{
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kvokn")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Trader" type="Area2D" parent="."]
 position = Vector2(472, 264)
 
-[node name="Trader" type="Sprite2D" parent="Area2D"]
-scale = Vector2(0.372137, 0.372137)
-texture = ExtResource("18_8pvsc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trader"]
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_kvbds")
+autoplay = "default"
+frame_progress = 0.238301
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trader"]
 scale = Vector2(7.75803, 4.60004)
 shape = SubResource("RectangleShape2D_40208")
 
@@ -724,10 +758,10 @@ attack damage"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Player/Shop/Sprite2D4"]
-offset_left = -8.00001
-offset_top = 9.6
-offset_right = 91.0
-offset_bottom = 40.6
+offset_left = -8.4
+offset_top = 9.2
+offset_right = 90.6
+offset_bottom = 40.2
 scale = Vector2(0.187444, 0.194176)
 text = "Buy (3 gold)"
 
@@ -746,13 +780,13 @@ text = "+ 20%
 armor"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Player/Shop/Sprite2D"]
-offset_left = -6.40001
-offset_top = 8.0
-offset_right = 31.6
-offset_bottom = 39.0
-scale = Vector2(0.347444, 0.359923)
-text = "Buy"
+[node name="Button2" type="Button" parent="Player/Shop/Sprite2D"]
+offset_left = -9.6
+offset_top = 9.2
+offset_right = 89.4
+offset_bottom = 40.2
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player/Shop"]
 position = Vector2(160, 56)
@@ -769,13 +803,13 @@ text = "+ 40%
 armor"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Player/Shop/Sprite2D2"]
-offset_left = -6.40001
-offset_top = 8.0
-offset_right = 31.6
-offset_bottom = 39.0
-scale = Vector2(0.347444, 0.359923)
-text = "Buy"
+[node name="Button3" type="Button" parent="Player/Shop/Sprite2D2"]
+offset_left = -9.6
+offset_top = 9.2
+offset_right = 89.4
+offset_bottom = 40.2
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
 
 [node name="Sprite2D3" type="Sprite2D" parent="Player/Shop"]
 position = Vector2(224, 54)
@@ -792,13 +826,23 @@ text = "+ 20%
 speed"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Player/Shop/Sprite2D3"]
-offset_left = -6.40001
-offset_top = 8.0
-offset_right = 31.6
-offset_bottom = 39.0
-scale = Vector2(0.347444, 0.359923)
-text = "Buy"
+[node name="Button2" type="Button" parent="Player/Shop/Sprite2D3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 2.0
+offset_right = 81.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
+
+[node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("28_su8pe")
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
@@ -838,10 +882,13 @@ position = Vector2(360, 264)
 [node name="Coin4" parent="." instance=ExtResource("22_ij715")]
 position = Vector2(384, 264)
 
-[connection signal="body_entered" from="Area2D" to="Player" method="_on_trader_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Player" method="_on_trader_body_exited"]
+[connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
+[connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]
 [connection signal="pressed" from="Player/WeatherButton" to="WeatherMechanics" method="_on_weather_button_pressed"]
 [connection signal="pressed" from="Player/Shop/Sprite2D4/Button" to="Player" method="_on_shop1_pressed" binds= [3]]
+[connection signal="pressed" from="Player/Shop/Sprite2D/Button2" to="Player" method="_on_shop2_pressed" binds= [3]]
+[connection signal="pressed" from="Player/Shop/Sprite2D2/Button3" to="Player" method="_on_button_3_pressed" binds= [3]]
+[connection signal="pressed" from="Player/Shop/Sprite2D3/Button2" to="Player" method="_on_shop4_pressed" binds= [3]]
 [connection signal="body_entered" from="Coin" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coin2" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coin3" to="Player" method="_on_coin_body_entered"]
