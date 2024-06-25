@@ -12,12 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://bscw25rurw8r2" path="res://scenes/VoidStatic.tscn" id="5_j8iaf"]
 [ext_resource type="PackedScene" uid="uid://bmf2e5hlvswwi" path="res://scenes/Necromancer.tscn" id="7_btixl"]
 [ext_resource type="AudioStream" uid="uid://swdeyex32o80" path="res://assets/music/Platformer Music 158815.mp3" id="7_fenwb"]
-[ext_resource type="PackedScene" uid="uid://ch2nnudsm6lxx" path="res://scenes/Void.tscn" id="8_164n1"]
 [ext_resource type="PackedScene" uid="uid://cwyw5f86k3kd7" path="res://scenes/NightBorn.tscn" id="8_s60dt"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="9_sp66h"]
 [ext_resource type="PackedScene" uid="uid://b4ahma1cub6ar" path="res://scenes/FlyingEye.tscn" id="9_vhevj"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="10_12ia5"]
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="14_h6jtw"]
+[ext_resource type="PackedScene" uid="uid://byufb1ir0dmio" path="res://scenes/BringerOfDeath.tscn" id="18_pkcwy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcxmo"]
 texture = ExtResource("1_iralc")
@@ -535,14 +535,10 @@ position = Vector2(720, 554)
 position = Vector2(727, 226)
 
 [node name="FlyingEye4" parent="Enemies" instance=ExtResource("9_vhevj")]
-position = Vector2(261, 221)
+position = Vector2(565, 198)
 
 [node name="FlyingEye3" parent="Enemies" instance=ExtResource("9_vhevj")]
 position = Vector2(1443, 208)
-
-[node name="Void" parent="." instance=ExtResource("8_164n1")]
-z_index = 2
-position = Vector2(-1075, -410)
 
 [node name="ViodStatic" parent="." instance=ExtResource("5_j8iaf")]
 position = Vector2(-1698, 794)
@@ -579,3 +575,6 @@ process_mode = 2
 
 [node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="BringerOfDeath" parent="." instance=ExtResource("18_pkcwy")]
+position = Vector2(266, 201)

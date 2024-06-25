@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://co0gjms1bhn62"]
+
+[ext_resource type="Script" path="res://scenes/abilities/grow_over_time.gd" id="1_3c0nh"]
+[ext_resource type="SpriteFrames" uid="uid://ct630i6asdvn8" path="res://scenes/abilities/player/fire_ball_projectile.tres" id="1_7qeev"]
+[ext_resource type="Script" path="res://scenes/abilities/area_damage_over_time.gd" id="3_wgy46"]
+[ext_resource type="Script" path="res://scenes/abilities/remove_after_growth.gd" id="4_wn603"]
+
+[sub_resource type="Curve" id="Curve_ff7hb"]
+min_value = 1.0
+max_value = 6.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.237895, 1.09048), 0.0, 0.0, 0, 0, Vector2(0.995789, 2.49685), 7.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2x6vc"]
+radius = 25.02
+
+[node name="FireBallExplosion" type="Node2D"]
+
+[node name="GrowOverTime" type="Node2D" parent="."]
+script = ExtResource("1_3c0nh")
+growth_curve = SubResource("Curve_ff7hb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GrowOverTime"]
+texture_filter = 1
+sprite_frames = ExtResource("1_7qeev")
+animation = &"fireballexplosion"
+autoplay = "fireballexplosion"
+frame_progress = 0.863757
+
+[node name="HotBoxArea" type="Area2D" parent="GrowOverTime" node_paths=PackedStringArray("damage_tick_timer")]
+script = ExtResource("3_wgy46")
+damage_tick_timer = NodePath("DamageTickTimer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrowOverTime/HotBoxArea"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_2x6vc")
+
+[node name="DamageTickTimer" type="Timer" parent="GrowOverTime/HotBoxArea"]
+wait_time = 0.189
+
+[node name="RemoveAfterGrowth" type="Node" parent="." node_paths=PackedStringArray("grow_over_time", "queue_free_target")]
+script = ExtResource("4_wn603")
+grow_over_time = NodePath("../GrowOverTime")
+queue_free_target = NodePath("..")
