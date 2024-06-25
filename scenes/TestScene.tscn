@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="28_su8pe"]
 [ext_resource type="PackedScene" uid="uid://b4ahma1cub6ar" path="res://scenes/FlyingEye.tscn" id="35_g0qrb"]
 
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvbds"]
 animations = [{
 "frames": [{
