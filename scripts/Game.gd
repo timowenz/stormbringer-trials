@@ -6,6 +6,8 @@ var playerhealth
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Enemies/NightBorn.connect("dead", add_boss_killed)
+	$Enemies/Necromancer.connect("dead", add_boss_killed)
 	get_tree().paused = false
 	$GameOver.get_node("MainMenu").pressed.connect(main_menu)
 	$GameOver.get_node("Restart").pressed.connect(new_game)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #var state_machine
-var SPEED = 190.0
+const SPEED = 190.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -28,11 +28,6 @@ var is_damaged = false
 var has_died = false
 var bosses_killed = 0
 var can_win = false
-const dashSpeed = 800
-const dashLength = 0.2
-var dashing = false
-var canDash = true
-var coins = 0
 
 func _ready():
 	effects.play("RESET")
@@ -47,38 +42,25 @@ func _ready():
 	$Node2D/AttackArea/AttackCol2.disabled = true
 
 func _process(delta):
-	$Coin/Label.text = str(coins)
 	update_anim_params()
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
+
 	if is_on_floor():
 		can_jump = true
 		jump_count = 0
-	
-	if Input.is_action_just_pressed("dash") and canDash:
-		dashing = true
-		canDash = false
-		anim.play("dash")
-		$DashTimer.start()
-		$CanDashTimer.start()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 
-	#if not is_on_floor() and velocity.y > 0:
-		#anim.play("fall")
-	#elif not is_on_floor() and velocity.y < 0 and can_jump:
-		#anim.play("jump")
-	
-	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction == - 1 and is_attacking == false:
 		get_node("AnimatedSprite2D").flip_h = true
@@ -91,15 +73,19 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED / 1.5
 		else:
 			if is_attacking == false:
-				if dashing:
-					velocity.x = direction * dashSpeed
-				else:
-					velocity.x = direction * SPEED
+				velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	direction2 = $Node2D.scale
 	
 	move_and_slide()
+	#handle death
+	
+	# Handle falling animation
+	if not is_on_floor() and velocity.y > 0:
+		anim.play("fall")
+	elif not is_on_floor() and velocity.y < 0 and can_jump:
+		anim.play("jump")
 
 func _set_health(value):
 	health = value
@@ -140,17 +126,11 @@ func die():
 	has_died = false
 
 func update_anim_params():
-	#handle_fall_jump()
 	if health <= 0:
 		die()
 	else:
 		if velocity == Vector2.ZERO:
-			if not is_on_floor() and velocity.y > 0:
-				falling()
-			elif not is_on_floor() and velocity.y < 0 and can_jump:
-				jump()
-			else:
-				idle()
+			idle()
 			if Input.is_action_just_pressed("stand_up"):
 				stand_up()
 				can_jump = true
@@ -162,13 +142,7 @@ func update_anim_params():
 				crouch_walk()
 			else:
 				if is_attacking == false:
-					if not is_on_floor() and velocity.y > 0:
-						falling()
-					elif not is_on_floor() and velocity.y < 0 and can_jump:
-						jump()
-					else:
-						run()
-
+					run()
 	
 	if Input.is_action_just_pressed("attack"):
 		if is_crouching:
@@ -212,7 +186,6 @@ func crouch_walk():
 	anim_tree["parameters/conditions/is_crouch_walking"] = true
 	anim_tree["parameters/conditions/crouch"] = false
 
-
 func idle():
 	anim_tree["parameters/conditions/idle"] = true
 	anim_tree["parameters/conditions/is_moving"] = false
@@ -224,29 +197,6 @@ func run():
 	anim_tree["parameters/conditions/is_moving"] = true
 	anim_tree["parameters/conditions/is_crouch_walking"] = false
 	anim_tree["parameters/conditions/crouch"] = false
-
-func falling():
-	anim_tree["parameters/conditions/idle"] = false
-	anim_tree["parameters/conditions/is_moving"] = false
-	anim_tree["parameters/conditions/is_crouch_walking"] = false
-	anim_tree["parameters/conditions/crouch"] = false
-	anim_tree["parameters/conditions/falling"] = true
-	anim_tree["parameters/conditions/jump"] = false
-
-func jump():
-	anim_tree["parameters/conditions/idle"] = false
-	anim_tree["parameters/conditions/is_moving"] = false
-	anim_tree["parameters/conditions/is_crouch_walking"] = false
-	anim_tree["parameters/conditions/crouch"] = false
-	anim_tree["parameters/conditions/falling"] = false
-	anim_tree["parameters/conditions/jump"] = true
-
-func handle_fall_jump():
-	# Handle falling animation
-	if not is_on_floor() and velocity.y > 0:
-		falling()
-	elif not is_on_floor() and velocity.y < 0 and can_jump:
-		jump()
 
 func _on_attack_area_body_entered(body):
 	print(body)
@@ -272,58 +222,3 @@ func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "hit":
 		anim_tree["parameters/conditions/idle"] = true
 		is_damaged = false
-
-
-func _on_dash_timer_timeout() -> void:
-	dashing = false
-
-
-func _on_can_dash_timer_timeout() -> void:
-	canDash = true
-
-func _on_coin_body_entered(body):
-	print("Coin collected")
-	coins+=1
-	pass 
-
-func _on_trader_body_entered(body):
-	if(body.name == "Player"):
-		%Shop.visible = true
-	pass # Replace with function body.
-
-
-func _on_trader_body_exited(body):
-	if(body.name == "Player"):
-		%Shop.visible = false
-	pass # Replace with function body.
-
-
-
-func _on_shop1_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
-		damage = damage * 1.2
-		$BuySound.play()
-	pass # Replace with function body.
-
-
-func _on_shop2_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
-		health = health * 1.2
-	pass # Replace with function body.
-
-
-func _on_button_3_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
-		health = health * 1.4
-	pass # Replace with function body.
-
-
-func _on_shop4_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
-		SPEED = SPEED * 1.2
-	pass # Replace with function body.
-
