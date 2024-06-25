@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c367j0qna1lgg"]
+[gd_scene load_steps=29 format=3 uid="uid://c367j0qna1lgg"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_8yes0"]
 [ext_resource type="Texture2D" uid="uid://orn2cuxk40ma" path="res://assets/tileset/Tileset.png" id="1_iralc"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b4ahma1cub6ar" path="res://scenes/FlyingEye.tscn" id="9_vhevj"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="10_12ia5"]
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="14_h6jtw"]
+[ext_resource type="PackedScene" uid="uid://byufb1ir0dmio" path="res://scenes/BringerOfDeath.tscn" id="18_pkcwy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcxmo"]
 texture = ExtResource("1_iralc")
@@ -534,7 +535,7 @@ position = Vector2(720, 554)
 position = Vector2(727, 226)
 
 [node name="FlyingEye4" parent="Enemies" instance=ExtResource("9_vhevj")]
-position = Vector2(261, 221)
+position = Vector2(565, 198)
 
 [node name="FlyingEye3" parent="Enemies" instance=ExtResource("9_vhevj")]
 position = Vector2(1443, 208)
@@ -574,3 +575,6 @@ process_mode = 2
 
 [node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="BringerOfDeath" parent="." instance=ExtResource("18_pkcwy")]
+position = Vector2(266, 201)
