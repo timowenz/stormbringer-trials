@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ProjectileLaunchAbility" load_steps=3 format=3 uid="uid://581g1aei1cvg"]
-
-[ext_resource type="PackedScene" uid="uid://btxwxw7aqeh0n" path="res://scenes/abilities/player/fire_spin_projectile.tscn" id="1_1prqs"]
-[ext_resource type="Script" path="res://scenes/abilities/projectile_launch_ability.gd" id="2_yy71t"]
-
-[resource]
-script = ExtResource("2_yy71t")
-projectile_scene = ExtResource("1_1prqs")
-instancing_offset = Vector2(0, -5)

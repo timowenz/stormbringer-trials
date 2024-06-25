@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ProjectileLaunchAbility" load_steps=3 format=3 uid="uid://dqrwweqnr1nr8"]
-
-[ext_resource type="PackedScene" uid="uid://cwql213vifn6e" path="res://scenes/abilities/player/fire_ball_projectile.tscn" id="1_2ibww"]
-[ext_resource type="Script" path="res://scenes/abilities/projectile_launch_ability.gd" id="2_ry27x"]
-
-[resource]
-script = ExtResource("2_ry27x")
-projectile_scene = ExtResource("1_2ibww")
-instancing_offset = Vector2(0, 0)
