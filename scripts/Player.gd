@@ -33,6 +33,7 @@ const dashSpeed = 800
 const dashLength = 0.2
 var dashing = false
 var canDash = true
+var coins = 0
 
 func _ready():
 	effects.play("RESET")
@@ -47,6 +48,7 @@ func _ready():
 	$Node2D/AttackArea/AttackCol2.disabled = true
 
 func _process(delta):
+	$Coin/Label.text = str(coins)
 	update_anim_params()
 
 func _physics_process(delta):
@@ -279,3 +281,8 @@ func _on_dash_timer_timeout() -> void:
 
 func _on_can_dash_timer_timeout() -> void:
 	canDash = true
+
+func _on_coin_body_entered(body):
+	print("Coin collected")
+	coins+=1
+	pass 
