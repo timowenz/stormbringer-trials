@@ -1,70 +1,116 @@
 extends CharacterBody2D
 
-const SPEED = 150
+enum State {IDLE, WALK, ATTACK, DEAD, HIT, CAST}
+
+const SPEED = 100
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
-var health = 200
+const ENEMEY_DAMAGE = 15
+var health = 100
+var state = State.IDLE
 var player = null
 var player_chase = false
-var damage = 15
-signal dead
 
-@onready var animation = $AnimatedSprite2D
+@onready var anim = $AnimatedSprite2D
 @onready var healthbar = $HealthBar
 
 func _ready():
-	healthbar.init_health(health)
+  set_state(State.IDLE)
+  healthbar.init_health(health)
 
-func move_enemy_towards_player():
-	velocity.y += GRAVITY
-	var direction = (player.position - position).normalized()
-	velocity.x = direction.x * SPEED
+func _physics_process(delta):
+  match state:
+    State.IDLE:
+      idle_state(delta)
+    State.WALK:
+      walk_state(delta)
+    State.ATTACK:
+      attack_state(delta)
+    State.CAST:
+      cast_state(delta)
 
-	if (player.position.x < position.x):
-		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.offset.x = 0
-		$Node2D.scale.x = 1
-	else:
-		$AnimatedSprite2D.flip_h = true
+func set_state(new_state):
+  state = new_state
+  match state:
+    State.IDLE:
+      anim.play("idle")
+    State.WALK:
+      anim.play("walk")
+    State.ATTACK:
+      anim.play("attack")
+    State.HIT:
+      anim.play("hit")
+    State.DEAD:
+      anim.play("dead")
+    State.CAST:
+      anim.play("cast")
+
+func cast_state(_delta):
+  if (player.position.distance_to(position) < 200):
+    set_state(State.CAST)
+
+func attack_state(_delta):
+  if (player.position.distance_to(position) < 50):
+    set_state(State.ATTACK)
+  elif (player.position.distance_to(position) < 200):
+    set_state(State.CAST)
+  else:
+    set_state(State.WALK)
+
+func walk_state(_delta):
+  var direction = (player.position - position).normalized()
+  velocity.y += GRAVITY
+  velocity.x = direction.x * SPEED
+
+  if (player.position.x < position.x):
+    $AnimatedSprite2D.flip_h = false
+    $AnimatedSprite2D.offset.x = 0
+    $Node2D.scale.x = 1
+  else:
 		# This is because the sprite: 'BringerOfDeath' is not centered
-		$AnimatedSprite2D.offset.x = 60
-		$Node2D.scale.x = -1
-	move_and_slide()
+    $AnimatedSprite2D.flip_h = true
+    $AnimatedSprite2D.offset.x = 70
+    $Node2D.scale.x = -1
 
-func _physics_process(_delta):
-	if (player_chase):
-		move_enemy_towards_player()
+  if (player.position.distance_to(position) < 50):
+    set_state(State.ATTACK)
 
-		# attack player
-		if (player.position.distance_to(position) < 50 and $AnimatedSprite2D.animation != "hurt"):
-			$AnimatedSprite2D.play("attack")
-		elif ($AnimatedSprite2D.animation != "hurt" and $AnimatedSprite2D.animation != "attack"):
-			$AnimatedSprite2D.play("walk")
-	
+  move_and_slide()
+
+func idle_state(_delta):
+  if (!player_chase):
+    return set_state(State.IDLE)
+
+  if (player.position.distance_to(position) < 50):
+    set_state(State.ATTACK)
+  else:
+    set_state(State.WALK)
+
 func _on_detection_area_2d_body_entered(body):
-	player = body
-	player_chase = true
+  player = body
+  player_chase = true
 
 func get_health():
-	return health
+  return health
 
-func set_health(value):
-	health = value
-
-func take_damage(dmg):
-	health -= dmg
-	healthbar.health = health
-	if (health <= 0):
-		dead.emit()
-		queue_free()
+func take_damage(damage):
+  if (health <= 0):
+    return set_state(State.DEAD)
+  health -= damage
+  healthbar.health = health
+  set_state(State.HIT)
 
 func _on_area_2d_body_entered(body):
-	# jump
-	if (body.name == "TileMap"):
-		velocity.y = -JUMP_HEIGHT
+  if (body.name == "TileMap"):
+    velocity.y = -JUMP_HEIGHT
 
 func _on_animated_sprite_2d_animation_finished():
-	if ($AnimatedSprite2D.animation == "hurt" and player.position.distance_to(position) < 50):
-		$AnimatedSprite2D.play("attack")
-	if ($AnimatedSprite2D.animation != "hurt"):
-		player.take_damage(damage)
+  if anim.animation == "dead":
+    queue_free()
+  if anim.animation == "hit":
+    set_state(State.WALK)
+  if anim.animation == "attack":
+    player.take_damage(ENEMEY_DAMAGE)
+  if anim.animation == "cast":
+    set_state(State.WALK)
+    player.take_damage(ENEMEY_DAMAGE)
