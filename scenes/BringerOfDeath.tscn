@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://byufb1ir0dmio"]
+[gd_scene load_steps=46 format=3 uid="uid://byufb1ir0dmio"]
 
 [ext_resource type="Script" path="res://scripts/BringerOfDeath.gd" id="1_f35kd"]
 [ext_resource type="Texture2D" uid="uid://6ymn657iblh0" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Attack/Bringer-of-Death_Attack_1.png" id="1_m4wty"]
@@ -12,8 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://dk8pp52lwdlcn" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Attack/Bringer-of-Death_Attack_9.png" id="9_pgwr0"]
 [ext_resource type="Texture2D" uid="uid://c8mrgs6t4cjx7" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Attack/Bringer-of-Death_Attack_10.png" id="10_ttfgr"]
 [ext_resource type="Texture2D" uid="uid://bihv82mmp3te7" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Hurt/Bringer-of-Death_Hurt_1.png" id="12_4v23y"]
+[ext_resource type="Texture2D" uid="uid://dh4eansmc1y76" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_1.png" id="12_38s3w"]
+[ext_resource type="Texture2D" uid="uid://db6t8f8x7ddrk" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_2.png" id="13_o6tti"]
 [ext_resource type="Texture2D" uid="uid://drg0kqrehhe2d" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Hurt/Bringer-of-Death_Hurt_2.png" id="13_qsoed"]
+[ext_resource type="Texture2D" uid="uid://ckgudtr1n40eu" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_3.png" id="14_7bhls"]
 [ext_resource type="Texture2D" uid="uid://7fn0m7eylde6" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Hurt/Bringer-of-Death_Hurt_3.png" id="14_dv1tx"]
+[ext_resource type="Texture2D" uid="uid://bceto7mef12uw" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_4.png" id="15_wgwrb"]
+[ext_resource type="Texture2D" uid="uid://bkeejs34c7r46" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_5.png" id="16_pvhii"]
+[ext_resource type="Texture2D" uid="uid://d4m2qy25fgspe" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_6.png" id="17_8vy8o"]
+[ext_resource type="Texture2D" uid="uid://dli5qjbasxdss" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_7.png" id="18_irto2"]
+[ext_resource type="Texture2D" uid="uid://g476t6rksoda" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_8.png" id="19_uf3fg"]
+[ext_resource type="Texture2D" uid="uid://dxjbh7l8m2nw5" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_9.png" id="20_d4ihl"]
+[ext_resource type="Texture2D" uid="uid://dgwpks2udps3w" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Death/Bringer-of-Death_Death_10.png" id="21_7jhns"]
 [ext_resource type="Texture2D" uid="uid://cmm20j4boltav" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Walk/Bringer-of-Death_Walk_1.png" id="23_74wbx"]
 [ext_resource type="Texture2D" uid="uid://bb86xvfwtvpid" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_1.png" id="24_4l4er"]
 [ext_resource type="Texture2D" uid="uid://d00ngiyhnc4kt" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Walk/Bringer-of-Death_Walk_2.png" id="24_7nige"]
@@ -71,6 +81,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("12_38s3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_o6tti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7bhls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wgwrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pvhii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8vy8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_irto2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_uf3fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_d4ihl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7jhns")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("12_4v23y")
 }, {
 "duration": 1.0,
@@ -80,7 +125,7 @@ animations = [{
 "texture": ExtResource("14_dv1tx")
 }],
 "loop": false,
-"name": &"hurt",
+"name": &"hit",
 "speed": 5.0
 }, {
 "frames": [{
@@ -158,7 +203,7 @@ script = ExtResource("1_f35kd")
 position = Vector2(-22, 12)
 scale = Vector2(0.604839, 0.604839)
 sprite_frames = SubResource("SpriteFrames_0aohk")
-animation = &"walk"
+animation = &"dead"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
