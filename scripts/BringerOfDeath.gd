@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-enum State {IDLE, WALK, ATTACK, DEAD, HIT}
+enum State {IDLE, WALK, ATTACK, DEAD, HIT, CAST}
 
 const SPEED = 100
 const GRAVITY = 25
@@ -26,6 +26,8 @@ func _physics_process(delta):
       walk_state(delta)
     State.ATTACK:
       attack_state(delta)
+    State.CAST:
+      cast_state(delta)
 
 func set_state(new_state):
   state = new_state
@@ -40,10 +42,18 @@ func set_state(new_state):
       anim.play("hit")
     State.DEAD:
       anim.play("dead")
+    State.CAST:
+      anim.play("cast")
+
+func cast_state(_delta):
+  if (player.position.distance_to(position) < 200):
+    set_state(State.CAST)
 
 func attack_state(_delta):
   if (player.position.distance_to(position) < 50):
     set_state(State.ATTACK)
+  elif (player.position.distance_to(position) < 200):
+    set_state(State.CAST)
   else:
     set_state(State.WALK)
 
@@ -84,11 +94,11 @@ func get_health():
   return health
 
 func take_damage(damage):
+  if (health <= 0):
+    return set_state(State.DEAD)
   health -= damage
   healthbar.health = health
   set_state(State.HIT)
-  if (health <= 0):
-    set_state(State.DEAD)
 
 func _on_area_2d_body_entered(body):
   if (body.name == "TileMap"):
@@ -100,4 +110,7 @@ func _on_animated_sprite_2d_animation_finished():
   if anim.animation == "hit":
     set_state(State.WALK)
   if anim.animation == "attack":
+    player.take_damage(ENEMEY_DAMAGE)
+  if anim.animation == "cast":
+    set_state(State.WALK)
     player.take_damage(ENEMEY_DAMAGE)
