@@ -9141,17 +9141,6 @@ position = Vector2(120, 250)
 position = Vector2(1, -3)
 zoom = Vector2(2, 2)
 
-[node name="WeatherButton" type="Button" parent="Player"]
-offset_left = 248.0
-offset_top = -157.0
-offset_right = 280.0
-offset_bottom = -125.0
-focus_mode = 0
-icon = ExtResource("11_ok8sy")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
 [node name="Rain" type="GPUParticles2D" parent="Player"]
 unique_name_in_owner = true
 visible = false
@@ -9161,21 +9150,39 @@ amount = 4000
 process_material = SubResource("ParticleProcessMaterial_d3hv2")
 lifetime = 5.0
 
-[node name="Coin" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(264, -106)
-scale = Vector2(1.5, 1.5)
+[node name="CanvasLayer3" type="CanvasLayer" parent="Player"]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="Label" type="Label" parent="Player/CanvasLayer3"]
+offset_left = 5160.0
+offset_top = 160.0
+offset_right = 5240.0
+offset_bottom = 260.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 100
+text = "00"
+
+[node name="Coin" type="AnimatedSprite2D" parent="Player/CanvasLayer3"]
+position = Vector2(5440, 250)
+scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_xsv2o")
 frame_progress = 0.656223
 script = ExtResource("15_um8nq")
 
-[node name="Label" type="Label" parent="Player/Coin"]
-offset_left = -24.0
-offset_top = -10.6667
-offset_right = -8.0
-offset_bottom = 9.33333
-theme_override_fonts/font = ExtResource("16_of5bn")
-theme_override_font_sizes/font_size = 20
-text = "00"
+[node name="WeatherButton" type="Button" parent="Player/CanvasLayer3"]
+visible = false
+offset_left = 368.0
+offset_top = 93.0
+offset_right = 400.0
+offset_bottom = 125.0
+focus_mode = 0
+icon = ExtResource("11_ok8sy")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="ArmorSprite" type="Sprite2D" parent="Player"]
 visible = false
@@ -9414,7 +9421,7 @@ position = Vector2(1184, 264)
 
 [connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
 [connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]
-[connection signal="pressed" from="Player/WeatherButton" to="WeatherMechanics" method="_on_weather_button_pressed"]
+[connection signal="pressed" from="Player/CanvasLayer3/WeatherButton" to="WeatherMechanics" method="_on_weather_button_pressed"]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item1/Button" to="Player" method="_on_shop1_pressed" binds= [3]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed" binds= [3]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item3/Button3" to="Player" method="_on_button_3_pressed" binds= [3]]
