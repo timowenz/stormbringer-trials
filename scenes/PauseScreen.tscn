@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmva44s7chgwy"]
+[gd_scene load_steps=16 format=3 uid="uid://cmva44s7chgwy"]
 
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="1_v4oni"]
+[ext_resource type="Texture2D" uid="uid://bfxt4brevb38m" path="res://selfdrawn/button2.png" id="2_t18na"]
+[ext_resource type="Texture2D" uid="uid://cv7xgkvp44fkn" path="res://selfdrawn/button2_pressed.png" id="3_vnn5i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0neds"]
 bg_color = Color(0.361412, 0.674163, 0.533592, 1)
@@ -95,19 +97,40 @@ corner_detail = 1
 
 [node name="Pause" type="CanvasLayer"]
 
-[node name="Resume" type="Button" parent="."]
-offset_left = 326.0
-offset_top = 256.0
-offset_right = 826.0
-offset_bottom = 287.0
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 24.0
+offset_top = 192.0
+offset_right = 104.0
+offset_bottom = 232.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("2_t18na")
+texture_pressed = ExtResource("3_vnn5i")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 136.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
 theme_override_fonts/font = ExtResource("1_v4oni")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="Resume" type="Button" parent="."]
+visible = false
+offset_left = 326.0
+offset_top = 232.0
+offset_right = 826.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_0neds")
 theme_override_styles/hover = SubResource("StyleBoxFlat_biees")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5plu7")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="."]
+visible = false
 offset_left = 326.0
 offset_top = 291.0
 offset_right = 826.0
@@ -120,6 +143,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y4beo")
 text = "Restart"
 
 [node name="MainMenu" type="Button" parent="."]
+visible = false
 offset_left = 326.0
 offset_top = 326.0
 offset_right = 826.0
@@ -132,6 +156,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y2wga")
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="."]
+visible = false
 offset_left = 326.0
 offset_top = 361.0
 offset_right = 826.0
