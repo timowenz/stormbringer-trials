@@ -9203,16 +9203,20 @@ offset_top = -16.0
 offset_right = 105.4
 offset_bottom = 33.0
 scale = Vector2(0.166603, 0.166603)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "+ 20% 
 attack damage"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Player/Shop/Sprite2D4"]
-offset_left = -8.4
+offset_left = -9.6
 offset_top = 9.2
-offset_right = 90.6
+offset_right = 94.4
 offset_bottom = 40.2
 scale = Vector2(0.187444, 0.194176)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "Buy (3 gold)"
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Shop"]
@@ -9226,6 +9230,8 @@ offset_top = -16.0
 offset_right = 105.4
 offset_bottom = 33.0
 scale = Vector2(0.166603, 0.166603)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "+ 20% 
 armor"
 horizontal_alignment = 1
@@ -9236,6 +9242,8 @@ offset_top = 9.2
 offset_right = 89.4
 offset_bottom = 40.2
 scale = Vector2(0.187444, 0.194176)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "Buy (3 gold)"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player/Shop"]
@@ -9244,21 +9252,25 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("20_n4hm8")
 
 [node name="Label" type="Label" parent="Player/Shop/Sprite2D2"]
-offset_left = -9.60001
+offset_left = -9.6
 offset_top = -16.0
 offset_right = 105.4
 offset_bottom = 33.0
 scale = Vector2(0.166603, 0.166603)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "+ 40% 
 armor"
 horizontal_alignment = 1
 
 [node name="Button3" type="Button" parent="Player/Shop/Sprite2D2"]
 offset_left = -9.6
-offset_top = 9.2
-offset_right = 89.4
-offset_bottom = 40.2
+offset_top = 8.8
+offset_right = 94.4
+offset_bottom = 39.8
 scale = Vector2(0.187444, 0.194176)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "Buy (3 gold)"
 
 [node name="Sprite2D3" type="Sprite2D" parent="Player/Shop"]
@@ -9267,11 +9279,13 @@ scale = Vector2(2.5, 2.48257)
 texture = ExtResource("21_k0kxb")
 
 [node name="Label" type="Label" parent="Player/Shop/Sprite2D3"]
-offset_left = -9.60001
-offset_top = -16.0
-offset_right = 105.4
-offset_bottom = 33.0
+offset_left = -10.0
+offset_top = -15.3067
+offset_right = 105.0
+offset_bottom = 33.6933
 scale = Vector2(0.166603, 0.166603)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "+ 20% 
 speed"
 horizontal_alignment = 1
@@ -9283,13 +9297,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -18.0
-offset_top = 2.0
-offset_right = 81.0
-offset_bottom = 33.0
+offset_top = 1.6674
+offset_right = 86.0
+offset_bottom = 32.6674
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.187444, 0.194176)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 20
 text = "Buy (3 gold)"
+
+[node name="Label" type="Label" parent="Player/Shop"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 122.0
+offset_right = 290.0
+offset_bottom = 145.0
+scale = Vector2(0.846, 0.846)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_of5bn")
+text = "Greetings, warrior! Fancy some new equipment?"
 
 [node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("28_su8pe")
@@ -9335,6 +9362,15 @@ position = Vector2(360, 264)
 [node name="Coin4" parent="." instance=ExtResource("22_ij715")]
 position = Vector2(384, 264)
 
+[node name="Coin5" parent="." instance=ExtResource("22_ij715")]
+position = Vector2(1136, 264)
+
+[node name="Coin6" parent="." instance=ExtResource("22_ij715")]
+position = Vector2(1160, 264)
+
+[node name="Coin7" parent="." instance=ExtResource("22_ij715")]
+position = Vector2(1184, 264)
+
 [node name="FlyingEye" parent="." instance=ExtResource("35_g0qrb")]
 position = Vector2(952, 210)
 
@@ -9358,3 +9394,6 @@ position = Vector2(1459, 262)
 [connection signal="body_entered" from="Coin2" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coin3" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coin4" to="Player" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Coin5" to="Player" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Coin6" to="Player" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Coin7" to="Player" method="_on_coin_body_entered"]
