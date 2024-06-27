@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="3_1hjbe"]
 [ext_resource type="AudioStream" uid="uid://hkm203sc233e" path="res://assets/music/Platformer Music 8-bit Arcade Mode.mp3" id="3_qoq06"]
-[ext_resource type="PackedScene" uid="uid://gv80ord7mbd1" path="res://scenes/SoundSlider.tscn" id="5_qlpxr"]
+[ext_resource type="PackedScene" path="res://scenes/SoundSlider.tscn" id="5_qlpxr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6xwg"]
 bg_color = Color(0.321569, 0.505882, 0.827451, 1)
@@ -252,7 +252,6 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("3_qoq06")
 volume_db = -15.0
 autoplay = true
-bus = &"Music"
 
 [node name="MasterVolume" parent="." instance=ExtResource("5_qlpxr")]
 layout_mode = 0

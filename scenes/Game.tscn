@@ -23,7 +23,7 @@
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="16_sb8b8"]
 [ext_resource type="Texture2D" uid="uid://covi8uf5gvly5" path="res://assets/Free RPG asset Pack/PACK/separate files/shield_02.png" id="17_tnyh3"]
 [ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_73mc2"]
-[ext_resource type="PackedScene" uid="uid://byufb1ir0dmio" path="res://scenes/BringerOfDeath.tscn" id="18_pkcwy"]
+[ext_resource type="PackedScene" path="res://scenes/BringerOfDeath.tscn" id="18_pkcwy"]
 [ext_resource type="Texture2D" uid="uid://cga320uwwu7qb" path="res://assets/Free RPG asset Pack/PACK/separate files/headgear_01.png" id="19_vnows"]
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_cqcwe"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
@@ -631,7 +631,7 @@ position = Vector2(-1698, 794)
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_72u3p")]
 
 [node name="Player" parent="." instance=ExtResource("2_i6stb")]
-position = Vector2(120, 250)
+position = Vector2(94, 256)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -3)
@@ -796,7 +796,6 @@ text = "Buy (3 gold)"
 [node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("22_y4sap")
 volume_db = -10.0
-bus = &"SFX"
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
@@ -823,4 +822,4 @@ process_mode = 2
 wait_time = 0.3
 
 [node name="BringerOfDeath" parent="." instance=ExtResource("18_pkcwy")]
-position = Vector2(266, 201)
+position = Vector2(333, 186)

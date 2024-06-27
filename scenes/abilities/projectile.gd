@@ -14,8 +14,12 @@ func _ready():
 func _physics_process(delta):
 	position.x += direction * speed * delta
 
-func launch(p_source : Node, p_direction : float):
+func launch(p_source : Node, p_direction : float, p_user: Node2D):
 	source = p_source
+	if p_direction == 0 && p_user.get_node("AnimatedSprite2D").flip_h == true:
+		p_direction  = -1
+	elif p_direction == 0 && p_user.get_node("AnimatedSprite2D").flip_h == false:
+		p_direction = 1
 	direction = p_direction
 	launched = true
 
