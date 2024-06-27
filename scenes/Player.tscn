@@ -1,4 +1,4 @@
-[gd_scene load_steps=267 format=3 uid="uid://c60h63oqga3qw"]
+[gd_scene load_steps=268 format=3 uid="uid://c60h63oqga3qw"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ys2wg"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_4gxhw"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://mquce0lkghm3" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_WallHang.png" id="30_rxih3"]
 [ext_resource type="Texture2D" uid="uid://b2qrqld2d8imd" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_WallSlide.png" id="31_g3mkj"]
 [ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="32_sf7b6"]
+[ext_resource type="Texture2D" uid="uid://drasy81wl6lgx" path="res://selfdrawn/health_bar_overlay.png" id="33_fl1cf"]
 [ext_resource type="Script" path="res://scenes/abilities/player/player_use_ability_component.gd" id="33_s0sr5"]
 [ext_resource type="Resource" uid="uid://581g1aei1cvg" path="res://scenes/abilities/player/fire_spin_ability.tres" id="34_adecb"]
 [ext_resource type="Script" path="res://scenes/abilities/player/fire_ball_spell.gd" id="35_wklvx"]
@@ -2210,6 +2211,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_llg3l")
+}
 tree_root = SubResource("AnimationNodeStateMachine_oxf18")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
@@ -2228,11 +2232,19 @@ parameters/conditions/jump = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource("32_sf7b6")]
-offset_left = 11.0
+anchors_preset = -1
+anchor_left = -0.015625
+anchor_right = -0.015625
+offset_left = 34.0
 offset_top = 18.0
-offset_right = 234.0
+offset_right = 252.0
 offset_bottom = 34.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HealthBar"]
+position = Vector2(108.5, 6)
+scale = Vector2(2.8875, 2.7)
+texture = ExtResource("33_fl1cf")
 
 [node name="Node2D" type="Node2D" parent="."]
 

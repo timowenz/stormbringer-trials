@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c367j0qna1lgg"]
+[gd_scene load_steps=49 format=3 uid="uid://c367j0qna1lgg"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_8yes0"]
 [ext_resource type="Texture2D" uid="uid://orn2cuxk40ma" path="res://assets/tileset/Tileset.png" id="1_iralc"]
@@ -16,7 +16,18 @@
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="9_sp66h"]
 [ext_resource type="PackedScene" uid="uid://b4ahma1cub6ar" path="res://scenes/FlyingEye.tscn" id="9_vhevj"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="10_12ia5"]
+[ext_resource type="Texture2D" uid="uid://dg7evlocf15rc" path="res://selfdrawn/clock.png" id="13_6lwmr"]
 [ext_resource type="PackedScene" uid="uid://ccrscj7aj4wtc" path="res://scenes/WonScreen.tscn" id="14_h6jtw"]
+[ext_resource type="Texture2D" uid="uid://nw8du8dg1b56" path="res://selfdrawn/coin_anim.png" id="14_xa5ne"]
+[ext_resource type="Script" path="res://scenes/Coin.gd" id="15_lix2k"]
+[ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="16_sb8b8"]
+[ext_resource type="Texture2D" uid="uid://covi8uf5gvly5" path="res://assets/Free RPG asset Pack/PACK/separate files/shield_02.png" id="17_tnyh3"]
+[ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_73mc2"]
+[ext_resource type="PackedScene" uid="uid://byufb1ir0dmio" path="res://scenes/BringerOfDeath.tscn" id="18_pkcwy"]
+[ext_resource type="Texture2D" uid="uid://cga320uwwu7qb" path="res://assets/Free RPG asset Pack/PACK/separate files/headgear_01.png" id="19_vnows"]
+[ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_cqcwe"]
+[ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
+[ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="22_y4sap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcxmo"]
 texture = ExtResource("1_iralc")
@@ -476,6 +487,81 @@ texture = ExtResource("5_d1742")
 [sub_resource type="TileSet" id="TileSet_6tfv5"]
 sources/0 = SubResource("TileSetAtlasSource_rev71")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aebkq"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(-1, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 200, 0)
+color = Color(0.121569, 0.490196, 0.890196, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjk48"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j04a"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pgl0"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sojiw"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffa0l"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1t2r"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3occn"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12jfw"]
+atlas = ExtResource("14_xa5ne")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nglhh"]
+resource_name = "Blink"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjk48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j04a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pgl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sojiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffa0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1t2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3occn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12jfw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8yes0")
 
@@ -534,7 +620,7 @@ position = Vector2(720, 554)
 position = Vector2(727, 226)
 
 [node name="FlyingEye4" parent="Enemies" instance=ExtResource("9_vhevj")]
-position = Vector2(261, 221)
+position = Vector2(565, 198)
 
 [node name="FlyingEye3" parent="Enemies" instance=ExtResource("9_vhevj")]
 position = Vector2(1443, 208)
@@ -550,6 +636,167 @@ position = Vector2(120, 250)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -3)
 zoom = Vector2(2, 2)
+
+[node name="WeatherButton" type="Button" parent="Player"]
+offset_left = 248.0
+offset_top = -157.0
+offset_right = 280.0
+offset_bottom = -125.0
+focus_mode = 0
+icon = ExtResource("13_6lwmr")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Rain" type="GPUParticles2D" parent="Player"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -200)
+scale = Vector2(7, 2)
+amount = 4000
+process_material = SubResource("ParticleProcessMaterial_aebkq")
+lifetime = 5.0
+
+[node name="Coin" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(264, -106)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_nglhh")
+script = ExtResource("15_lix2k")
+
+[node name="Label" type="Label" parent="Player/Coin"]
+offset_left = -24.0
+offset_top = -10.0
+offset_right = -8.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="ArmorSprite" type="Sprite2D" parent="Player"]
+position = Vector2(264, -74)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_tnyh3")
+
+[node name="Label2" type="Label" parent="Player/ArmorSprite"]
+offset_left = -24.0
+offset_top = -10.6667
+offset_right = -8.0
+offset_bottom = 9.33333
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="Shop" type="Panel" parent="Player"]
+unique_name_in_owner = true
+visible = false
+offset_left = -120.0
+offset_top = -146.0
+offset_right = 128.0
+offset_bottom = -34.0
+
+[node name="Sprite2D4" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(32, 56)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("18_73mc2")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D4"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 20% 
+attack damage"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Player/Shop/Sprite2D4"]
+offset_left = -8.4
+offset_top = 9.2
+offset_right = 90.6
+offset_bottom = 40.2
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(96, 56)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("19_vnows")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 20% 
+armor"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Player/Shop/Sprite2D"]
+offset_left = -9.6
+offset_top = 9.2
+offset_right = 89.4
+offset_bottom = 40.2
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(160, 56)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("20_cqcwe")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D2"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 40% 
+armor"
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="Player/Shop/Sprite2D2"]
+offset_left = -9.6
+offset_top = 9.2
+offset_right = 89.4
+offset_bottom = 40.2
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player/Shop"]
+position = Vector2(224, 54)
+scale = Vector2(2.5, 2.48257)
+texture = ExtResource("21_j35hs")
+
+[node name="Label" type="Label" parent="Player/Shop/Sprite2D3"]
+offset_left = -9.60001
+offset_top = -16.0
+offset_right = 105.4
+offset_bottom = 33.0
+scale = Vector2(0.166603, 0.166603)
+text = "+ 20% 
+speed"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Player/Shop/Sprite2D3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 2.0
+offset_right = 81.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.187444, 0.194176)
+text = "Buy (3 gold)"
+
+[node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("22_y4sap")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
@@ -574,3 +821,6 @@ process_mode = 2
 
 [node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="BringerOfDeath" parent="." instance=ExtResource("18_pkcwy")]
+position = Vector2(266, 201)
