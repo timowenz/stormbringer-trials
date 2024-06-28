@@ -75,6 +75,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Play" type="TextureButton" parent="BottomControl"]
+layout_mode = 0
 offset_left = 57.0
 offset_top = 10.0
 offset_right = 137.0
@@ -96,6 +97,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits" type="TextureButton" parent="BottomControl"]
+layout_mode = 0
 offset_left = 101.0
 offset_top = 109.0
 offset_right = 181.0
@@ -132,6 +134,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1qdgf")
 
 [node name="CloseButton" type="TextureButton" parent="CreditSheet"]
+layout_mode = 0
 offset_left = 829.0
 offset_top = 10.0
 offset_right = 838.0
