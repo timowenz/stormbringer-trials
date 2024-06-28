@@ -13,6 +13,7 @@ func _ready():
 
 func _input(event):
 	if(event.is_action_pressed(use_ability_action_name) && canCastSpell):
+		$"../SFX/SoundFireSpell".play()
 		ability.use(user)
 		canCastSpell = false
 		cooldown.start()

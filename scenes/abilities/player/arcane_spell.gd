@@ -1,7 +1,7 @@
-class_name PlayerUseAbilityComponent
+class_name ArcaneSpellAbility
 extends Node
 
-@export var use_ability_action_name = "use_ability"
+@export var use_ability_action_name = "spell_q"
 @export var ability : Ability
 @export var user : Node2D
 @export var cooldown : Timer
@@ -13,7 +13,7 @@ func _ready():
 
 func _input(event):
 	if(event.is_action_pressed(use_ability_action_name) && canCastSpell):
-		$"../SFX/SoundFireSpell".play()
+		$"../SFX/SoundArcaneSpell".play()
 		ability.use(user)
 		canCastSpell = false
 		cooldown.start()

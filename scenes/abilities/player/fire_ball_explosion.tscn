@@ -8,8 +8,8 @@
 [sub_resource type="Curve" id="Curve_ff7hb"]
 min_value = 1.0
 max_value = 6.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.237895, 1.09048), 0.0, 0.0, 0, 0, Vector2(0.995789, 2.49685), 7.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.237895, 1.09048), 0.0, 0.0, 0, 0, Vector2(0.421356, 1.62727), 7.0, 0.0, 0, 0, Vector2(0.984127, 2.1), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2x6vc"]
 radius = 25.02
@@ -25,7 +25,6 @@ texture_filter = 1
 sprite_frames = ExtResource("1_7qeev")
 animation = &"fireballexplosion"
 autoplay = "fireballexplosion"
-frame_progress = 0.863757
 
 [node name="HotBoxArea" type="Area2D" parent="GrowOverTime" node_paths=PackedStringArray("damage_tick_timer")]
 script = ExtResource("3_wgy46")

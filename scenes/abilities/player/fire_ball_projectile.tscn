@@ -16,7 +16,6 @@ texture_filter = 1
 sprite_frames = ExtResource("1_h52xn")
 animation = &"fireball"
 autoplay = "fireball"
-frame_progress = 0.933021
 
 [node name="Area2D" type="Area2D" parent="."]
 light_mask = 33
