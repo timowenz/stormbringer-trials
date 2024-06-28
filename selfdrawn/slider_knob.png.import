@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0681qjurt5og"
-path="res://.godot/imported/button3_pressed.png-7afa2303f48cb2b8824e79bb7538e92e.ctex"
+uid="uid://diogw0ro3cp5o"
+path="res://.godot/imported/slider_knob.png-39398da0acd0310cdf7cc116bb10bf78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/button3_pressed.png"
-dest_files=["res://.godot/imported/button3_pressed.png-7afa2303f48cb2b8824e79bb7538e92e.ctex"]
+source_file="res://selfdrawn/slider_knob.png"
+dest_files=["res://.godot/imported/slider_knob.png-39398da0acd0310cdf7cc116bb10bf78.ctex"]
 
 [params]
 
