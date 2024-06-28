@@ -13,6 +13,7 @@ var player_chase = false
 
 @onready var anim = $AnimatedSprite2D
 @onready var healthbar = $HealthBar
+@onready var spell = preload ("res://scenes/BringerOfDeath/Spell.tscn").instantiate()
 
 func _ready():
   set_state(State.IDLE)
@@ -46,7 +47,13 @@ func set_state(new_state):
       anim.play("cast")
 
 func cast_state(_delta):
+  if (!spell):
+    spell = preload ("res://scenes/BringerOfDeath/Spell.tscn").instantiate()
+  spell.position = player.position
+  spell.offset = Vector2i(15, -27)
   if (player.position.distance_to(position) < 200):
+    if (anim.frame == 0):
+      get_parent().add_child(spell)
     set_state(State.CAST)
 
 func attack_state(_delta):
@@ -112,5 +119,6 @@ func _on_animated_sprite_2d_animation_finished():
   if anim.animation == "attack":
     player.take_damage(ENEMEY_DAMAGE)
   if anim.animation == "cast":
+    spell.queue_free()
     set_state(State.WALK)
     player.take_damage(ENEMEY_DAMAGE)

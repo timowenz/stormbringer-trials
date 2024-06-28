@@ -48,7 +48,8 @@ func _ready():
 	$Node2D/AttackArea/AttackCol2.disabled = true
 
 func _process(delta):
-	$Coin/Label.text = str(coins)
+	if ($CanvasLayer3/Label):
+		$CanvasLayer3/Label.text = str(coins)
 	update_anim_params()
 
 func _physics_process(delta):
