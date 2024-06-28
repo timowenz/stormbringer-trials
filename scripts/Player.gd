@@ -21,7 +21,7 @@ var can_jump: bool = true
 var health
 var damage
 var jump_count = 0
-var max_jumps = 2
+var max_jumps = 1
 const wall_slide_acceleration = 10
 const max_slide_speed = 120
 var enemy = null
@@ -29,11 +29,12 @@ var is_damaged = false
 var has_died = false
 var bosses_killed = 0
 var can_win = false
-const dashSpeed = 800
+const dashSpeed = 400
 const dashLength = 0.2
 var dashing = false
 var canDash = true
 var coins = 0
+var can_attack = true
 
 func _ready():
 	effects.play("RESET")
@@ -59,6 +60,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		can_jump = true
 		jump_count = 0
+		
 	
 	if Input.is_action_just_pressed("dash") and canDash:
 		dashing = true
@@ -71,6 +73,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
+		$SFX/SoundJump.play()
 
 	#if not is_on_floor() and velocity.y > 0:
 		#anim.play("fall")
@@ -109,6 +112,7 @@ func _set_health(value):
 	healthbar.health = health
 
 func take_damage(value):
+	$SFX/SoundHit.play()
 	is_damaged = true
 	health -= value
 	effects.play("hurtBlink")
@@ -134,6 +138,7 @@ func _increase_damage(value):
 
 func die():
 	if has_died:
+		$SFX/SoundDie.play()
 		$AnimatedSprite2D.play("death")
 		if health <= 0:
 			print("dead")
@@ -168,25 +173,45 @@ func update_anim_params():
 						jump()
 					else:
 						run()
+						if $SFX/WalkTimer.time_left <= 0:
+							##$SFX/SoundWalk.pitch_scale = randf_range(0.8, 1.2)
+							$SFX/SoundWalk.play()
+							$SFX/WalkTimer.start(0.4)
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and can_attack:
 		if is_crouching:
 			anim_tree["parameters/conditions/crouch_attack"] = true
 			$Node2D/AttackArea/AttackCol2.disabled = false
+			can_attack = false
 			is_attacking = true
+			if is_attacking:
+				$SFX/SoundAttack.play()
+			$AttackTimer.start()
+			await $AttackTimer.timeout
 		else:
 			anim_tree["parameters/conditions/attack"] = true
 			$Node2D/AttackArea/AttackCol2.disabled = false
+			can_attack = false
 			is_attacking = true
+			if is_attacking:
+				$SFX/SoundAttack.play()
+			$AttackTimer.start()
+			await $AttackTimer.timeout
+			
 	else:
 		anim_tree["parameters/conditions/attack"] = false
 		anim_tree["parameters/conditions/crouch_attack"] = false
 		is_attacking = false
 	
-	if Input.is_action_just_pressed("attack2"):
+	if Input.is_action_just_pressed("attack2") and can_attack:
 		anim_tree["parameters/conditions/attack2"] = true
 		$Node2D/AttackArea/AttackCol.disabled = false
+		can_attack = false
 		is_attacking = true
+		if is_attacking:
+				$SFX/SoundAttack.play()
+		$AttackTimer.start()
+		await $AttackTimer.timeout
 	else:
 		anim_tree["parameters/conditions/attack2"] = false
 		is_attacking = false
@@ -258,6 +283,7 @@ func _on_attack_area_body_entered(body):
 			body.animation.play("hurt")
 
 func hit():
+	
 	if is_damaged:
 		anim_tree["parameters/conditions/hit"] = true
 		anim_tree["parameters/conditions/idle"] = false
@@ -325,3 +351,7 @@ func _on_shop4_pressed(extra_arg_0):
 		SPEED = SPEED * 1.2
 	pass # Replace with function body.
 
+
+
+func _on_attack_timer_timeout():
+	can_attack = true

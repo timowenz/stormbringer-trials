@@ -819,7 +819,9 @@ process_mode = 2
 process_mode = 2
 
 [node name="GameOverTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.1
 
 [node name="BringerOfDeath" parent="." instance=ExtResource("18_pkcwy")]
 position = Vector2(333, 186)
+
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
