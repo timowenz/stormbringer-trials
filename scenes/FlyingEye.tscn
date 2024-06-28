@@ -212,6 +212,7 @@ script = ExtResource("1_abbvh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bympy")
 animation = &"hit"
+animation = &"flight"
 autoplay = "flight"
 
 [node name="HealthBar" parent="." instance=ExtResource("6_bfymn")]
