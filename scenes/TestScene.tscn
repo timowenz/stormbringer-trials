@@ -30,10 +30,10 @@
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="17_dq3xh"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="18_a33hq"]
 [ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_wtltt"]
-[ext_resource type="Texture2D" uid="uid://cga320uwwu7qb" path="res://assets/Free RPG asset Pack/PACK/separate files/headgear_01.png" id="19_cywa4"]
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_n4hm8"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_k0kxb"]
 [ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="22_ij715"]
+[ext_resource type="Texture2D" uid="uid://db70dgg5dyp88" path="res://assets/Free RPG asset Pack/PACK/separate files/veggie.png" id="28_bmo5j"]
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="28_su8pe"]
 [ext_resource type="PackedScene" uid="uid://b4ahma1cub6ar" path="res://scenes/FlyingEye.tscn" id="35_g0qrb"]
 [ext_resource type="PackedScene" uid="uid://c5yfpagb605ud" path="res://scenes/Goblin.tscn" id="37_lc4yg"]
@@ -9211,7 +9211,6 @@ transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 
 [node name="Shop" type="Panel" parent="Player/CanvasLayer2"]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -9254,18 +9253,18 @@ text = "Buy (3 gold)"
 [node name="Item2" type="Sprite2D" parent="Player/CanvasLayer2/Shop"]
 position = Vector2(790, 500)
 scale = Vector2(20, 20)
-texture = ExtResource("19_cywa4")
+texture = ExtResource("20_n4hm8")
 
 [node name="Label6" type="Label" parent="Player/CanvasLayer2/Shop/Item2"]
-offset_left = -9.5
+offset_left = -10.75
 offset_top = -17.5
-offset_right = 510.5
+offset_right = 509.25
 offset_bottom = 185.5
 scale = Vector2(0.04, 0.04)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 100
 text = "+ 20% 
-attack damage"
+armor"
 horizontal_alignment = 1
 
 [node name="Button2" type="Button" parent="Player/CanvasLayer2/Shop/Item2"]
@@ -9281,18 +9280,17 @@ text = "Buy (3 gold)"
 [node name="Item3" type="Sprite2D" parent="Player/CanvasLayer2/Shop"]
 position = Vector2(1240, 500)
 scale = Vector2(20, 20)
-texture = ExtResource("20_n4hm8")
+texture = ExtResource("28_bmo5j")
 
 [node name="Label7" type="Label" parent="Player/CanvasLayer2/Shop/Item3"]
-offset_left = -11.25
+offset_left = -10.25
 offset_top = -17.5
-offset_right = 508.75
+offset_right = 509.75
 offset_bottom = 185.5
 scale = Vector2(0.04, 0.04)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 100
-text = "+ 40% 
-armor"
+text = "tbd"
 horizontal_alignment = 1
 
 [node name="Button3" type="Button" parent="Player/CanvasLayer2/Shop/Item3"]

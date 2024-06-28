@@ -23,7 +23,7 @@
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="16_sb8b8"]
 [ext_resource type="Texture2D" uid="uid://covi8uf5gvly5" path="res://assets/Free RPG asset Pack/PACK/separate files/shield_02.png" id="17_tnyh3"]
 [ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_73mc2"]
-[ext_resource type="PackedScene" uid="uid://byufb1ir0dmio" path="res://scenes/BringerOfDeath.tscn" id="18_pkcwy"]
+[ext_resource type="PackedScene" uid="uid://byufb1ir0dmio" path="res://scenes/BringerOfDeath/BringerOfDeath.tscn" id="18_pkcwy"]
 [ext_resource type="Texture2D" uid="uid://cga320uwwu7qb" path="res://assets/Free RPG asset Pack/PACK/separate files/headgear_01.png" id="19_vnows"]
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_cqcwe"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
