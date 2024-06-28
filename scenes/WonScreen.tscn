@@ -16,9 +16,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -304.0
-offset_top = -284.0
+offset_top = -308.0
 offset_right = -5.0
-offset_bottom = -185.0
+offset_bottom = -209.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.04, 2)
@@ -32,9 +32,9 @@ vertical_alignment = 1
 
 [node name="Restart" type="TextureButton" parent="."]
 offset_left = 376.0
-offset_top = 248.0
+offset_top = 216.0
 offset_right = 456.0
-offset_bottom = 288.0
+offset_bottom = 256.0
 scale = Vector2(5, 3.399)
 texture_normal = ExtResource("2_us4nf")
 texture_pressed = ExtResource("3_pky5i")
@@ -52,9 +52,9 @@ text = "Restart
 
 [node name="MainMenu" type="TextureButton" parent="."]
 offset_left = 376.0
-offset_top = 336.0
+offset_top = 304.0
 offset_right = 456.0
-offset_bottom = 376.0
+offset_bottom = 344.0
 scale = Vector2(5, 3.399)
 texture_normal = ExtResource("4_3dgol")
 texture_pressed = ExtResource("5_7fe10")
@@ -73,19 +73,19 @@ text = "Main Menu
 
 [node name="Quit" type="TextureButton" parent="."]
 offset_left = 376.0
-offset_top = 424.0
+offset_top = 392.0
 offset_right = 456.0
-offset_bottom = 464.0
+offset_bottom = 432.0
 scale = Vector2(5, 3.399)
 texture_normal = ExtResource("4_3dgol")
 texture_pressed = ExtResource("5_7fe10")
 
 [node name="Label" type="Label" parent="Quit"]
 layout_mode = 0
-offset_left = 19.2
-offset_right = 139.2
+offset_left = 16.0
+offset_right = 136.0
 offset_bottom = 50.0
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.4, 0.4)
 theme_override_fonts/font = ExtResource("1_vr0v3")
 theme_override_font_sizes/font_size = 50
 text = "Quit

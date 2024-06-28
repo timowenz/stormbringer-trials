@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://o7j2fgs2o7xo"]
+[gd_scene load_steps=12 format=3 uid="uid://g851gkjp4fxq"]
 
 [ext_resource type="Texture2D" uid="uid://dwd8xv8npm6gv" path="res://assets/tileset/BG1.png" id="1_uq56c"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
@@ -6,9 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://hkm203sc233e" path="res://assets/music/Platformer Music 8-bit Arcade Mode.mp3" id="3_qoq06"]
 [ext_resource type="PackedScene" uid="uid://gv80ord7mbd1" path="res://scenes/SoundSlider.tscn" id="5_qlpxr"]
 [ext_resource type="Texture2D" uid="uid://dwknuv7od1kme" path="res://selfdrawn/credits_x.png" id="6_016xs"]
-[ext_resource type="Texture2D" uid="uid://bfxt4brevb38m" path="res://selfdrawn/button2.png" id="6_p3mso"]
+[ext_resource type="Texture2D" path="res://selfdrawn/button2.png" id="6_p3mso"]
 [ext_resource type="Texture2D" uid="uid://cy2j51gne2s4i" path="res://selfdrawn/credits_x_pressed.png" id="7_7f0j4"]
-[ext_resource type="Texture2D" uid="uid://cv7xgkvp44fkn" path="res://selfdrawn/button2_pressed.png" id="7_185el"]
+[ext_resource type="Texture2D" path="res://selfdrawn/button2_pressed.png" id="7_185el"]
 [ext_resource type="Texture2D" uid="uid://diogw0ro3cp5o" path="res://selfdrawn/slider_knob.png" id="10_q2kiv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdgf"]
@@ -75,6 +75,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Play" type="TextureButton" parent="BottomControl"]
+layout_mode = 0
 offset_left = 57.0
 offset_top = 10.0
 offset_right = 137.0
@@ -96,6 +97,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits" type="TextureButton" parent="BottomControl"]
+layout_mode = 0
 offset_left = 101.0
 offset_top = 109.0
 offset_right = 181.0
@@ -132,6 +134,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1qdgf")
 
 [node name="CloseButton" type="TextureButton" parent="CreditSheet"]
+layout_mode = 0
 offset_left = 829.0
 offset_top = 10.0
 offset_right = 838.0

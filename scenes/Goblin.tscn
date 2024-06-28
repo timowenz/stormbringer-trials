@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c5yfpagb605ud"]
+[gd_scene load_steps=35 format=3 uid="uid://c5yfpagb605ud"]
 
 [ext_resource type="Script" path="res://scripts/Goblin.gd" id="1_tju1j"]
 [ext_resource type="Texture2D" uid="uid://dkk0off25mmeu" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Attack.png" id="3_enf0v"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dc42r342v1tj" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Death.png" id="4_vv743"]
 [ext_resource type="Texture2D" uid="uid://06hh05vhsv8w" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Run.png" id="5_257cq"]
 [ext_resource type="Texture2D" uid="uid://losm0tex6d4y" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Idle.png" id="5_scvhx"]
-[ext_resource type="Texture2D" uid="uid://bbx3iok5gorvn" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Take Hit.png" id="6_lhdus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osu26"]
 atlas = ExtResource("3_enf0v")
@@ -104,22 +103,6 @@ region = Rect2(900, 0, 150, 150)
 atlas = ExtResource("5_257cq")
 region = Rect2(1050, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukd76"]
-atlas = ExtResource("6_lhdus")
-region = Rect2(0, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_giyj0"]
-atlas = ExtResource("6_lhdus")
-region = Rect2(150, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3x1jl"]
-atlas = ExtResource("6_lhdus")
-region = Rect2(300, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_slrbh"]
-atlas = ExtResource("6_lhdus")
-region = Rect2(450, 0, 150, 150)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_1af3c"]
 animations = [{
 "frames": [{
@@ -147,7 +130,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_apss4")
 }],
-"loop": false,
+"loop": true,
 "name": &"goblin_attack",
 "speed": 5.0
 }, {
@@ -213,40 +196,24 @@ animations = [{
 "loop": true,
 "name": &"goblin_run",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ukd76")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_giyj0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3x1jl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_slrbh")
-}],
-"loop": true,
-"name": &"goblin_takehit",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfkvl"]
 size = Vector2(24, 38)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k8uyl"]
-radius = 186.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8f8f"]
 radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8uyl"]
+radius = 186.0
 
 [node name="Goblin" type="CharacterBody2D"]
 script = ExtResource("1_tju1j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1af3c")
-animation = &"goblin_death"
+animation = &"goblin_idle"
+frame_progress = 0.109082
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
@@ -254,16 +221,9 @@ shape = SubResource("RectangleShape2D_sfkvl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_yt13r")]
 offset_left = -21.0
-offset_top = -14.0
+offset_top = -2.0
 offset_right = 21.0
-offset_bottom = -10.0
-
-[node name="DetectionArea2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
-shape = SubResource("CircleShape2D_k8uyl")
+offset_bottom = 2.0
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -273,6 +233,11 @@ shape = SubResource("CircleShape2D_k8uyl")
 position = Vector2(-12, 10)
 shape = SubResource("CircleShape2D_s8f8f")
 
+[node name="DetectionArea2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
+shape = SubResource("CircleShape2D_k8uyl")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]
-[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -48,7 +48,8 @@ func _ready():
 	$Node2D/AttackArea/AttackCol2.disabled = true
 
 func _process(delta):
-	$CanvasLayer3/Label.text = str(coins)
+	if ($CanvasLayer3/Label):
+		$CanvasLayer3/Label.text = str(coins)
 	update_anim_params()
 
 func _physics_process(delta):
@@ -253,9 +254,6 @@ func _on_attack_area_body_entered(body):
 	if body.name != "TileMap":
 		print("damage taken")
 		body.take_damage(damage)
-		# TODO: do this for all enemies
-		if body.name == "BringerOfDeath":
-			body.animation.play("hurt")
 
 func hit():
 	if is_damaged:
@@ -281,47 +279,40 @@ func _on_can_dash_timer_timeout() -> void:
 
 func _on_coin_body_entered(body):
 	print("Coin collected")
-	coins+=1
-	pass 
+	coins += 1
+	pass
 
 func _on_trader_body_entered(body):
-	if(body.name == "Player"):
+	if (body.name == "Player"):
 		%Shop.visible = true
 	pass # Replace with function body.
 
-
 func _on_trader_body_exited(body):
-	if(body.name == "Player"):
+	if (body.name == "Player"):
 		%Shop.visible = false
 	pass # Replace with function body.
 
-
-
 func _on_shop1_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		damage = damage * 1.2
 		$BuySound.play()
 	pass # Replace with function body.
 
-
 func _on_shop2_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		health = health * 1.2
 	pass # Replace with function body.
 
-
 func _on_button_3_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		health = health * 1.4
 	pass # Replace with function body.
 
-
 func _on_shop4_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		SPEED = SPEED * 1.2
 	pass # Replace with function body.
-

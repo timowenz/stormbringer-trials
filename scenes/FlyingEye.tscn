@@ -147,7 +147,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t627b")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -193,7 +193,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l35no")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }]
@@ -205,13 +205,13 @@ radius = 186.0
 size = Vector2(29, 37)
 
 [node name="FlyingEye" type="CharacterBody2D"]
-position = Vector2(65, 63)
+position = Vector2(65, 64)
 collision_layer = 5
 script = ExtResource("1_abbvh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bympy")
-animation = &"flight"
+animation = &"hit"
 autoplay = "flight"
 
 [node name="HealthBar" parent="." instance=ExtResource("6_bfymn")]
