@@ -1,77 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://g851gkjp4fxq"]
+[gd_scene load_steps=12 format=3 uid="uid://o7j2fgs2o7xo"]
 
 [ext_resource type="Texture2D" uid="uid://dwd8xv8npm6gv" path="res://assets/tileset/BG1.png" id="1_uq56c"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="3_1hjbe"]
 [ext_resource type="AudioStream" uid="uid://hkm203sc233e" path="res://assets/music/Platformer Music 8-bit Arcade Mode.mp3" id="3_qoq06"]
 [ext_resource type="PackedScene" uid="uid://gv80ord7mbd1" path="res://scenes/SoundSlider.tscn" id="5_qlpxr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6xwg"]
-bg_color = Color(0.321569, 0.505882, 0.827451, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0xdm"]
-bg_color = Color(0.413201, 0.585919, 0.884277, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkxfi"]
-bg_color = Color(0.321569, 0.505882, 0.827451, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mmtq"]
-bg_color = Color(0.411765, 0.584314, 0.882353, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wrxo"]
-bg_color = Color(0.321569, 0.505882, 0.827451, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
+[ext_resource type="Texture2D" uid="uid://dwknuv7od1kme" path="res://selfdrawn/credits_x.png" id="6_016xs"]
+[ext_resource type="Texture2D" uid="uid://bfxt4brevb38m" path="res://selfdrawn/button2.png" id="6_p3mso"]
+[ext_resource type="Texture2D" uid="uid://cy2j51gne2s4i" path="res://selfdrawn/credits_x_pressed.png" id="7_7f0j4"]
+[ext_resource type="Texture2D" uid="uid://cv7xgkvp44fkn" path="res://selfdrawn/button2_pressed.png" id="7_185el"]
+[ext_resource type="Texture2D" uid="uid://diogw0ro3cp5o" path="res://selfdrawn/slider_knob.png" id="10_q2kiv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdgf"]
 bg_color = Color(0.654902, 0.811765, 0.917647, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3m5n"]
-bg_color = Color(1, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh8o3"]
-bg_color = Color(1, 0.434811, 0.36614, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmnjn"]
-bg_color = Color(1, 0, 0, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -133,41 +74,50 @@ offset_right = 257.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PlayButton" type="Button" parent="BottomControl"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -97.0
-offset_top = 61.0
-offset_right = 97.0
-offset_bottom = 102.0
-grow_horizontal = 2
-theme_override_constants/icon_max_width = 30
-theme_override_fonts/font = ExtResource("3_1hjbe")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_c6xwg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j0xdm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_kkxfi")
-text = "Play!"
+[node name="Play" type="TextureButton" parent="BottomControl"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 10.0
+offset_right = 137.0
+offset_bottom = 50.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("6_p3mso")
+texture_pressed = ExtResource("7_185el")
 
-[node name="CreditsButton" type="Button" parent="BottomControl"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -97.0
-offset_top = 115.0
-offset_right = 97.0
-offset_bottom = 156.0
-grow_horizontal = 2
-theme_override_constants/icon_max_width = 30
+[node name="Label" type="Label" parent="BottomControl/Play"]
+layout_mode = 0
+offset_left = 19.0
+offset_right = 139.0
+offset_bottom = 50.0
+scale = Vector2(0.35, 0.35)
 theme_override_fonts/font = ExtResource("3_1hjbe")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_c6xwg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1mmtq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7wrxo")
+theme_override_font_sizes/font_size = 50
+text = "Play!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="BottomControl"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 109.0
+offset_right = 181.0
+offset_bottom = 149.0
+scale = Vector2(4, 2.719)
+texture_normal = ExtResource("6_p3mso")
+texture_pressed = ExtResource("7_185el")
+
+[node name="Label" type="Label" parent="BottomControl/Credits"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 0.367785
+offset_right = 155.0
+offset_bottom = 50.3678
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 50
 text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CreditSheet" type="Panel" parent="."]
 visible = false
@@ -183,22 +133,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1qdgf")
 
-[node name="CloseButton" type="Button" parent="CreditSheet"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.946833
-anchor_top = 0.0386473
-anchor_right = 0.979638
-anchor_bottom = 0.10628
-offset_left = 2.36034e-05
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("3_1hjbe")
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_f3m5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_lh8o3")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wmnjn")
-text = "X"
-metadata/_edit_use_anchors_ = true
+[node name="CloseButton" type="TextureButton" parent="CreditSheet"]
+layout_mode = 0
+offset_left = 829.0
+offset_top = 10.0
+offset_right = 838.0
+offset_bottom = 19.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("6_016xs")
+texture_pressed = ExtResource("7_7f0j4")
 
 [node name="CreditsLabel" type="Label" parent="CreditSheet"]
 layout_mode = 0
@@ -254,53 +197,62 @@ volume_db = -15.0
 autoplay = true
 bus = &"Music"
 
-[node name="MasterVolume" parent="." instance=ExtResource("5_qlpxr")]
-layout_mode = 0
-offset_left = 918.0
-offset_top = 495.0
-offset_right = 1118.0
-offset_bottom = 515.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
 
-[node name="Label" type="Label" parent="MasterVolume"]
+[node name="MasterVolume" parent="CanvasLayer" instance=ExtResource("5_qlpxr")]
+offset_left = 2200.0
+offset_top = 1120.0
+offset_right = 2600.0
+offset_bottom = 1160.0
+scale = Vector2(1.5, 1.5)
+theme_override_icons/grabber = ExtResource("10_q2kiv")
+
+[node name="Label" type="Label" parent="CanvasLayer/MasterVolume"]
 layout_mode = 0
-offset_top = -15.0
-offset_right = 84.0
-offset_bottom = 8.0
+offset_top = -60.0
+offset_right = 260.0
+offset_bottom = -10.0
 theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 50
 text = "Master Volume"
 
-[node name="MusicVolume" parent="." instance=ExtResource("5_qlpxr")]
-layout_mode = 0
-offset_left = 918.0
-offset_top = 536.0
-offset_right = 1118.0
-offset_bottom = 556.0
+[node name="MusicVolume" parent="CanvasLayer" instance=ExtResource("5_qlpxr")]
+offset_left = 2200.0
+offset_top = 1260.0
+offset_right = 2600.0
+offset_bottom = 1300.0
+scale = Vector2(1.5, 1.5)
 bus = "Music"
 
-[node name="Label" type="Label" parent="MusicVolume"]
+[node name="Label" type="Label" parent="CanvasLayer/MusicVolume"]
 layout_mode = 0
-offset_top = -15.0
-offset_right = 77.0
-offset_bottom = 8.0
+offset_top = -53.3333
+offset_right = 240.0
+offset_bottom = -3.33333
 theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 50
 text = "Music Volume"
 
-[node name="SoundEffectVolume" parent="." instance=ExtResource("5_qlpxr")]
-layout_mode = 0
-offset_left = 918.0
-offset_top = 576.0
-offset_right = 1118.0
-offset_bottom = 596.0
+[node name="SoundEffectVolume" parent="CanvasLayer" instance=ExtResource("5_qlpxr")]
+offset_left = 2200.0
+offset_top = 1400.0
+offset_right = 2600.0
+offset_bottom = 1440.0
+scale = Vector2(1.5, 1.5)
 bus = "SFX"
 
-[node name="Label" type="Label" parent="SoundEffectVolume"]
+[node name="Label" type="Label" parent="CanvasLayer/SoundEffectVolume"]
 layout_mode = 0
-offset_top = -14.0
-offset_right = 116.0
-offset_bottom = 9.0
+offset_left = 0.000101725
+offset_top = -53.3334
+offset_right = 360.0
+offset_bottom = -3.33339
 theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 50
 text = "Sound Effect Volume"
 
-[connection signal="pressed" from="BottomControl/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="BottomControl/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="BottomControl/Play" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BottomControl/Credits" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CreditSheet/CloseButton" to="." method="_on_close_button_pressed"]
