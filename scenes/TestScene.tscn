@@ -9001,7 +9001,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fofox"]
 size = Vector2(20, 368)
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
 script = ExtResource("1_kvokn")
 
 [node name="TutorialCanvasLayer" type="CanvasLayer" parent="."]
