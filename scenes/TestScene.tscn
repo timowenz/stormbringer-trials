@@ -9211,6 +9211,7 @@ transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 
 [node name="Shop" type="Panel" parent="Player/CanvasLayer2"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
