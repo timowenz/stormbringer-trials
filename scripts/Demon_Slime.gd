@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-
 const SPEED = 250
 
 var health = 300
-
 
 var dead = false
 var player_in_area = false
@@ -16,17 +14,23 @@ func _ready():
 	dead = false
 
 func _physics_process(delta):
-	
 	if !dead:
 		$DetectionArea/CollisionShape2D.disabled = false
 		if player_in_area:
 			position += (player.position - position) / SPEED
+			if(player.position.x < position.x):
+				$AnimatedSprite2D.flip_h = false
+				$Hit_taken.flip_h = false
+				$Give_damage.flip_h = false
+			else:
+				$AnimatedSprite2D.flip_h = true
+				$Hit_taken.flip_h = true
+				$Give_damage.flip_h = true
 			$AnimatedSprite2D.play("walk")
 		else:
 			$AnimatedSprite2D.play("idle")
 	if dead:
 		$DetectionArea/CollisionShape2D.disabled = true
-		
 
 func take_damage(damage):
 	health = health - damage
@@ -71,7 +75,6 @@ func give_damage_to_player():
 	$Give_damage.show()
 	$Give_damage.play("hit_player")
 	await get_tree().create_timer(1).timeout
-	player.take_damage(45)
 	$Give_damage.hide()
 	$AnimatedSprite2D.show()
 
