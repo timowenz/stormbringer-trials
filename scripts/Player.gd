@@ -222,3 +222,16 @@ func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "hit":
 		anim_tree["parameters/conditions/idle"] = true
 		is_damaged = false
+
+
+func player():
+	pass
+
+func give_damage():
+	pass
+
+
+
+func _on_deamon_damage_body_entered(body):
+	if body.has_method("give_damage_to_player_from_deamon"):
+		take_damage(45)

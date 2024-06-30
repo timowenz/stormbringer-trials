@@ -1,4 +1,4 @@
-[gd_scene load_steps=246 format=3 uid="uid://c60h63oqga3qw"]
+[gd_scene load_steps=247 format=3 uid="uid://c60h63oqga3qw"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ys2wg"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_4gxhw"]
@@ -2096,6 +2096,9 @@ _data = {
 "hurtBlink": SubResource("Animation_e6t6t")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ng8p"]
+height = 40.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_ys2wg")
@@ -2174,5 +2177,15 @@ libraries = {
 wait_time = 0.5
 one_shot = true
 
+[node name="Deamon_damage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deamon_damage"]
+position = Vector2(4, 1)
+shape = SubResource("CapsuleShape2D_2ng8p")
+
+[connection signal="child_entered_tree" from="StandCol" to="." method="_on_stand_col_child_entered_tree"]
+[connection signal="child_entered_tree" from="CrouchCol" to="." method="_on_crouch_col_child_entered_tree"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="Node2D/AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="area_entered" from="Deamon_damage" to="." method="_on_deamon_damage_area_entered"]
+[connection signal="body_entered" from="Deamon_damage" to="." method="_on_deamon_damage_body_entered"]

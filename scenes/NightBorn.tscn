@@ -430,16 +430,18 @@ script = ExtResource("1_y46ik")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ytg0v")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame = 7
-frame_progress = 0.436183
+frame = 11
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(3.5, 5.5)
 shape = SubResource("RectangleShape2D_l7wok")
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
