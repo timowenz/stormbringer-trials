@@ -4,6 +4,8 @@ var playerhealth
 
 @onready var gameOverTimer = $GameOverTimer
 
+@export var nextLevel : String
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = false
@@ -14,6 +16,7 @@ func _ready():
 	$Pause.get_node("MainMenu").pressed.connect(main_menu)
 	$Pause.get_node("Restart").pressed.connect(new_game)
 	$Pause.get_node("Quit").pressed.connect(quit)
+	$WonGame.get_node("Continue").pressed.connect(next_level)
 	$WonGame.get_node("MainMenu").pressed.connect(main_menu)
 	$WonGame.get_node("Restart").pressed.connect(new_game)
 	$WonGame.get_node("Quit").pressed.connect(quit)
@@ -41,6 +44,9 @@ func _process(delta):
 
 func quit():
 	get_tree().quit()
+
+func next_level():
+	get_tree().change_scene_to_file(nextLevel)
 
 func main_menu():
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")

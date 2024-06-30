@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccrscj7aj4wtc"]
+[gd_scene load_steps=6 format=3 uid="uid://k4vsxqmldmyy"]
 
-[ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="1_vr0v3"]
-[ext_resource type="Texture2D" uid="uid://bfxt4brevb38m" path="res://selfdrawn/button2.png" id="2_ej1r0"]
-[ext_resource type="Texture2D" uid="uid://ccb2gu4l1gsns" path="res://selfdrawn/button3.png" id="2_us4nf"]
-[ext_resource type="Texture2D" uid="uid://cv7xgkvp44fkn" path="res://selfdrawn/button2_pressed.png" id="3_b4aap"]
-[ext_resource type="Texture2D" uid="uid://h0tmtxnx1cj7" path="res://selfdrawn/button3_pressed.png" id="3_pky5i"]
-[ext_resource type="Texture2D" uid="uid://d0n76tfdngiwt" path="res://selfdrawn/button1.png" id="4_3dgol"]
-[ext_resource type="Texture2D" uid="uid://c2xp8wxoxx6i5" path="res://selfdrawn/button1_pressed.png" id="5_7fe10"]
+[ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="1_i2v1f"]
+[ext_resource type="Texture2D" uid="uid://ccb2gu4l1gsns" path="res://selfdrawn/button3.png" id="2_cmh8d"]
+[ext_resource type="Texture2D" uid="uid://h0tmtxnx1cj7" path="res://selfdrawn/button3_pressed.png" id="3_kb2yk"]
+[ext_resource type="Texture2D" uid="uid://d0n76tfdngiwt" path="res://selfdrawn/button1.png" id="4_8ladk"]
+[ext_resource type="Texture2D" uid="uid://c2xp8wxoxx6i5" path="res://selfdrawn/button1_pressed.png" id="5_d8jxe"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -25,42 +23,43 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.04, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_vr0v3")
+theme_override_fonts/font = ExtResource("1_i2v1f")
 theme_override_font_sizes/font_size = 25
 text = "Congratulations!
-You won!
-Proceed to the next level?"
+You beat the game!
+Thanks for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Continue" type="TextureButton" parent="."]
+visible = false
 offset_left = 376.0
 offset_top = 248.0
 offset_right = 456.0
 offset_bottom = 288.0
 scale = Vector2(5, 3.399)
-texture_normal = ExtResource("2_ej1r0")
-texture_pressed = ExtResource("3_b4aap")
+texture_normal = ExtResource("2_cmh8d")
+texture_pressed = ExtResource("3_kb2yk")
 
 [node name="Label" type="Label" parent="Continue"]
 layout_mode = 0
-offset_left = 11.2
-offset_right = 155.2
+offset_left = 12.8
+offset_right = 152.8
 offset_bottom = 50.0
 scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("1_vr0v3")
-theme_override_font_sizes/font_size = 45
-text = "Continue
+theme_override_fonts/font = ExtResource("1_i2v1f")
+theme_override_font_sizes/font_size = 50
+text = "Restart
 "
 
 [node name="Restart" type="TextureButton" parent="."]
 offset_left = 376.0
-offset_top = 336.0
+offset_top = 248.0
 offset_right = 456.0
-offset_bottom = 376.0
+offset_bottom = 288.0
 scale = Vector2(5, 3.399)
-texture_normal = ExtResource("2_us4nf")
-texture_pressed = ExtResource("3_pky5i")
+texture_normal = ExtResource("2_cmh8d")
+texture_pressed = ExtResource("3_kb2yk")
 
 [node name="Label" type="Label" parent="Restart"]
 layout_mode = 0
@@ -68,19 +67,19 @@ offset_left = 12.8
 offset_right = 152.8
 offset_bottom = 50.0
 scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("1_vr0v3")
+theme_override_fonts/font = ExtResource("1_i2v1f")
 theme_override_font_sizes/font_size = 50
 text = "Restart
 "
 
 [node name="MainMenu" type="TextureButton" parent="."]
 offset_left = 376.0
-offset_top = 424.0
+offset_top = 336.0
 offset_right = 456.0
-offset_bottom = 464.0
+offset_bottom = 376.0
 scale = Vector2(5, 3.399)
-texture_normal = ExtResource("4_3dgol")
-texture_pressed = ExtResource("5_7fe10")
+texture_normal = ExtResource("4_8ladk")
+texture_pressed = ExtResource("5_d8jxe")
 
 [node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 0
@@ -89,19 +88,19 @@ offset_top = 2.35364
 offset_right = 192.8
 offset_bottom = 52.3536
 scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("1_vr0v3")
+theme_override_fonts/font = ExtResource("1_i2v1f")
 theme_override_font_sizes/font_size = 50
 text = "Main Menu
 "
 
 [node name="Quit" type="TextureButton" parent="."]
 offset_left = 376.0
-offset_top = 512.0
+offset_top = 424.0
 offset_right = 456.0
-offset_bottom = 552.0
+offset_bottom = 464.0
 scale = Vector2(5, 3.399)
-texture_normal = ExtResource("4_3dgol")
-texture_pressed = ExtResource("5_7fe10")
+texture_normal = ExtResource("4_8ladk")
+texture_pressed = ExtResource("5_d8jxe")
 
 [node name="Label" type="Label" parent="Quit"]
 layout_mode = 0
@@ -109,7 +108,7 @@ offset_left = 19.2
 offset_right = 139.2
 offset_bottom = 50.0
 scale = Vector2(0.35, 0.35)
-theme_override_fonts/font = ExtResource("1_vr0v3")
+theme_override_fonts/font = ExtResource("1_i2v1f")
 theme_override_font_sizes/font_size = 50
 text = "Quit
 "
