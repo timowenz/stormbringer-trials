@@ -231,7 +231,6 @@ func give_damage():
 	pass
 
 
-
-func _on_deamon_damage_body_entered(body):
-	if body.has_method("give_damage_to_player_from_deamon"):
+func _on_deamon_damage_area_entered(area):
+	if area.has_method("give_damage_to_player_from_deamon"):
 		take_damage(45)

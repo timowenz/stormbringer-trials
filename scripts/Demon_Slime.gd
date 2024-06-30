@@ -66,14 +66,15 @@ func _on_hitbox_area_entered(area):
 		take_damage(damage)
 		
 
-func give_damage():
+func give_damage_to_player():
 	$AnimatedSprite2D.hide()
 	$Give_damage.show()
 	$Give_damage.play("hit_player")
 	await get_tree().create_timer(1).timeout
+	player.take_damage(45)
 	$Give_damage.hide()
 	$AnimatedSprite2D.show()
 
 func _on_damage_body_entered(body):
 	if body.has_method("player"):
-		give_damage()
+		give_damage_to_player()
