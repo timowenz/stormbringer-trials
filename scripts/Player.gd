@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 #var state_machine
 var SPEED = 190.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -450.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 1000
+var fall_gravity := 1500
 var direction: float = 0
 var direction2: Vector2 = Vector2.ZERO
 # Animation variables
@@ -55,7 +57,7 @@ func _process(delta):
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += get_gravity(velocity) * delta
 	
 	if is_on_floor():
 		can_jump = true
@@ -68,6 +70,10 @@ func _physics_process(delta):
 		anim.play("dash")
 		$DashTimer.start()
 		$CanDashTimer.start()
+	
+	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
+		velocity.y = JUMP_VELOCITY / 3
+		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
@@ -351,7 +357,10 @@ func _on_shop4_pressed(extra_arg_0):
 		SPEED = SPEED * 1.2
 	pass # Replace with function body.
 
-
-
 func _on_attack_timer_timeout():
 	can_attack = true
+
+func get_gravity(velocity : Vector2):
+	if velocity.y  < 0:
+		return gravity
+	return fall_gravity
