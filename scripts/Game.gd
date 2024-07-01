@@ -4,10 +4,12 @@ var playerhealth
 
 @onready var gameOverTimer = $GameOverTimer
 
-@export var nextLevel : String
+@export var nextLevel: String
+var can_game_over: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	can_game_over = false
 	get_tree().paused = false
 	$GameOver.get_node("MainMenu").pressed.connect(main_menu)
 	$GameOver.get_node("Restart").pressed.connect(new_game)
@@ -40,7 +42,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		$Pause.show()
 		get_tree().paused = true
-	
 
 func quit():
 	get_tree().quit()
@@ -57,3 +58,6 @@ func new_game():
 func resume():
 	$Pause.hide()
 	get_tree().paused = false
+
+func _on_game_over_timer_timeout():
+	can_game_over = true

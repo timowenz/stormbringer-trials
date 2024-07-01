@@ -11,6 +11,8 @@ var player_chase = false
 
 @onready var anim = $AnimatedSprite2D
 @onready var healthbar = $HealthBar
+const vulnerable = "fire"
+const resistance = "arcane"
 
 func _ready():
 	set_state(State.FLIGHT)

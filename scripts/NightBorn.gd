@@ -46,7 +46,7 @@ func set_health(value):
 
 func take_damage(damage):
 	health -= damage
-	healthbar.health = health
+	healthbar.health = get_health()
 	if (health <= 0):
 		dead.emit()
 		queue_free()

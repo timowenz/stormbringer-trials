@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProjectileLaunchAbility" load_steps=3 format=3 uid="uid://die5bmssimh41"]
+
+[ext_resource type="PackedScene" uid="uid://coryxayxe4m17" path="res://scenes/abilities/player/arcane_spell_projectile.tscn" id="1_o0cym"]
+[ext_resource type="Script" path="res://scenes/abilities/projectile_launch_ability.gd" id="2_lu8pk"]
+
+[resource]
+script = ExtResource("2_lu8pk")
+projectile_scene = ExtResource("1_o0cym")
+instancing_offset = Vector2(10, 0)
