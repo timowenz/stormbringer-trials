@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://b2qkcruprqfkf"]
+[gd_scene load_steps=96 format=3 uid="uid://b2qkcruprqfkf"]
 
 [ext_resource type="Texture2D" uid="uid://d4mbexbyuip8n" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="1_70j47"]
 [ext_resource type="Script" path="res://scripts/Demon_Slime.gd" id="1_tw0mv"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://70mblcdd0cyj" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_10.png" id="17_jfsjs"]
 [ext_resource type="Texture2D" uid="uid://ctewbxtx6hjaa" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_11.png" id="18_3tea5"]
 [ext_resource type="Texture2D" uid="uid://btoqx2ndo27wr" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_12.png" id="19_uuh1f"]
+[ext_resource type="AudioStream" uid="uid://l54kh5s3suiw" path="res://assets/music/Deamon_death.mp3" id="22_u5s2l"]
+[ext_resource type="AudioStream" uid="uid://d3m4txpjqnx6h" path="res://assets/music/Deamon_Hit.mp3" id="23_k1plq"]
+[ext_resource type="AudioStream" uid="uid://bdg2lrqj4bid6" path="res://assets/music/Deamon_Swing.mp3" id="24_edgwx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lbeyl"]
 shader = ExtResource("2_wcevf")
@@ -638,6 +641,15 @@ sprite_frames = SubResource("SpriteFrames_ikwps")
 animation = &"hit_player"
 frame = 10
 frame_progress = 0.236008
+
+[node name="Death_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_u5s2l")
+
+[node name="Deamon_Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_k1plq")
+
+[node name="Deamon_Swing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_edgwx")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

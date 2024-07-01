@@ -4,6 +4,10 @@ const SPEED = 250
 
 var health = 300
 
+var DeathSound = preload("res://assets/music/Deamon_death.mp3")
+var DeamonHit = preload("res://assets/music/Deamon_Hit.mp3")
+var DeamonSwing = preload("res://assets/music/Deamon_Swing.mp3")
+
 var dead = false
 var player_in_area = false
 var player
@@ -33,9 +37,11 @@ func _physics_process(delta):
 		$DetectionArea/CollisionShape2D.disabled = true
 
 func take_damage(damage):
+	$Deamon_Hit.stream = DeamonHit
 	health = health - damage
 	$AnimatedSprite2D.hide()
 	$Hit_taken.show()
+	$Deamon_Hit.play()
 	$Hit_taken.play("take_damage")
 	await get_tree().create_timer(0.5).timeout
 	$Hit_taken.hide()
@@ -48,6 +54,8 @@ func give_damage_to_player_from_deamon():
 
 func death():
 	dead = true
+	$Death_Sound.stream = DeathSound
+	$Death_Sound.play()
 	$AnimatedSprite2D.play("death")
 	await get_tree().create_timer(1.4).timeout
 	queue_free()
@@ -65,12 +73,16 @@ func _on_detection_area_body_exited(body):
 
 func _on_hitbox_area_entered(area):
 	var damage
+	$Deamon_Hit.stream = DeamonHit
 	if area.has_method("give_damage"):
+		$Deamon_Hit.play()
 		damage = 50
 		take_damage(damage)
 		
 
 func give_damage_to_player():
+	$Deamon_Swing.stream = DeamonSwing
+	$Deamon_Swing.play()
 	$AnimatedSprite2D.hide()
 	$Give_damage.show()
 	$Give_damage.play("hit_player")
