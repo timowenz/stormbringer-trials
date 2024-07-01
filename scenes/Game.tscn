@@ -2701,7 +2701,6 @@ animations = [{
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8yes0")
-nextLevel = "res://scenes/Game.tscn"
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -3032,11 +3031,10 @@ shape = SubResource("RectangleShape2D_uhvea")
 
 [node name="EndGame" parent="." instance=ExtResource("2_4l62g")]
 position = Vector2(3064, 96)
-sceneName = "res://scenes/Game.tscn"
 
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
 position = Vector2(2600, 360)
 
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
 [connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
 [connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]
-[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

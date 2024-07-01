@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvp6q15hryxcn"]
+[gd_scene load_steps=6 format=3 uid="uid://cvp6q15hryxcn"]
 
+[ext_resource type="PackedScene" uid="uid://ck003hduftie7" path="res://scenes/level_3/Background_Level_3.tscn" id="1_82w2g"]
 [ext_resource type="PackedScene" uid="uid://c60h63oqga3qw" path="res://scenes/Player.tscn" id="1_edm3o"]
 [ext_resource type="Texture2D" uid="uid://32nk5lfr8ujt" path="res://assets/Platformer - desert/Tileset/00Atlas.png" id="2_7eokq"]
 
@@ -343,6 +344,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hitm6")
 
 [node name="Level3" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_82w2g")]
 
 [node name="Player" parent="." instance=ExtResource("1_edm3o")]
 position = Vector2(100, 66)
