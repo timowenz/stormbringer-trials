@@ -39,12 +39,14 @@ collision_layer = 32
 collision_mask = 4
 script = ExtResource("3_mdj26")
 damage_tick_timer = NodePath("DamageTickTimer")
+damage_type = "fire"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowOverTime/HitBoxArea"]
 shape = SubResource("CircleShape2D_jc5sx")
 
 [node name="DamageTickTimer" type="Timer" parent="GrowOverTime/HitBoxArea"]
 wait_time = 0.1
+autostart = true
 
 [node name="PointLight2D" type="PointLight2D" parent="GrowOverTime"]
 color = Color(0.862745, 0.435294, 0.160784, 1)

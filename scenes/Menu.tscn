@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://diogw0ro3cp5o" path="res://selfdrawn/slider_knob.png" id="10_q2kiv"]
 [ext_resource type="Texture2D" uid="uid://bm6defo8xxamo" path="res://assets/player_asset/Colour1/Outline/120x80_PNGSheets/_AttackComboNoMovement.png" id="11_q8gse"]
 [ext_resource type="Texture2D" uid="uid://cqqwwb5lrb7wt" path="res://assets/enemy_asset/NightBorne Warrior/NightBorne.png" id="12_e25a6"]
-[ext_resource type="Texture2D" uid="uid://dnm60gacapu0w" path="res://assets/icons/thunder.svg" id="13_wtcvo"]
+[ext_resource type="Texture2D" path="res://assets/icons/thunder.svg" id="13_wtcvo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdgf"]
 bg_color = Color(0.654902, 0.811765, 0.917647, 1)
@@ -203,7 +203,6 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("3_qoq06")
 volume_db = -15.0
 autoplay = true
-bus = &"Music"
 
 [node name="CanvasLayer" type="Panel" parent="."]
 layout_mode = 0
@@ -234,6 +233,7 @@ offset_top = 1260.0
 offset_right = 2600.0
 offset_bottom = 1300.0
 scale = Vector2(1.5, 1.5)
+theme_override_icons/grabber = ExtResource("10_q2kiv")
 bus = "Music"
 
 [node name="Label" type="Label" parent="CanvasLayer/MusicVolume"]
@@ -252,6 +252,7 @@ offset_top = 1400.0
 offset_right = 2600.0
 offset_bottom = 1440.0
 scale = Vector2(1.5, 1.5)
+theme_override_icons/grabber = ExtResource("10_q2kiv")
 bus = "SFX"
 
 [node name="Label" type="Label" parent="CanvasLayer/SoundEffectVolume"]
@@ -283,6 +284,15 @@ position = Vector2(165, 589)
 scale = Vector2(0.287129, 0.287129)
 texture = ExtResource("13_wtcvo")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 616.0
+offset_right = 1151.0
+offset_bottom = 647.0
+text = "Reset progress"
+
 [connection signal="pressed" from="BottomControl/Play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BottomControl/Credits" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CreditSheet/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_reset_pressed"]
