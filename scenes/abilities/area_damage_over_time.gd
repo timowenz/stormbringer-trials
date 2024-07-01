@@ -20,7 +20,9 @@ func apply_damage(p_tick_damage : int):
 	for target in targets_in_area:
 		print("enemy taking damage")
 		if target.vulnerable == damage_type:
-			extra_damage = damage_per_tick * 2
+			extra_damage = extra_damage * 2
+		if target.resistance == damage_type:
+			extra_damage = extra_damage / 2
 		target.take_damage(extra_damage)
 	
 
