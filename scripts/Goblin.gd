@@ -9,6 +9,8 @@ var player_chase = false
 var damage = 20
 signal dead
 @onready var healthbar = $HealthBar
+const vulnerable = "arcane"
+const resistance = "fire"
 
 func _ready():
 	$AnimatedSprite2D.play("goblin_idle")

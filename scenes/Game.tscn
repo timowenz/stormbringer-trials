@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_cqcwe"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="22_y4sap"]
-[ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="30_l1psa"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="30_l1psa"]
 [ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="31_to8xw"]
 [ext_resource type="Texture2D" uid="uid://bbv5nb1mfntfm" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="32_1n3u1"]
 [ext_resource type="Texture2D" uid="uid://bw7oy1ufe55pg" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="33_6gr14"]
@@ -3032,11 +3032,10 @@ shape = SubResource("RectangleShape2D_uhvea")
 
 [node name="EndGame" parent="." instance=ExtResource("2_4l62g")]
 position = Vector2(3064, 96)
-sceneName = "res://scenes/Game.tscn"
 
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
 position = Vector2(2600, 360)
 
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
 [connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
 [connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]
-[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
