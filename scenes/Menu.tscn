@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://o7j2fgs2o7xo"]
+[gd_scene load_steps=15 format=3 uid="uid://o7j2fgs2o7xo"]
 
 [ext_resource type="Texture2D" uid="uid://dwd8xv8npm6gv" path="res://assets/tileset/BG1.png" id="1_uq56c"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cy2j51gne2s4i" path="res://selfdrawn/credits_x_pressed.png" id="7_7f0j4"]
 [ext_resource type="Texture2D" uid="uid://cv7xgkvp44fkn" path="res://selfdrawn/button2_pressed.png" id="7_185el"]
 [ext_resource type="Texture2D" uid="uid://diogw0ro3cp5o" path="res://selfdrawn/slider_knob.png" id="10_q2kiv"]
+[ext_resource type="Texture2D" uid="uid://bm6defo8xxamo" path="res://assets/player_asset/Colour1/Outline/120x80_PNGSheets/_AttackComboNoMovement.png" id="11_q8gse"]
+[ext_resource type="Texture2D" uid="uid://cqqwwb5lrb7wt" path="res://assets/enemy_asset/NightBorne Warrior/NightBorne.png" id="12_e25a6"]
+[ext_resource type="Texture2D" uid="uid://dnm60gacapu0w" path="res://assets/icons/thunder.svg" id="13_wtcvo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdgf"]
 bg_color = Color(0.654902, 0.811765, 0.917647, 1)
@@ -260,6 +263,25 @@ offset_bottom = -3.33339
 theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 50
 text = "Sound Effect Volume"
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(104, 523)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("11_q8gse")
+hframes = 10
+
+[node name="Nightborn" type="Sprite2D" parent="."]
+position = Vector2(281, 557)
+scale = Vector2(4.17123, 4.17123)
+texture = ExtResource("12_e25a6")
+flip_h = true
+hframes = 25
+vframes = 5
+
+[node name="Thunder" type="Sprite2D" parent="."]
+position = Vector2(165, 589)
+scale = Vector2(0.287129, 0.287129)
+texture = ExtResource("13_wtcvo")
 
 [connection signal="pressed" from="BottomControl/Play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BottomControl/Credits" to="." method="_on_credits_button_pressed"]
