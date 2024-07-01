@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://diogw0ro3cp5o" path="res://selfdrawn/slider_knob.png" id="10_q2kiv"]
 [ext_resource type="Texture2D" uid="uid://bm6defo8xxamo" path="res://assets/player_asset/Colour1/Outline/120x80_PNGSheets/_AttackComboNoMovement.png" id="11_q8gse"]
 [ext_resource type="Texture2D" uid="uid://cqqwwb5lrb7wt" path="res://assets/enemy_asset/NightBorne Warrior/NightBorne.png" id="12_e25a6"]
-[ext_resource type="Texture2D" path="res://assets/icons/thunder.svg" id="13_wtcvo"]
+[ext_resource type="Texture2D" uid="uid://dnm60gacapu0w" path="res://assets/icons/thunder.svg" id="13_wtcvo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdgf"]
 bg_color = Color(0.654902, 0.811765, 0.917647, 1)

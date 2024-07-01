@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b12cpu6cktax8"]
 
-[ext_resource type="AudioStream" uid="uid://c68y55ltb525l" path="res://sfx_selfmade/itempickup.wav" id="1_nkrqk"]
+[ext_resource type="AudioStream" uid="uid://c0nab7u3bqbqg" path="res://assets/SFX/Knight-Monsters-Sounds-Pack/coin.wav" id="1_2auy0"]
 
 [node name="CoinSound" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_nkrqk")
+stream = ExtResource("1_2auy0")
 volume_db = 10.0
 autoplay = true
