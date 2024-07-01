@@ -24,6 +24,14 @@ func _physics_process(delta):
 			flight_state(delta)
 		State.ATTACK:
 			attack_state(delta)
+		State.HIT:
+			hit_state(delta)
+
+func hit_state(_delta):
+	if (health <= 0):
+		set_state(State.DEAD)
+	else:
+		set_state(State.FLIGHT)
 
 func set_state(new_state):
 	state = new_state
