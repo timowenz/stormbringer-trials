@@ -31,6 +31,7 @@ replace_target = NodePath("..")
 replacement_scene_path = "res://scenes/abilities/player/lightning_strike.tscn"
 
 [node name="Timer" type="Timer" parent="ReplaceOnTimeout"]
+wait_time = 2.3
 autostart = true
 
 [node name="ReplaceOnAreaEntered" type="Node" parent="." node_paths=PackedStringArray("enter_area", "replace_target")]

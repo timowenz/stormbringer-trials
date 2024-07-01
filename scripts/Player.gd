@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #var state_machine
-var SPEED = 190.0
+var SPEED = 190
 const JUMP_VELOCITY = -450.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -37,6 +37,9 @@ var dashing = false
 var canDash = true
 var coins = 0
 var can_attack = true
+const acc = 30
+const friction = 50
+var last_direction: float = 0
 
 func _ready():
 	effects.play("RESET")
@@ -95,6 +98,7 @@ func _physics_process(delta):
 	elif direction == 1 and is_attacking == false:
 		get_node("AnimatedSprite2D").flip_h = false
 		$Node2D.scale = Vector2(1, 1)
+		
 	if direction:
 		if is_crouching and is_attacking == false:
 			velocity.x = direction * SPEED / 1.5
@@ -151,6 +155,7 @@ func die():
 	has_died = false
 
 func update_anim_params():
+	var input_dir: Vector2 = input_direction()
 	#handle_fall_jump()
 	if health <= 0:
 		die()
@@ -161,6 +166,7 @@ func update_anim_params():
 			elif not is_on_floor() and velocity.y < 0 and can_jump:
 				jump()
 			else:
+				add_friction()
 				idle()
 			if Input.is_action_just_pressed("stand_up"):
 				stand_up()
@@ -178,6 +184,7 @@ func update_anim_params():
 					elif not is_on_floor() and velocity.y < 0 and can_jump:
 						jump()
 					else:
+						accelerate(input_dir)
 						run()
 						if $SFX/WalkTimer.time_left <= 0:
 							##$SFX/SoundWalk.pitch_scale = randf_range(0.8, 1.2)
@@ -282,7 +289,6 @@ func _on_attack_area_body_entered(body):
 	if body.name == "EndGame":
 		return
 	if body.name != "TileMap":
-		print("damage taken")
 		body.take_damage(damage)
 		# TODO: do this for all enemies
 		if body.name == "BringerOfDeath":
@@ -364,3 +370,16 @@ func get_gravity(velocity : Vector2):
 	if velocity.y  < 0:
 		return gravity
 	return fall_gravity
+
+func input_direction() -> Vector2:
+	var input_dir = Vector2.ZERO
+	input_dir.x = Input.get_axis("ui_left", "ui_right")
+	input_dir = input_dir.normalized()
+	return input_dir
+
+func accelerate(direction):
+	velocity = velocity.move_toward(SPEED * direction, acc)
+
+func add_friction():
+	velocity = velocity.move_toward(Vector2.ZERO, friction)
+	

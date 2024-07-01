@@ -427,6 +427,7 @@ radius = 186.0
 radius = 15.0
 
 [node name="NightBorn" type="CharacterBody2D"]
+collision_layer = 5
 script = ExtResource("1_y46ik")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

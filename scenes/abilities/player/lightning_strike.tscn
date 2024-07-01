@@ -10,7 +10,7 @@ _data = [Vector2(0, 0.5), 0.0, 0.0, 0, 1, Vector2(1, 0.5), 0.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xinq"]
-size = Vector2(171, 270)
+size = Vector2(171, 464)
 
 [node name="LightningStrike" type="Node2D"]
 position = Vector2(12, -242)
@@ -30,12 +30,14 @@ autoplay = "LightningStrike"
 script = ExtResource("3_8qhcb")
 damage_per_tick = 10
 damage_tick_timer = NodePath("DamageTick")
+damage_type = "lightning"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowthOverTime/HitBoxArea"]
-position = Vector2(-12.5, -13)
+position = Vector2(-12.5, 84)
 shape = SubResource("RectangleShape2D_4xinq")
 
 [node name="DamageTick" type="Timer" parent="GrowthOverTime/HitBoxArea"]
+autostart = true
 
 [node name="RemoveAfterGrowth" type="Node" parent="." node_paths=PackedStringArray("grow_over_time", "queue_free_target")]
 script = ExtResource("4_hmepn")

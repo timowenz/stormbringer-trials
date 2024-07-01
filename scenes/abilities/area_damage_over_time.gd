@@ -2,6 +2,7 @@ extends Area2D
 
 @export var damage_per_tick = 5
 @export var damage_tick_timer : Timer
+@export var damage_type: String
 
 var targets_in_area : Array[CharacterBody2D]
 
@@ -11,23 +12,25 @@ func _ready():
 	connect("body_exited", _on_body_exited)
 
 func _on_timeout():
+	print("timeout")
 	apply_damage(damage_per_tick)
 
 func apply_damage(p_tick_damage : int):
+	var extra_damage = damage_per_tick
 	for target in targets_in_area:
 		print("enemy taking damage")
-		target.take_damage(30)
+		if target.vulnerable == damage_type:
+			extra_damage = damage_per_tick * 2
+		target.take_damage(extra_damage)
 	
 
 func _on_body_entered(p_body : Node2D):
 	print("enemy entered")
-	for child in p_body.get_parent().get_children():
-		if child is Enemy && !targets_in_area.has(child):
-			targets_in_area.append(child)
+	if !targets_in_area.has(p_body) && p_body.name != "Player":
+		targets_in_area.append(p_body)
 	print(targets_in_area)
 
 func _on_body_exited(p_body : Node2D):
 	print("enemy exited")
-	for child in p_body.get_parent().get_children():
-		if child is Enemy && targets_in_area.has(child):
-			targets_in_area.erase(child)
+	if targets_in_area.has(p_body) && p_body.name != "Player":
+		targets_in_area.erase(p_body)

@@ -28,14 +28,17 @@ autoplay = "fireballexplosion"
 
 [node name="HotBoxArea" type="Area2D" parent="GrowOverTime" node_paths=PackedStringArray("damage_tick_timer")]
 script = ExtResource("3_wgy46")
+damage_per_tick = 10
 damage_tick_timer = NodePath("DamageTickTimer")
+damage_type = "fire"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrowOverTime/HotBoxArea"]
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_2x6vc")
 
 [node name="DamageTickTimer" type="Timer" parent="GrowOverTime/HotBoxArea"]
-wait_time = 0.189
+wait_time = 0.4
+autostart = true
 
 [node name="RemoveAfterGrowth" type="Node" parent="." node_paths=PackedStringArray("grow_over_time", "queue_free_target")]
 script = ExtResource("4_wn603")
