@@ -78,7 +78,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY / 3
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
+	if Input.is_action_just_pressed("jump") and jump_count < max_jumps and can_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 		$SFX/SoundJump.play()
