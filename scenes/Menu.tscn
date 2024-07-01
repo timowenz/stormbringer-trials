@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://o7j2fgs2o7xo"]
+[gd_scene load_steps=15 format=3 uid="uid://o7j2fgs2o7xo"]
 
 [ext_resource type="Texture2D" uid="uid://dwd8xv8npm6gv" path="res://assets/tileset/BG1.png" id="1_uq56c"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cy2j51gne2s4i" path="res://selfdrawn/credits_x_pressed.png" id="7_7f0j4"]
 [ext_resource type="Texture2D" uid="uid://cv7xgkvp44fkn" path="res://selfdrawn/button2_pressed.png" id="7_185el"]
 [ext_resource type="Texture2D" uid="uid://diogw0ro3cp5o" path="res://selfdrawn/slider_knob.png" id="10_q2kiv"]
+[ext_resource type="Texture2D" uid="uid://bm6defo8xxamo" path="res://assets/player_asset/Colour1/Outline/120x80_PNGSheets/_AttackComboNoMovement.png" id="11_q8gse"]
+[ext_resource type="Texture2D" uid="uid://cqqwwb5lrb7wt" path="res://assets/enemy_asset/NightBorne Warrior/NightBorne.png" id="12_e25a6"]
+[ext_resource type="Texture2D" uid="uid://dnm60gacapu0w" path="res://assets/icons/thunder.svg" id="13_wtcvo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdgf"]
 bg_color = Color(0.654902, 0.811765, 0.917647, 1)
@@ -121,6 +124,7 @@ vertical_alignment = 1
 
 [node name="CreditSheet" type="Panel" parent="."]
 visible = false
+z_index = 100
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,17 +148,20 @@ texture_normal = ExtResource("6_016xs")
 texture_pressed = ExtResource("7_7f0j4")
 
 [node name="CreditsLabel" type="Label" parent="CreditSheet"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.0189243
 anchor_top = 0.0241228
 anchor_right = 0.108566
 anchor_bottom = 0.114035
+theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
 theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 30
 text = "CREDITS"
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollText" type="RichTextLabel" parent="CreditSheet"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0622172
@@ -179,14 +186,15 @@ metadata/_edit_use_anchors_ = true
 [node name="MaintainersLabel" type="Label" parent="CreditSheet"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.323529
-anchor_top = 0.031401
-anchor_right = 0.671946
-anchor_bottom = 0.125604
+anchor_left = 0.126697
+anchor_top = 0.0169082
+anchor_right = 0.79638
+anchor_bottom = 0.111111
 theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
 theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 20
-text = "Maintainers: Slaven Dzinic & Timo Wenz"
+text = "Maintainers: Slaven Dzinic, Niels Kochert, Philipp Mestenhauser, Timo Wenz 
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -196,11 +204,12 @@ stream = ExtResource("3_qoq06")
 volume_db = -15.0
 autoplay = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="Panel" parent="."]
+layout_mode = 0
 scale = Vector2(0.4, 0.4)
-transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
 
 [node name="MasterVolume" parent="CanvasLayer" instance=ExtResource("5_qlpxr")]
+layout_mode = 0
 offset_left = 2200.0
 offset_top = 1120.0
 offset_right = 2600.0
@@ -218,11 +227,13 @@ theme_override_font_sizes/font_size = 50
 text = "Master Volume"
 
 [node name="MusicVolume" parent="CanvasLayer" instance=ExtResource("5_qlpxr")]
+layout_mode = 0
 offset_left = 2200.0
 offset_top = 1260.0
 offset_right = 2600.0
 offset_bottom = 1300.0
 scale = Vector2(1.5, 1.5)
+theme_override_icons/grabber = ExtResource("10_q2kiv")
 bus = "Music"
 
 [node name="Label" type="Label" parent="CanvasLayer/MusicVolume"]
@@ -235,11 +246,13 @@ theme_override_font_sizes/font_size = 50
 text = "Music Volume"
 
 [node name="SoundEffectVolume" parent="CanvasLayer" instance=ExtResource("5_qlpxr")]
+layout_mode = 0
 offset_left = 2200.0
 offset_top = 1400.0
 offset_right = 2600.0
 offset_bottom = 1440.0
 scale = Vector2(1.5, 1.5)
+theme_override_icons/grabber = ExtResource("10_q2kiv")
 bus = "SFX"
 
 [node name="Label" type="Label" parent="CanvasLayer/SoundEffectVolume"]
@@ -252,6 +265,34 @@ theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 50
 text = "Sound Effect Volume"
 
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(104, 523)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("11_q8gse")
+hframes = 10
+
+[node name="Nightborn" type="Sprite2D" parent="."]
+position = Vector2(281, 557)
+scale = Vector2(4.17123, 4.17123)
+texture = ExtResource("12_e25a6")
+flip_h = true
+hframes = 25
+vframes = 5
+
+[node name="Thunder" type="Sprite2D" parent="."]
+position = Vector2(165, 589)
+scale = Vector2(0.287129, 0.287129)
+texture = ExtResource("13_wtcvo")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 616.0
+offset_right = 1151.0
+offset_bottom = 647.0
+text = "Reset progress"
+
 [connection signal="pressed" from="BottomControl/Play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BottomControl/Credits" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CreditSheet/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_reset_pressed"]

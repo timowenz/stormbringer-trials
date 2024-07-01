@@ -55,7 +55,7 @@ func _ready():
 
 func _process(delta):
 	if ($CanvasLayer3/Label):
-		$CanvasLayer3/Label.text = str(coins)
+		$CanvasLayer3/Label.text = str(GlobalVariables.coins)
 	update_anim_params()
 
 func _physics_process(delta):
@@ -78,7 +78,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY / 3
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
+	if Input.is_action_just_pressed("jump") and jump_count < max_jumps and can_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 		$SFX/SoundJump.play()
@@ -313,9 +313,9 @@ func _on_dash_timer_timeout() -> void:
 func _on_can_dash_timer_timeout() -> void:
 	canDash = true
 
-func _on_coin_body_entered(body):
+func _on_coin_body_entered():
 	print("Coin collected")
-	coins += 1
+	GlobalVariables.coins += 1
 	pass
 
 func _on_trader_body_entered(body):
@@ -329,27 +329,27 @@ func _on_trader_body_exited(body):
 	pass # Replace with function body.
 
 func _on_shop1_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		damage = damage * 1.2
 		$BuySound.play()
 	pass # Replace with function body.
 
 func _on_shop2_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		health = health * 1.2
 	pass # Replace with function body.
 
 func _on_button_3_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		health = health * 1.4
 	pass # Replace with function body.
 
 func _on_shop4_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		SPEED = SPEED * 1.2
 	pass # Replace with function body.
 
