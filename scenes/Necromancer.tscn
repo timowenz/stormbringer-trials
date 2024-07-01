@@ -283,7 +283,7 @@ script = ExtResource("1_gqrbj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1af3c")
-animation = &"damage"
+animation = &"attack"
 autoplay = "flight"
 
 [node name="HealthBar" parent="." instance=ExtResource("3_i10xf")]

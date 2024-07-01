@@ -54,7 +54,8 @@ func _ready():
 	$Node2D/AttackArea/AttackCol2.disabled = true
 
 func _process(delta):
-	$Coin/Label.text = str(coins)
+	if ($CanvasLayer3/Label):
+		$CanvasLayer3/Label.text = str(coins)
 	update_anim_params()
 
 func _physics_process(delta):
@@ -65,7 +66,6 @@ func _physics_process(delta):
 	if is_on_floor():
 		can_jump = true
 		jump_count = 0
-		
 	
 	if Input.is_action_just_pressed("dash") and canDash:
 		dashing = true
@@ -76,7 +76,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y = JUMP_VELOCITY / 3
-		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
@@ -290,9 +289,6 @@ func _on_attack_area_body_entered(body):
 		return
 	if body.name != "TileMap":
 		body.take_damage(damage)
-		# TODO: do this for all enemies
-		if body.name == "BringerOfDeath":
-			body.animation.play("hurt")
 
 func hit():
 	
@@ -319,55 +315,49 @@ func _on_can_dash_timer_timeout() -> void:
 
 func _on_coin_body_entered(body):
 	print("Coin collected")
-	coins+=1
-	pass 
+	coins += 1
+	pass
 
 func _on_trader_body_entered(body):
-	if(body.name == "Player"):
+	if (body.name == "Player"):
 		%Shop.visible = true
 	pass # Replace with function body.
 
-
 func _on_trader_body_exited(body):
-	if(body.name == "Player"):
+	if (body.name == "Player"):
 		%Shop.visible = false
 	pass # Replace with function body.
 
-
-
 func _on_shop1_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		damage = damage * 1.2
 		$BuySound.play()
 	pass # Replace with function body.
 
-
 func _on_shop2_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		health = health * 1.2
 	pass # Replace with function body.
 
-
 func _on_button_3_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		health = health * 1.4
 	pass # Replace with function body.
 
-
 func _on_shop4_pressed(extra_arg_0):
-	if(coins >= extra_arg_0):
-		coins = coins-extra_arg_0
+	if (coins >= extra_arg_0):
+		coins = coins - extra_arg_0
 		SPEED = SPEED * 1.2
 	pass # Replace with function body.
 
 func _on_attack_timer_timeout():
 	can_attack = true
 
-func get_gravity(velocity : Vector2):
-	if velocity.y  < 0:
+func get_gravity(velocity: Vector2):
+	if velocity.y < 0:
 		return gravity
 	return fall_gravity
 
@@ -382,4 +372,3 @@ func accelerate(direction):
 
 func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
-	
