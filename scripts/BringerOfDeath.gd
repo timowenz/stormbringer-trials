@@ -14,6 +14,8 @@ var player_chase = false
 @onready var anim = $AnimatedSprite2D
 @onready var healthbar = $HealthBar
 @onready var spell = preload ("res://scenes/BringerOfDeath/Spell.tscn").instantiate()
+@onready var attack_audio = $AttackAudio
+@onready var cast_audio = $CastAudio
 
 func _ready():
   set_state(State.IDLE)
@@ -53,11 +55,14 @@ func cast_state(_delta):
   spell.offset = Vector2i(15, -27)
   if (player.position.distance_to(position) < 200):
     if (anim.frame == 0):
+      cast_audio.play()
       get_parent().add_child(spell)
     set_state(State.CAST)
 
 func attack_state(_delta):
   if (player.position.distance_to(position) < 50):
+    if (anim.frame == 4):
+      attack_audio.play()
     set_state(State.ATTACK)
   elif (player.position.distance_to(position) < 200):
     set_state(State.CAST)
