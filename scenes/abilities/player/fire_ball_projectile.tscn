@@ -16,7 +16,6 @@ texture_filter = 1
 sprite_frames = ExtResource("1_h52xn")
 animation = &"fireball"
 autoplay = "fireball"
-frame_progress = 0.933021
 
 [node name="Area2D" type="Area2D" parent="."]
 light_mask = 33
@@ -34,6 +33,7 @@ replace_target = NodePath("..")
 replacement_scene_path = "res://scenes/abilities/player/fire_ball_explosion.tscn"
 
 [node name="Timer" type="Timer" parent="ReplaceOnTimeout"]
+wait_time = 1.2
 autostart = true
 
 [node name="ReplaceOnAreaEntered" type="Node" parent="." node_paths=PackedStringArray("enter_area", "replace_target")]

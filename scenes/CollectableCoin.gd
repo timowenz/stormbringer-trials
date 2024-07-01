@@ -13,6 +13,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		body._on_coin_body_entered()
 		var newsound = sound.instantiate()
 		$"..".add_child(newsound)
 		queue_free()
