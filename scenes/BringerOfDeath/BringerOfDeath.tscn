@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://byufb1ir0dmio"]
+[gd_scene load_steps=57 format=3 uid="uid://byufb1ir0dmio"]
 
 [ext_resource type="Script" path="res://scripts/BringerOfDeath.gd" id="1_f35kd"]
 [ext_resource type="Texture2D" uid="uid://6ymn657iblh0" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Attack/Bringer-of-Death_Attack_1.png" id="1_m4wty"]
@@ -50,6 +50,8 @@
 [ext_resource type="Texture2D" uid="uid://c2vl2t150s171" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Walk/Bringer-of-Death_Walk_8.png" id="30_u0rh8"]
 [ext_resource type="Texture2D" uid="uid://de7t8ubi5tvik" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Idle/Bringer-of-Death_Idle_8.png" id="31_wsrhw"]
 [ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="40_pryr0"]
+[ext_resource type="AudioStream" uid="uid://nujg8eui6fwc" path="res://assets/SFX/RPG_Essentials_Free/10_Battle_SFX/22_Slash_04.wav" id="51_yrpn1"]
+[ext_resource type="AudioStream" uid="uid://bq5is3ek7xrt6" path="res://assets/SFX/RPG_Essentials_Free/8_Atk_Magic_SFX/04_Fire_explosion_04_medium.wav" id="52_urnuy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0aohk"]
 animations = [{
@@ -271,6 +273,12 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
 shape = SubResource("CircleShape2D_nqw8m")
+
+[node name="AttackAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("51_yrpn1")
+
+[node name="CastAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("52_urnuy")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
