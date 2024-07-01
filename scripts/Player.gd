@@ -33,7 +33,6 @@ const dashSpeed = 800
 const dashLength = 0.2
 var dashing = false
 var canDash = true
-var coins = 0
 
 func _ready():
 	effects.play("RESET")
@@ -49,7 +48,7 @@ func _ready():
 
 func _process(delta):
 	if ($CanvasLayer3/Label):
-		$CanvasLayer3/Label.text = str(coins)
+		$CanvasLayer3/Label.text = str(GlobalVariables.coins)
 	update_anim_params()
 
 func _physics_process(delta):
@@ -279,7 +278,7 @@ func _on_can_dash_timer_timeout() -> void:
 
 func _on_coin_body_entered(body):
 	print("Coin collected")
-	coins += 1
+	GlobalVariables.coins += 1
 	pass
 
 func _on_trader_body_entered(body):
@@ -293,26 +292,26 @@ func _on_trader_body_exited(body):
 	pass # Replace with function body.
 
 func _on_shop1_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		damage = damage * 1.2
 		$BuySound.play()
 	pass # Replace with function body.
 
 func _on_shop2_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		health = health * 1.2
 	pass # Replace with function body.
 
 func _on_button_3_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		health = health * 1.4
 	pass # Replace with function body.
 
 func _on_shop4_pressed(extra_arg_0):
-	if (coins >= extra_arg_0):
-		coins = coins - extra_arg_0
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
 		SPEED = SPEED * 1.2
 	pass # Replace with function body.

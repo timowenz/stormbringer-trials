@@ -224,6 +224,7 @@ offset_top = 1260.0
 offset_right = 2600.0
 offset_bottom = 1300.0
 scale = Vector2(1.5, 1.5)
+theme_override_icons/grabber = ExtResource("10_q2kiv")
 bus = "Music"
 
 [node name="Label" type="Label" parent="CanvasLayer/MusicVolume"]
@@ -241,6 +242,7 @@ offset_top = 1400.0
 offset_right = 2600.0
 offset_bottom = 1440.0
 scale = Vector2(1.5, 1.5)
+theme_override_icons/grabber = ExtResource("10_q2kiv")
 bus = "SFX"
 
 [node name="Label" type="Label" parent="CanvasLayer/SoundEffectVolume"]
@@ -253,6 +255,15 @@ theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 50
 text = "Sound Effect Volume"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 616.0
+offset_right = 1151.0
+offset_bottom = 647.0
+text = "Reset progress"
+
 [connection signal="pressed" from="BottomControl/Play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BottomControl/Credits" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CreditSheet/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_reset_pressed"]

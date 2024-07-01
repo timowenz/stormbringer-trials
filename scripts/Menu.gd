@@ -14,3 +14,8 @@ func _on_credits_button_pressed():
 
 func _on_close_button_pressed():
 	$CreditSheet.visible = false
+
+
+func _on_reset_pressed():
+	GlobalVariables.coins = 0
+	pass 
