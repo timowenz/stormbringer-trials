@@ -9020,27 +9020,43 @@ theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
 text = "Move left and right using A and D
 on your keyboard or press left and right
-on the numpad"
+on the numpad
+Jump using the spacebar"
 
 [node name="Tutorial2" type="Label" parent="TutorialCanvasLayer"]
-offset_left = 1410.0
-offset_top = 1175.0
-offset_right = 2070.0
-offset_bottom = 1240.0
+offset_left = 1360.0
+offset_top = 1130.0
+offset_right = 2380.0
+offset_bottom = 1233.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
-text = "Oh look! Someone lost their money"
+text = "Oh look! Someone lost their money.
+You can use it to buy useful items."
 
 [node name="Tutorial3" type="Label" parent="TutorialCanvasLayer"]
-offset_left = 3245.0
-offset_top = 925.0
-offset_right = 3905.0
-offset_bottom = 990.0
+offset_left = 3000.0
+offset_top = 930.0
+offset_right = 4000.0
+offset_bottom = 1033.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
-text = "Be careful around here!"
+text = "Be careful around here!
+Click the left mouse button or press upwards to attack!"
+
+[node name="Tutorial4" type="Label" parent="TutorialCanvasLayer"]
+offset_left = 7840.0
+offset_top = 675.0
+offset_right = 8470.0
+offset_bottom = 778.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 50
+text = "Defeat all bosses in the
+ world to access the next level"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Trader" type="Area2D" parent="."]
 position = Vector2(472, 264)
