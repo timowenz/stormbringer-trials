@@ -9,3 +9,4 @@ func _ready():
 
 func _on_timeout():
 	replace()
+

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://6due4sfe8ww5"]
+
+[ext_resource type="SpriteFrames" uid="uid://c1ism2hhed2eb" path="res://scenes/abilities/player/arcane_spell_projectile.tres" id="1_a3m1u"]
+[ext_resource type="Script" path="res://scenes/abilities/grow_over_time.gd" id="1_g8mvk"]
+[ext_resource type="Script" path="res://scenes/abilities/area_damage_over_time.gd" id="3_eclnp"]
+[ext_resource type="Script" path="res://scenes/abilities/remove_after_growth.gd" id="4_jfh2m"]
+
+[sub_resource type="Curve" id="Curve_6ac5l"]
+min_value = 1.0
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.479077, 1.10234), 0.0, 0.0, 0, 0, Vector2(0.643579, 1.15636), 0.0, 0.0, 0, 0, Vector2(0.828283, 1.14961), 0.0, 0.0, 0, 0, Vector2(0.994228, 1.28468), 3.37395, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imcj1"]
+radius = 33.0151
+
+[node name="ArcaneExplosion" type="Node2D"]
+
+[node name="GrowthOverTime" type="Node2D" parent="."]
+script = ExtResource("1_g8mvk")
+growth_curve = SubResource("Curve_6ac5l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GrowthOverTime"]
+sprite_frames = ExtResource("1_a3m1u")
+animation = &"ArcaneExplosion"
+autoplay = "ArcaneExplosion"
+
+[node name="HitBoxArea" type="Area2D" parent="GrowthOverTime" node_paths=PackedStringArray("damage_tick_timer")]
+script = ExtResource("3_eclnp")
+damage_tick_timer = NodePath("DamageTickTimer")
+damage_type = "arcane"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrowthOverTime/HitBoxArea"]
+position = Vector2(3, 3)
+shape = SubResource("CircleShape2D_imcj1")
+
+[node name="DamageTickTimer" type="Timer" parent="GrowthOverTime/HitBoxArea"]
+wait_time = 0.3
+autostart = true
+
+[node name="RemoveAfterGrowth" type="Node" parent="." node_paths=PackedStringArray("grow_over_time", "queue_free_target")]
+script = ExtResource("4_jfh2m")
+grow_over_time = NodePath("../GrowthOverTime")
+queue_free_target = NodePath("..")

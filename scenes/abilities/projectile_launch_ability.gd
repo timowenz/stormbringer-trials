@@ -18,6 +18,6 @@ func use(p_user : Node2D) -> bool:
 	var instance_position = p_user.global_position + final_offset
 	instance.global_position = instance_position
 	
-	instance.launch(p_user, p_user.direction)
+	instance.launch(p_user, p_user.direction, p_user)
 	
 	return true

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://coryxayxe4m17"]
+
+[ext_resource type="Script" path="res://scenes/abilities/projectile.gd" id="1_1rvkj"]
+[ext_resource type="SpriteFrames" uid="uid://c1ism2hhed2eb" path="res://scenes/abilities/player/arcane_spell_projectile.tres" id="1_8aua3"]
+[ext_resource type="Script" path="res://scenes/abilities/replace_on_timeout.gd" id="2_sjufq"]
+[ext_resource type="Script" path="res://scenes/abilities/replace_on_area_entered.gd" id="3_teftf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5s0n"]
+radius = 38.0
+
+[node name="ArcaneSpellProjectile" type="Node2D"]
+script = ExtResource("1_1rvkj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, -6)
+sprite_frames = ExtResource("1_8aua3")
+animation = &"ArcaneASpell"
+autoplay = "ArcaneASpell"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -3)
+shape = SubResource("CircleShape2D_g5s0n")
+
+[node name="ReplaceOnTimeout" type="Node" parent="." node_paths=PackedStringArray("replace_timer", "replace_target")]
+script = ExtResource("2_sjufq")
+replace_timer = NodePath("Timer")
+replace_target = NodePath("..")
+replacement_scene_path = "res://scenes/abilities/player/arcane_explosion.tscn"
+
+[node name="Timer" type="Timer" parent="ReplaceOnTimeout"]
+wait_time = 2.0
+autostart = true
+
+[node name="ReplaceOnAreaEntered" type="Node" parent="." node_paths=PackedStringArray("enter_area", "replace_target")]
+script = ExtResource("3_teftf")
+enter_area = NodePath("../Area2D")
+replace_target = NodePath("..")
+replacement_scene_path = "res://scenes/abilities/player/arcane_explosion.tscn"
+
+[connection signal="body_entered" from="Area2D" to="ReplaceOnAreaEntered" method="_on_body_entered"]
