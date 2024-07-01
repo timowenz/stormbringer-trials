@@ -605,15 +605,26 @@ shape = SubResource("CircleShape2D_eh0pj")
 
 [node name="Damage" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+[node name="top_left" type="CollisionShape2D" parent="Damage"]
 position = Vector2(-97, 39)
 rotation = 0.537561
 skew = -0.424115
 shape = SubResource("CapsuleShape2D_trlo8")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Damage"]
+[node name="top_right" type="CollisionShape2D" parent="Damage"]
+position = Vector2(97, 39)
+rotation = 0.123918
+skew = -0.424115
+shape = SubResource("CapsuleShape2D_trlo8")
+
+[node name="bottom_left" type="CollisionShape2D" parent="Damage"]
 position = Vector2(-78.5322, 66.4483)
 rotation = -0.359538
+shape = SubResource("RectangleShape2D_5eyf7")
+
+[node name="bottom_right" type="CollisionShape2D" parent="Damage"]
+position = Vector2(78.532, 66.448)
+rotation = 0.122173
 shape = SubResource("RectangleShape2D_5eyf7")
 
 [node name="Hit_taken" type="AnimatedSprite2D" parent="."]
@@ -625,8 +636,8 @@ frame_progress = 0.00194034
 [node name="Give_damage" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ikwps")
 animation = &"hit_player"
-frame = 14
-frame_progress = 0.227675
+frame = 10
+frame_progress = 0.236008
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
