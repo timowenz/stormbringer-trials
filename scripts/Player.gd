@@ -276,7 +276,7 @@ func _on_dash_timer_timeout() -> void:
 func _on_can_dash_timer_timeout() -> void:
 	canDash = true
 
-func _on_coin_body_entered(body):
+func _on_coin_body_entered():
 	print("Coin collected")
 	GlobalVariables.coins += 1
 	pass

@@ -3037,3 +3037,6 @@ sceneName = "res://scenes/Game.tscn"
 
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
 position = Vector2(2600, 360)
+
+[connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
+[connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]
