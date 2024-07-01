@@ -6,8 +6,8 @@ extends TextureButton
 @export var timer: Timer
 @onready var panel = $Panel
 @onready var key = $Key
-
-
+@export var user : Node2D
+@export var mana_cost: int
 
 var change_key = "":
 	set(value):
@@ -34,9 +34,10 @@ func _process(delta):
 
 
 func _on_pressed():
-	timer.start()
-	disabled = true
-	set_process(true)
+	if user.mana >= mana_cost:
+		timer.start()
+		disabled = true
+		set_process(true)
 
 
 func _on_timeout():
