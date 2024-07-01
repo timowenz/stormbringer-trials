@@ -28,11 +28,11 @@ func apply_damage(p_tick_damage : int):
 
 func _on_body_entered(p_body : Node2D):
 	print("enemy entered")
-	if !targets_in_area.has(p_body) && p_body.name != "Player":
+	if !targets_in_area.has(p_body) && p_body.name != "Player" && p_body.name != "TileMap":
 		targets_in_area.append(p_body)
 	print(targets_in_area)
 
 func _on_body_exited(p_body : Node2D):
 	print("enemy exited")
-	if targets_in_area.has(p_body) && p_body.name != "Player":
+	if targets_in_area.has(p_body) && p_body.name != "Player" && p_body.name != "TileMap":
 		targets_in_area.erase(p_body)
