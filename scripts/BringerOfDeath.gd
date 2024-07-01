@@ -31,6 +31,14 @@ func _physics_process(delta):
       attack_state(delta)
     State.CAST:
       cast_state(delta)
+    State.HIT:
+      hit_state(delta)
+
+func hit_state(_delta):
+  if (health <= 0):
+    set_state(State.DEAD)
+  else:
+    set_state(State.WALK)
 
 func set_state(new_state):
   state = new_state
