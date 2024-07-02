@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
 [ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="21_othxk"]
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="22_y4sap"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="30_l1psa"]
+[ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="30_l1psa"]
 [ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="31_to8xw"]
 [ext_resource type="Texture2D" uid="uid://bbv5nb1mfntfm" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="32_1n3u1"]
 [ext_resource type="Texture2D" uid="uid://bw7oy1ufe55pg" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="33_6gr14"]

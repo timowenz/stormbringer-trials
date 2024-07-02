@@ -9386,7 +9386,7 @@ theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 100
 text = "Greetings, warrior! Fancy some new equipment?"
 
-[node name="HealthRegenTimer" type="Timer" parent="Player"]
+[node name="HealthRegenTimer2" type="Timer" parent="Player"]
 wait_time = 10.0
 autostart = true
 
