@@ -2391,6 +2391,10 @@ wait_time = 0.6
 wait_time = 3.0
 autostart = true
 
+[node name="HealthRegenTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [node name="PlayerUseAbilityComponent" type="Node" parent="." node_paths=PackedStringArray("user", "cooldown")]
 script = ExtResource("33_s0sr5")
 ability = ExtResource("34_adecb")
