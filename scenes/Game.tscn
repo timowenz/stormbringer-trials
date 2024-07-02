@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
 [ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="21_othxk"]
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="22_y4sap"]
-[ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="30_l1psa"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="30_l1psa"]
 [ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="31_to8xw"]
 [ext_resource type="Texture2D" uid="uid://bbv5nb1mfntfm" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="32_1n3u1"]
 [ext_resource type="Texture2D" uid="uid://bw7oy1ufe55pg" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="33_6gr14"]
@@ -2761,7 +2761,7 @@ position = Vector2(565, 198)
 
 [node name="ViodStatic" parent="." instance=ExtResource("5_j8iaf")]
 visible = false
-position = Vector2(-1698, 794)
+position = Vector2(-1626, 1266)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_72u3p")]
 offset = Vector2(0, 50)
@@ -3071,10 +3071,10 @@ shape = SubResource("RectangleShape2D_uhvea")
 
 [node name="EndGame" parent="." instance=ExtResource("2_4l62g")]
 position = Vector2(3064, 96)
-sceneName = "res://scenes/Game.tscn"
 
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
 position = Vector2(2600, 360)
+
 
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item1/Button" to="Player" method="_on_shop1_pressed" binds= [4]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed"]

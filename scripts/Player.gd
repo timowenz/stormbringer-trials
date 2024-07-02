@@ -14,13 +14,16 @@ var direction2: Vector2 = Vector2.ZERO
 @onready var anim = get_node("AnimationPlayer")
 @onready var anim_tree: AnimationTree = $AnimationTree
 @onready var healthbar = $CanvasLayer/HealthBar
+@onready var manabar = $CanvasLayer/ManaBar
 @onready var effects = $Effects
 @onready var hurtTimer = $HurtTimer
+@onready var manaregentimer = $ManaRegenTimer
 
 var is_attacking: bool = false;
 var is_crouching: bool = false;
 var can_jump: bool = true
 var health
+var mana
 var damage
 var jump_count = 0
 var max_jumps = 1
@@ -44,14 +47,17 @@ var last_direction: float = 0
 func _ready():
 	effects.play("RESET")
 	health = 100
+	mana = 100
 	damage = 20
 	can_jump = true
 	is_crouching = false
 	anim_tree.active = true
 	#state_machine = $AnimationTree.get("parameters/playback")
 	healthbar.init_health(health)
+	manabar.init_mana(mana)
 	$Node2D/AttackArea/AttackCol.disabled = true
 	$Node2D/AttackArea/AttackCol2.disabled = true
+	manaregentimer.connect("timeout", _on_timeout_mana_regen)
 
 func _process(delta):
 	if ($CanvasLayer3/Label):
@@ -78,7 +84,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY / 3
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps and can_jump:
+	if Input.is_action_just_pressed("jump") and jump_count < max_jumps and can_jump:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 		$SFX/SoundJump.play()
@@ -144,6 +150,27 @@ func _set_damage(value):
 
 func _increase_damage(value):
 	damage = damage + value
+
+func _set_mana(value):
+	mana = value
+	if mana <= 0:
+		mana = 0
+	manabar.mana = mana
+
+func reduce_mana(value):
+	mana -= value
+	if mana <= 0:
+		mana = 0
+	manabar.mana = mana
+
+func _regen_mana(value):
+	mana += value
+	if mana > 100:
+		mana= 100
+	manabar.mana = mana
+
+func _on_timeout_mana_regen():
+	_regen_mana(5)
 
 func die():
 	if has_died:
@@ -373,6 +400,6 @@ func accelerate(direction):
 func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
 
-
 func _on_shop3_pressed():
 	pass # Replace with function body.
+
