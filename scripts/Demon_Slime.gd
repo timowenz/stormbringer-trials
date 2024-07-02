@@ -114,12 +114,6 @@ func attack_state(_delta):
 		can_cast_spell = false
 		set_state(State.CAST)
 	elif player.position.distance_to(position) < 100 and can_smash:
-		if anim.frame == 1:
-			$SmashArea/CollisionShape2D.disabled = true
-		if anim.frame == 10:
-			$SmashArea/CollisionShape2D.disabled = false
-		if anim.frame == 16:
-			$SmashArea/CollisionShape2D.disabled = true
 		can_smash = false
 		set_state(State.SMASH)
 	else:
@@ -157,8 +151,13 @@ func idle_state(_delta):
 		set_state(State.WALK)
 
 func smash_state(_delta):
-	if player.position.distance_to(position) < 100 and can_smash:
-		can_smash = false
+	if player.position.distance_to(position) < 100:
+		if anim.frame == 1:
+			$SmashArea/CollisionShape2D.disabled = true
+		if anim.frame == 10:
+			$SmashArea/CollisionShape2D.disabled = false
+		if anim.frame == 16:
+			$SmashArea/CollisionShape2D.disabled = true
 
 func _on_smashcd_timeout():
 	set_state(State.WALK)
