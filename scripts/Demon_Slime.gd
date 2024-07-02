@@ -98,17 +98,17 @@ func _on_spellcd_timeout():
 	can_cast_spell = true
 
 func attack_state(_delta):
-	if player.position.distance_to(position) < 80:
+	if player.position.distance_to(position) < 80 and can_attack:
 		if anim.frame == 1:
 			$Node2D/Area2D/CollisionShape2D.disabled = true
 			$Node2D/Area2D/CollisionShape2D2.disabled = true
 		if anim.frame == 9:
 			$Node2D/Area2D/CollisionShape2D.disabled = false
 			$Node2D/Area2D/CollisionShape2D2.disabled = false
-			can_attack = false
 		if anim.frame == 13:
 			$Node2D/Area2D/CollisionShape2D.disabled = true
 			$Node2D/Area2D/CollisionShape2D2.disabled = true
+		can_attack = false
 	elif player.position.distance_to(position) < 200 and can_cast_spell:
 		can_cast_spell = false
 		set_state(State.CAST)
@@ -189,6 +189,7 @@ func _on_animated_sprite_2d_animation_finished():
 			#player.take_damage(ENEMEY_DAMAGE)
 			$Node2D/Area2D/CollisionShape2D.disabled = true
 			$Node2D/Area2D/CollisionShape2D2.disabled = true
+			set_state(State.WALK)
 		"cast":
 			spell.queue_free()
 			set_state(State.WALK)

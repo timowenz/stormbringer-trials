@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3gfcx77pf1" path="res://assets/Jozo2assets/AlchemyBundle.png" id="2_sxy8h"]
 [ext_resource type="Texture2D" uid="uid://by1iq2w3y7stt" path="res://assets/Jozo2assets/TilesetJozo2.png" id="3_fekj1"]
 [ext_resource type="PackedScene" uid="uid://c60h63oqga3qw" path="res://scenes/Player.tscn" id="3_tbw5e"]
-[ext_resource type="PackedScene" path="res://scenes/Background_Cave_Deamon.tscn" id="3_vfy14"]
+[ext_resource type="PackedScene" uid="uid://dakcrga62rygg" path="res://scenes/Background_Cave_Deamon.tscn" id="3_vfy14"]
 [ext_resource type="PackedScene" uid="uid://6tlbttjrpqk0" path="res://scenes/Demon_Slime.tscn" id="4_410s6"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="5_u41fu"]
 [ext_resource type="Texture2D" uid="uid://nw8du8dg1b56" path="res://selfdrawn/coin_anim.png" id="6_yk7da"]
@@ -813,6 +813,8 @@ position = Vector2(2352, 369)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -3)
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
 
 [node name="Rain" type="GPUParticles2D" parent="Player"]
 unique_name_in_owner = true
