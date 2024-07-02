@@ -27,6 +27,7 @@ autoplay = "ArcaneExplosion"
 
 [node name="HitBoxArea" type="Area2D" parent="GrowthOverTime" node_paths=PackedStringArray("damage_tick_timer")]
 script = ExtResource("3_eclnp")
+damage_per_tick = 10
 damage_tick_timer = NodePath("DamageTickTimer")
 damage_type = "arcane"
 
