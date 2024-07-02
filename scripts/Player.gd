@@ -400,6 +400,10 @@ func accelerate(direction):
 func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
 
-func _on_shop3_pressed():
+func _on_shop3_pressed(extra_arg_0):
+	if (GlobalVariables.coins >= extra_arg_0):
+		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+		mana = mana * 1.2
+	pass # Replace with function body.
 	pass # Replace with function body.
 
