@@ -32,6 +32,7 @@ var smash_damage = 30
 func _ready():
 	$Node2D/Area2D/CollisionShape2D.disabled = true
 	$Node2D/Area2D/CollisionShape2D2.disabled = true
+	$SmashArea/CollisionShape2D.disabled = true
 	set_state(State.IDLE)
 	healthbar.init_health(health)
 	smashCD.connect("timeout", _on_smashcd_timeout)
@@ -84,21 +85,21 @@ func set_state(new_state):
 			anim.play("transform")
 
 func cast_state(_delta):
-	if not spell:
-		spell = preload("res://scenes/BringerOfDeath/Spell.tscn").instantiate()
+	if (!spell):
+		spell = preload ("res://scenes/BringerOfDeath/Spell.tscn").instantiate()
 	spell.position = player.position
-	spell.offset = Vector2(15, -27)
-	if player.position.distance_to(position) < 200 and can_cast_spell:
-		if anim.frame == 0:
+	spell.offset = Vector2i(15, -27)
+	if (player.position.distance_to(position) < 200) and can_cast_spell:
+		if (anim.frame == 0):
 			get_parent().add_child(spell)
-		can_cast_spell = false
+		set_state(State.CAST)
 
 func _on_spellcd_timeout():
 	set_state(State.WALK)
 	can_cast_spell = true
 
 func attack_state(_delta):
-	if player.position.distance_to(position) < 80 and can_attack:
+	if player.position.distance_to(position) < 80:
 		if anim.frame == 1:
 			$Node2D/Area2D/CollisionShape2D.disabled = true
 			$Node2D/Area2D/CollisionShape2D2.disabled = true
@@ -109,10 +110,16 @@ func attack_state(_delta):
 			$Node2D/Area2D/CollisionShape2D.disabled = true
 			$Node2D/Area2D/CollisionShape2D2.disabled = true
 		can_attack = false
-	elif player.position.distance_to(position) < 200 and can_cast_spell:
+	elif (player.position.distance_to(position) < 200) and can_cast_spell:
 		can_cast_spell = false
 		set_state(State.CAST)
 	elif player.position.distance_to(position) < 100 and can_smash:
+		if anim.frame == 1:
+			$SmashArea/CollisionShape2D.disabled = true
+		if anim.frame == 10:
+			$SmashArea/CollisionShape2D.disabled = false
+		if anim.frame == 16:
+			$SmashArea/CollisionShape2D.disabled = true
 		can_smash = false
 		set_state(State.SMASH)
 	else:
@@ -142,7 +149,7 @@ func walk_state(_delta):
 
 func idle_state(_delta):
 	if not player_chase:
-		return
+		return set_state(State.IDLE)
 
 	if player.position.distance_to(position) < 80:
 		set_state(State.ATTACK)
@@ -180,19 +187,19 @@ func _on_area_2d_body_entered(body):
 		body.take_damage(attack_damage)
 
 func _on_animated_sprite_2d_animation_finished():
-	match anim.animation:
-		"dead":
-			queue_free()
-		"hit":
-			set_state(State.WALK)
-		"attack":
-			#player.take_damage(ENEMEY_DAMAGE)
-			$Node2D/Area2D/CollisionShape2D.disabled = true
-			$Node2D/Area2D/CollisionShape2D2.disabled = true
-			set_state(State.WALK)
-		"cast":
-			spell.queue_free()
-			set_state(State.WALK)
-			player.take_damage(ENEMEY_DAMAGE)
-		"smash":
-			set_state(State.IDLE)
+	if anim.animation == "dead":
+		queue_free()
+	if anim.animation == "hit":
+		set_state(State.WALK)
+	if anim.animation == "attack":
+		set_state(State.WALK)
+	if anim.animation == "cast":
+		spell.queue_free()
+		set_state(State.WALK)
+		player.take_damage(ENEMEY_DAMAGE)
+	if anim.animation == "smash":
+		set_state(State.WALK)
+
+func _on_smash_area_body_entered_smash(body):
+	if body.name == "Player":
+		body.take_damage(smash_damage)

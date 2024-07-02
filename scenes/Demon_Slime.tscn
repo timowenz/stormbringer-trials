@@ -445,7 +445,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_7ggf3")
 }],
-"loop": true,
+"loop": false,
 "name": &"cast",
 "speed": 10.0
 }, {
@@ -516,7 +516,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l3djw")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 15.0
 }, {
@@ -584,7 +584,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("50_stpuc")
 }],
-"loop": true,
+"loop": false,
 "name": &"fire_breath",
 "speed": 10.0
 }, {
@@ -604,7 +604,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w0ip6")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 10.0
 }, {
@@ -686,7 +686,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("33_23t0l")
 }],
-"loop": true,
+"loop": false,
 "name": &"smash",
 "speed": 10.0
 }, {
@@ -787,7 +787,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("65_4ntkr")
 }],
-"loop": true,
+"loop": false,
 "name": &"transform",
 "speed": 10.0
 }, {
@@ -863,9 +863,11 @@ frame_progress = 0.672226
 material = SubResource("ShaderMaterial_lbeyl")
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_wc6y3")
-animation = &"attack"
+animation = &"smash"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(2.5, 39)
 shape = SubResource("RectangleShape2D_jbihp")
 one_way_collision = true
@@ -906,19 +908,23 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_6nlct")
 
 [node name="SpellCD" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 20.0
+autostart = true
 
 [node name="SmashCD" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 30.0
+autostart = true
 
 [node name="AttackCD" type="Timer" parent="."]
+autostart = true
 
 [node name="SmashArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmashArea"]
 position = Vector2(-1.5, 68)
 shape = SubResource("RectangleShape2D_ipwpt")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]
+[connection signal="body_entered" from="SmashArea" to="." method="_on_smash_area_body_entered_smash"]
