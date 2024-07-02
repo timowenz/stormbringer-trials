@@ -2292,9 +2292,15 @@ texture = ExtResource("33_fl1cf")
 
 [node name="ManaBar" parent="CanvasLayer" instance=ExtResource("56_0x4ld")]
 offset_left = 23.0
-offset_top = 618.0
+offset_top = 616.0
 offset_right = 250.0
-offset_bottom = 627.0
+offset_bottom = 625.0
+scale = Vector2(1, 1.48)
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/ManaBar"]
+position = Vector2(113, 4.05406)
+scale = Vector2(2.8875, 1.82432)
+texture = ExtResource("33_fl1cf")
 
 [node name="SkillBar" type="BoxContainer" parent="CanvasLayer"]
 anchors_preset = 2
