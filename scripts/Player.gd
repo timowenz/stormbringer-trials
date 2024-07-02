@@ -18,6 +18,7 @@ var direction2: Vector2 = Vector2.ZERO
 @onready var effects = $Effects
 @onready var hurtTimer = $HurtTimer
 @onready var manaregentimer = $ManaRegenTimer
+@onready var healthregentimer = $HealthRegenTimer
 
 var is_attacking: bool = false;
 var is_crouching: bool = false;
@@ -45,6 +46,8 @@ const friction = 50
 var last_direction: float = 0
 
 func _ready():
+	can_win = false
+	bosses_killed = 0
 	effects.play("RESET")
 	health = GlobalVariables.health 
 	mana = GlobalVariables.mana
@@ -58,6 +61,7 @@ func _ready():
 	$Node2D/AttackArea/AttackCol.disabled = true
 	$Node2D/AttackArea/AttackCol2.disabled = true
 	manaregentimer.connect("timeout", _on_timeout_mana_regen)
+	healthregentimer.connect("timeout", _on_timeout_health_regen)
 
 func _process(delta):
 	if ($CanvasLayer3/Label):
@@ -144,6 +148,7 @@ func _heal(value):
 	if health + value > 100:
 		health = 100
 	health = health + value
+	healthbar.health = health
 
 func _set_damage(value):
 	damage = value
@@ -169,9 +174,18 @@ func _regen_mana(value):
 		mana= 100
 	manabar.mana = mana
 
+func _regen_health(value):
+	health += value
+	if health > 100:
+		health = 100
+	healthbar.health = health
+
 func _on_timeout_mana_regen():
 	_regen_mana(5)
 
+func _on_timeout_health_regen():
+	_regen_health(5)
+	
 func die():
 	if has_died:
 		$SFX/SoundDie.play()

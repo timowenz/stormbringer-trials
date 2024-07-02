@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxpqs2tubrqpk"]
+
+[ext_resource type="Texture2D" uid="uid://ci3hfvw2njddp" path="res://assets/Free RPG asset Pack/PACK/separate files/sandwich.png" id="1_42bot"]
+[ext_resource type="Script" path="res://scripts/sandwich.gd" id="1_uajns"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4tpv"]
+
+[node name="Sandwich" type="Area2D"]
+script = ExtResource("1_uajns")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_42bot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s4tpv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
