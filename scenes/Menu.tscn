@@ -174,7 +174,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1hjbe")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "- Tileset: [url]https://aamatniekss.itch.io/free-pixelart-tileset-cute-forest[/url]
+text = "- Tileset Level 1: [url]https://aamatniekss.itch.io/free-pixelart-tileset-cute-forest[/url]
 - Knight Asset: [url]https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character[/url]
 - Enemy Asset: [url]https://luizmelo.itch.io/monsters-creatures-fantasy[/url]
 - Boss Assets: [url]https://creativekind.itch.io/necromancer-free[/url] [url]https://creativekind.itch.io/nightborne-warrior[/url] 
@@ -187,7 +187,10 @@ text = "- Tileset: [url]https://aamatniekss.itch.io/free-pixelart-tileset-cute-f
 - Trader Sprites: [url]https://clembod.itch.io/warrior-free-animation-set[/url]
 - Demond Slime Sprites: [url]https://chierit.itch.io/boss-demon-slime[/url]
 - Fire Spell Sprites: [url]https://pimen.itch.io/fire-spell[/url]
-- Dark Speel Effect Sprites: [url]https://pimen.itch.io/dark-spell-effect[/url]"
+- Dark Spell Effect Sprites: [url]https://pimen.itch.io/dark-spell-effect[/url]
+- Tileset Level 3: [url]https://anokolisa.itch.io/legacy-adventure-pack-cemetery[/url]
+- Background Level 3: [url]https://lil-cthulhu.itch.io/pixel-art-cave-background[/url]
+- Itch.io game icon: ChatGPT"
 metadata/_edit_use_anchors_ = true
 
 [node name="MaintainersLabel" type="Label" parent="CreditSheet"]
@@ -291,15 +294,57 @@ position = Vector2(165, 589)
 scale = Vector2(0.287129, 0.287129)
 texture = ExtResource("13_wtcvo")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
+[node name="AdminMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Reset" type="Button" parent="AdminMenu"]
 offset_left = 968.0
 offset_top = 616.0
 offset_right = 1151.0
 offset_bottom = 647.0
 text = "Reset progress"
 
+[node name="Lvl3" type="Button" parent="AdminMenu"]
+offset_left = 833.0
+offset_top = 624.0
+offset_right = 1016.0
+offset_bottom = 655.0
+scale = Vector2(0.7, 0.7)
+text = "Jump to level 3"
+
+[node name="Lvl4" type="Button" parent="AdminMenu"]
+offset_left = 696.0
+offset_top = 624.0
+offset_right = 879.0
+offset_bottom = 655.0
+scale = Vector2(0.7, 0.7)
+text = "Jump to level 3"
+
+[node name="Lvl5" type="Button" parent="AdminMenu"]
+offset_left = 560.0
+offset_top = 624.0
+offset_right = 743.0
+offset_bottom = 655.0
+scale = Vector2(0.7, 0.7)
+text = "Jump to level 3"
+
+[node name="admin" type="Label" parent="."]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 624.0
+offset_right = 1150.0
+offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("3_1hjbe")
+theme_override_font_sizes/font_size = 20
+text = "Press F11 to toggle the Admin Menu"
+
 [connection signal="pressed" from="BottomControl/Play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BottomControl/Credits" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CreditSheet/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="AdminMenu/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="AdminMenu/Lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="AdminMenu/Lvl4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="AdminMenu/Lvl5" to="." method="_on_lvl_5_pressed"]

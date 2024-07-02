@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cd3fx0ymcfufu"]
+[gd_scene load_steps=41 format=3 uid="uid://dlggqymeto12r"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_swr4n"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="2_rbeuv"]

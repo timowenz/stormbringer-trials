@@ -48,6 +48,7 @@ func quit():
 	get_tree().quit()
 
 func next_level():
+	get_tree().paused = false
 	get_tree().change_scene_to_file(nextLevel)
 
 func main_menu():
@@ -63,3 +64,11 @@ func resume():
 
 func _on_game_over_timer_timeout():
 	can_game_over = true
+
+
+func _on_shop4_pressed(extra_arg_0):
+	pass # Replace with function body.
+
+
+func _on_trader_body_exited(body):
+	pass # Replace with function body.
