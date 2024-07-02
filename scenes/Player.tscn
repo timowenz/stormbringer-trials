@@ -2314,10 +2314,10 @@ offset_right = 260.0
 grow_vertical = 0
 
 [node name="SpellButton" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 392.0
-offset_top = 564.0
-offset_right = 440.0
-offset_bottom = 612.0
+offset_left = 390.0
+offset_top = 576.0
+offset_right = 438.0
+offset_bottom = 624.0
 texture_normal = ExtResource("35_8emvr")
 Spellkey = "E"
 timer = NodePath("../../PlayerUseAbilityComponent/FireSpinSpellCD")
@@ -2325,10 +2325,10 @@ user = NodePath("../..")
 mana_cost = 20
 
 [node name="SpellButton2" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 451.0
-offset_top = 564.0
-offset_right = 499.0
-offset_bottom = 612.0
+offset_left = 449.0
+offset_top = 576.0
+offset_right = 497.0
+offset_bottom = 624.0
 texture_normal = ExtResource("36_3vfsl")
 Spellkey = "R"
 timer = NodePath("../../FireBallSpell/FireBallSpellCD")
@@ -2336,10 +2336,10 @@ user = NodePath("../..")
 mana_cost = 30
 
 [node name="SpellButton3" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 274.0
-offset_top = 564.0
-offset_right = 322.0
-offset_bottom = 612.0
+offset_left = 272.0
+offset_top = 576.0
+offset_right = 320.0
+offset_bottom = 624.0
 texture_normal = ExtResource("37_0icme")
 Spellkey = "Q"
 timer = NodePath("../../ArcaneSpell/ArcaneSpellCD")
@@ -2347,10 +2347,10 @@ user = NodePath("../..")
 mana_cost = 25
 
 [node name="SpellButton4" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 333.0
-offset_top = 564.0
-offset_right = 381.0
-offset_bottom = 612.0
+offset_left = 331.0
+offset_top = 576.0
+offset_right = 379.0
+offset_bottom = 624.0
 texture_normal = ExtResource("38_v5hr5")
 Spellkey = "W"
 timer = NodePath("../../LightningStrike/LightningStrikeCD")
@@ -2398,6 +2398,10 @@ wait_time = 0.6
 
 [node name="ManaRegenTimer" type="Timer" parent="."]
 wait_time = 3.0
+autostart = true
+
+[node name="HealthRegenTimer" type="Timer" parent="."]
+wait_time = 10.0
 autostart = true
 
 [node name="PlayerUseAbilityComponent" type="Node" parent="." node_paths=PackedStringArray("user", "cooldown")]
