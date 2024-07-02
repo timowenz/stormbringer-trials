@@ -9229,6 +9229,7 @@ transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 
 [node name="Shop" type="Panel" parent="Player/CanvasLayer2"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -9368,6 +9369,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 100
 text = "Greetings, warrior! Fancy some new equipment?"
+
+[node name="HealthRegenTimer" type="Timer" parent="Player"]
+wait_time = 10.0
+autostart = true
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false

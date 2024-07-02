@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=139 format=3 uid="uid://c1ism2hhed2eb"]
+[gd_resource type="SpriteFrames" load_steps=139 format=3 uid="uid://dbyhn8f3uhnsn"]
 
 [ext_resource type="Texture2D" uid="uid://tpokxs3ycghq" path="res://assets/FireSpellAssets/12_nebula_spritesheet.png" id="1_gpqj5"]
 [ext_resource type="Texture2D" uid="uid://cvmcw6ie3evac" path="res://assets/FireSpellAssets/1_magicspell_spritesheet.png" id="2_5a11i"]
