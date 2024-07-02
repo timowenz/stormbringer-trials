@@ -48,6 +48,7 @@ func set_health(value):
 	health = value
 
 func take_damage(damage):
+	$HurtSound.play()
 	health -= damage
 	healthbar.health = health
 	if (health <= 0):

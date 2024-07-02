@@ -1,4 +1,5 @@
-[gd_scene load_steps=40 format=3 uid="uid://ky2gom1mn5ji"]
+[gd_scene load_steps=41 format=3 uid="uid://c5yfpagb605ud"]
+
 
 [ext_resource type="Script" path="res://scripts/Goblin.gd" id="1_tju1j"]
 [ext_resource type="Texture2D" uid="uid://dkk0off25mmeu" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Attack.png" id="3_enf0v"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://06hh05vhsv8w" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Run.png" id="5_257cq"]
 [ext_resource type="Texture2D" uid="uid://losm0tex6d4y" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Idle.png" id="5_scvhx"]
 [ext_resource type="Texture2D" uid="uid://bbx3iok5gorvn" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Goblin/Take Hit.png" id="6_lhdus"]
+[ext_resource type="AudioStream" uid="uid://c5k3ttvxm7vdq" path="res://assets/SFX/Knight-Monsters-Sounds-Pack/hurt3_monster.wav" id="8_yg3ej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osu26"]
 atlas = ExtResource("3_enf0v")
@@ -273,6 +275,10 @@ shape = SubResource("CircleShape2D_k8uyl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
 position = Vector2(-12, 10)
 shape = SubResource("CircleShape2D_s8f8f")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_yg3ej")
+volume_db = 8.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]

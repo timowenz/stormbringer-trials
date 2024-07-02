@@ -399,3 +399,7 @@ func accelerate(direction):
 
 func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
+
+func _on_shop3_pressed():
+	pass # Replace with function body.
+
