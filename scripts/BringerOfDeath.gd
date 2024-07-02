@@ -115,6 +115,7 @@ func get_health():
 
 func take_damage(damage):
 	if (health <= 0):
+		%Player.can_win = true
 		return set_state(State.DEAD)
 	health -= damage
 	healthbar.health = health

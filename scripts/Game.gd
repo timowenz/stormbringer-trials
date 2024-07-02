@@ -48,6 +48,7 @@ func quit():
 	get_tree().quit()
 
 func next_level():
+	get_tree().paused = false
 	get_tree().change_scene_to_file(nextLevel)
 
 func main_menu():

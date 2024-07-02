@@ -1,6 +1,7 @@
-[gd_scene load_steps=59 format=3 uid="uid://cvp6q15hryxcn"]
+[gd_scene load_steps=60 format=3 uid="uid://cvp6q15hryxcn"]
 
 [ext_resource type="PackedScene" uid="uid://ck003hduftie7" path="res://scenes/level_2/Background_Level_2.tscn" id="1_36svg"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_htsqu"]
 [ext_resource type="PackedScene" uid="uid://c60h63oqga3qw" path="res://scenes/Player.tscn" id="2_h4uew"]
 [ext_resource type="Texture2D" uid="uid://vu8r2cjp1s8j" path="res://assets/tileset/Decors.png" id="3_73ysp"]
 [ext_resource type="Texture2D" uid="uid://dg7evlocf15rc" path="res://selfdrawn/clock.png" id="3_gnjmt"]
@@ -9530,10 +9531,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrwgc"]
 
 [node name="Level3" type="Node2D"]
+script = ExtResource("1_htsqu")
+nextLevel = "res://scenes/Deamon_Level.tscn"
 
 [node name="Background" parent="." instance=ExtResource("1_36svg")]
 
 [node name="Player" parent="." instance=ExtResource("2_h4uew")]
+unique_name_in_owner = true
 position = Vector2(100, 66)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -9797,9 +9801,9 @@ position = Vector2(3862, -203)
 position = Vector2(-8, 104)
 shape = SubResource("RectangleShape2D_u4g4w")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("10_3vnkf")]
-position = Vector2(3719, -64)
-sceneName = "Daemon_Level"
+[node name="EndGame" parent="." instance=ExtResource("10_3vnkf")]
+position = Vector2(3720, -64)
+sceneName = "res://scenes/Deamon_Level.tscn"
 
 [node name="Coins" type="Node2D" parent="."]
 
