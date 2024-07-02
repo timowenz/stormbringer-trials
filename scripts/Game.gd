@@ -68,3 +68,7 @@ func _on_game_over_timer_timeout():
 
 func _on_shop4_pressed(extra_arg_0):
 	pass # Replace with function body.
+
+
+func _on_trader_body_exited(body):
+	pass # Replace with function body.

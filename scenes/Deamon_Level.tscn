@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b1aielqx0cg8v"]
+[gd_scene load_steps=53 format=3 uid="uid://b1aielqx0cg8v"]
 
 [ext_resource type="Texture2D" uid="uid://dowdjjjrm3cct" path="res://assets/tileset/Level_4_Deamon/Legacy Adventure Pack - CEMETERY/Assets/Assets.png" id="1_cicwm"]
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_nbn5g"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="14_htipc"]
 [ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="15_3ge6t"]
 [ext_resource type="AudioStream" uid="uid://swdeyex32o80" path="res://assets/music/Platformer Music 158815.mp3" id="16_imyl8"]
+[ext_resource type="AudioStream" uid="uid://cpho7p70xpgd7" path="res://assets/SFX/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav" id="18_w21y2"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="18_wmm0y"]
 [ext_resource type="PackedScene" uid="uid://k4vsxqmldmyy" path="res://scenes/FinalWonScreen.tscn" id="19_8lwd6"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="19_v3six"]
@@ -1026,6 +1027,11 @@ text = "Greetings, warrior! Fancy some new equipment?"
 wait_time = 10.0
 autostart = true
 
+[node name="SandwichSound" type="AudioStreamPlayer2D" parent="Player"]
+unique_name_in_owner = true
+stream = ExtResource("18_w21y2")
+volume_db = -10.0
+
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("15_3ge6t")]
@@ -1054,7 +1060,7 @@ position = Vector2(896, 320)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_imyl8")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 
 [node name="WonGame" parent="." instance=ExtResource("19_8lwd6")]
@@ -1141,3 +1147,5 @@ position = Vector2(704, 520)
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed" binds= [4]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item3/Button3" to="Player" method="_on_shop3_pressed" binds= [4]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item4/Button4" to="Player" method="_on_shop4_pressed" binds= [4]]
+[connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
+[connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]

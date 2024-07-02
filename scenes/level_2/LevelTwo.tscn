@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cvp6q15hryxcn"]
+[gd_scene load_steps=61 format=3 uid="uid://cvp6q15hryxcn"]
 
 [ext_resource type="PackedScene" uid="uid://ck003hduftie7" path="res://scenes/level_2/Background_Level_2.tscn" id="1_36svg"]
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_htsqu"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b4ahma1cub6ar" path="res://scenes/FlyingEye.tscn" id="12_cpwkv"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="12_j6tod"]
 [ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="13_0ftfe"]
+[ext_resource type="AudioStream" uid="uid://cpho7p70xpgd7" path="res://assets/SFX/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav" id="14_7jt2i"]
 [ext_resource type="Texture2D" uid="uid://bbv5nb1mfntfm" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="14_yreuq"]
 [ext_resource type="Texture2D" uid="uid://bw7oy1ufe55pg" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="15_cr41g"]
 [ext_resource type="Texture2D" uid="uid://cve532knyavsf" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_4.png" id="16_cssid"]
@@ -9579,7 +9580,7 @@ offset_top = 160.0
 offset_right = 5240.0
 offset_bottom = 260.0
 scale = Vector2(2, 2)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_t6ew2")
 theme_override_font_sizes/font_size = 100
 text = "00"
@@ -9767,6 +9768,11 @@ theme_override_fonts/font = ExtResource("4_t6ew2")
 theme_override_font_sizes/font_size = 100
 text = "Greetings, warrior! Fancy some new equipment?"
 
+[node name="SandwichSound" type="AudioStreamPlayer2D" parent="Player"]
+unique_name_in_owner = true
+stream = ExtResource("14_7jt2i")
+volume_db = -10.0
+
 [node name="Decor" type="TileMap" parent="."]
 z_index = -1
 tile_set = SubResource("TileSet_p618d")
@@ -9862,7 +9868,7 @@ position = Vector2(-1626, 1266)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_6wr1m")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 
 [node name="WonGame" parent="." instance=ExtResource("31_bqmjh")]
@@ -9896,3 +9902,5 @@ position = Vector2(3264, -36)
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed" binds= [4]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item3/Button3" to="Player" method="_on_shop3_pressed" binds= [4]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item4/Button4" to="Player" method="_on_shop4_pressed" binds= [4]]
+[connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
+[connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]
