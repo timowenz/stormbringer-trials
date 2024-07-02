@@ -9891,3 +9891,8 @@ position = Vector2(2600, -32)
 
 [node name="Sandwich4" parent="." instance=ExtResource("34_g054g")]
 position = Vector2(3264, -36)
+
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item1/Button" to="Player" method="_on_shop1_pressed" binds= [4]]
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed" binds= [4]]
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item3/Button3" to="Player" method="_on_shop3_pressed" binds= [4]]
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item4/Button4" to="Player" method="_on_shop4_pressed" binds= [4]]
