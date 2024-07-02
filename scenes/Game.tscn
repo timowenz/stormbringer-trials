@@ -24,9 +24,9 @@
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="16_sb8b8"]
 [ext_resource type="Texture2D" uid="uid://covi8uf5gvly5" path="res://assets/Free RPG asset Pack/PACK/separate files/shield_02.png" id="17_tnyh3"]
 [ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_73mc2"]
-[ext_resource type="Texture2D" uid="uid://cga320uwwu7qb" path="res://assets/Free RPG asset Pack/PACK/separate files/headgear_01.png" id="19_vnows"]
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_cqcwe"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
+[ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="21_othxk"]
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="22_y4sap"]
 [ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="30_l1psa"]
 [ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="31_to8xw"]
@@ -2760,7 +2760,7 @@ position = Vector2(565, 198)
 
 [node name="ViodStatic" parent="." instance=ExtResource("5_j8iaf")]
 visible = false
-position = Vector2(-1698, 794)
+position = Vector2(-1626, 1266)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_72u3p")]
 offset = Vector2(0, 50)
@@ -2842,116 +2842,154 @@ theme_override_fonts/font = ExtResource("16_sb8b8")
 theme_override_font_sizes/font_size = 20
 text = "00"
 
-[node name="Shop" type="Panel" parent="Player"]
+[node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("22_y4sap")
+volume_db = -10.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Player"]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="Shop" type="Panel" parent="Player/CanvasLayer2"]
 unique_name_in_owner = true
-visible = false
-offset_left = -120.0
-offset_top = -146.0
-offset_right = 128.0
-offset_bottom = -34.0
-
-[node name="Sprite2D4" type="Sprite2D" parent="Player/Shop"]
-position = Vector2(32, 56)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("18_73mc2")
-
-[node name="Label" type="Label" parent="Player/Shop/Sprite2D4"]
-offset_left = -9.60001
-offset_top = -16.0
-offset_right = 105.4
-offset_bottom = 33.0
-scale = Vector2(0.166603, 0.166603)
-text = "+ 20% 
-attack damage"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="Player/Shop/Sprite2D4"]
-offset_left = -8.4
-offset_top = 9.2
-offset_right = 90.6
-offset_bottom = 40.2
-scale = Vector2(0.187444, 0.194176)
-text = "Buy (3 gold)"
-
-[node name="Sprite2D" type="Sprite2D" parent="Player/Shop"]
-position = Vector2(96, 56)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("19_vnows")
-
-[node name="Label" type="Label" parent="Player/Shop/Sprite2D"]
-offset_left = -9.60001
-offset_top = -16.0
-offset_right = 105.4
-offset_bottom = 33.0
-scale = Vector2(0.166603, 0.166603)
-text = "+ 20% 
-armor"
-horizontal_alignment = 1
-
-[node name="Button2" type="Button" parent="Player/Shop/Sprite2D"]
-offset_left = -9.6
-offset_top = 9.2
-offset_right = 89.4
-offset_bottom = 40.2
-scale = Vector2(0.187444, 0.194176)
-text = "Buy (3 gold)"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Player/Shop"]
-position = Vector2(160, 56)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("20_cqcwe")
-
-[node name="Label" type="Label" parent="Player/Shop/Sprite2D2"]
-offset_left = -9.60001
-offset_top = -16.0
-offset_right = 105.4
-offset_bottom = 33.0
-scale = Vector2(0.166603, 0.166603)
-text = "+ 40% 
-armor"
-horizontal_alignment = 1
-
-[node name="Button3" type="Button" parent="Player/Shop/Sprite2D2"]
-offset_left = -9.6
-offset_top = 9.2
-offset_right = 89.4
-offset_bottom = 40.2
-scale = Vector2(0.187444, 0.194176)
-text = "Buy (3 gold)"
-
-[node name="Sprite2D3" type="Sprite2D" parent="Player/Shop"]
-position = Vector2(224, 54)
-scale = Vector2(2.5, 2.48257)
-texture = ExtResource("21_j35hs")
-
-[node name="Label" type="Label" parent="Player/Shop/Sprite2D3"]
-offset_left = -9.60001
-offset_top = -16.0
-offset_right = 105.4
-offset_bottom = 33.0
-scale = Vector2(0.166603, 0.166603)
-text = "+ 20% 
-speed"
-horizontal_alignment = 1
-
-[node name="Button2" type="Button" parent="Player/Shop/Sprite2D3"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = 2.0
-offset_right = 81.0
-offset_bottom = 33.0
+offset_left = 1344.0
+offset_top = -74.0
+offset_right = 3344.0
+offset_bottom = 926.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.187444, 0.194176)
-text = "Buy (3 gold)"
 
-[node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource("22_y4sap")
-volume_db = -10.0
+[node name="Item1" type="Sprite2D" parent="Player/CanvasLayer2/Shop"]
+position = Vector2(310, 500)
+scale = Vector2(20, 20)
+texture = ExtResource("18_73mc2")
+
+[node name="Label2" type="Label" parent="Player/CanvasLayer2/Shop/Item1"]
+offset_left = -11.0
+offset_top = -17.5
+offset_right = 509.0
+offset_bottom = 185.5
+scale = Vector2(0.04, 0.04)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 100
+text = "+ 20% 
+attack damage"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Player/CanvasLayer2/Shop/Item1"]
+offset_left = -9.5
+offset_top = 8.0
+offset_right = 958.5
+offset_bottom = 216.0
+scale = Vector2(0.02, 0.021)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 150
+text = "Buy (4 gold)"
+
+[node name="Item2" type="Sprite2D" parent="Player/CanvasLayer2/Shop"]
+position = Vector2(790, 500)
+scale = Vector2(20, 20)
+texture = ExtResource("20_cqcwe")
+
+[node name="Label6" type="Label" parent="Player/CanvasLayer2/Shop/Item2"]
+offset_left = -10.75
+offset_top = -17.5
+offset_right = 509.25
+offset_bottom = 185.5
+scale = Vector2(0.04, 0.04)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 100
+text = "+ 20% 
+armor"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Player/CanvasLayer2/Shop/Item2"]
+offset_left = -9.5
+offset_top = 8.0
+offset_right = 958.5
+offset_bottom = 216.0
+scale = Vector2(0.02, 0.021)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 150
+text = "Buy (4 gold)"
+
+[node name="Item3" type="Sprite2D" parent="Player/CanvasLayer2/Shop"]
+position = Vector2(1240, 500)
+scale = Vector2(20, 20)
+texture = ExtResource("21_othxk")
+
+[node name="Label7" type="Label" parent="Player/CanvasLayer2/Shop/Item3"]
+offset_left = -10.25
+offset_top = -17.5
+offset_right = 509.75
+offset_bottom = 185.5
+scale = Vector2(0.04, 0.04)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 100
+text = "+20%
+mana"
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="Player/CanvasLayer2/Shop/Item3"]
+offset_left = -9.0
+offset_top = 8.0
+offset_right = 959.0
+offset_bottom = 216.0
+scale = Vector2(0.02, 0.021)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 150
+text = "Buy (4 gold)"
+
+[node name="Item4" type="Sprite2D" parent="Player/CanvasLayer2/Shop"]
+position = Vector2(1705, 500)
+scale = Vector2(20, 19.864)
+texture = ExtResource("21_j35hs")
+
+[node name="Label8" type="Label" parent="Player/CanvasLayer2/Shop/Item4"]
+offset_left = -9.0
+offset_top = -17.6198
+offset_right = 511.0
+offset_bottom = 185.38
+scale = Vector2(0.04, 0.04)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 100
+text = "+ 20% 
+speed"
+horizontal_alignment = 1
+
+[node name="Button4" type="Button" parent="Player/CanvasLayer2/Shop/Item4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 0.0547733
+offset_right = 952.0
+offset_bottom = 208.055
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.02, 0.021)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 150
+text = "Buy (4 gold)"
+
+[node name="Label" type="Label" parent="Player/CanvasLayer2/Shop"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 865.0
+offset_right = 2040.0
+offset_bottom = 965.0
+scale = Vector2(0.846, 0.846)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_sb8b8")
+theme_override_font_sizes/font_size = 100
+text = "Greetings, warrior! Fancy some new equipment?"
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false
@@ -3036,6 +3074,10 @@ sceneName = "LevelTwo"
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
 position = Vector2(2600, 360)
 
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item1/Button" to="Player" method="_on_shop1_pressed" binds= [4]]
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed" binds= [4]]
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item3/Button3" to="Player" method="_on_shop3_pressed" binds= [4]]
+[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item4/Button4" to="Player" method="_on_shop4_pressed" binds= [4]]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
 [connection signal="body_entered" from="Trader" to="Player" method="_on_trader_body_entered"]
 [connection signal="body_exited" from="Trader" to="Player" method="_on_trader_body_exited"]

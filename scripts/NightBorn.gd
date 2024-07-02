@@ -9,6 +9,8 @@ var player_chase = false
 var damage = 15
 signal dead
 @onready var healthbar = $HealthBar
+const vulnerable = "lightning"
+const resistance = "fire"
 
 func _ready():
 	healthbar.init_health(health)

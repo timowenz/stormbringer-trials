@@ -50,7 +50,8 @@ func next_level():
 	get_tree().change_scene_to_file(nextLevel)
 
 func main_menu():
-	get_tree().change_scene_to_file("res://scenes/Main.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 
 func new_game():
 	get_tree().reload_current_scene()
