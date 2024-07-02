@@ -74,7 +74,7 @@ func set_state(new_state):
 		State.HIT:
 			anim.play("hit")
 		State.DEAD:
-			anim.play("dead")
+			anim.play("death")
 		State.CAST:
 			anim.play("cast")
 		State.SMASH:
@@ -173,8 +173,7 @@ func get_health():
 func take_damage(damage):
 	if health <= 0:
 		%Player.can_win = true
-		set_state(State.DEAD)
-		return
+		return set_state(State.DEAD)
 	health -= damage
 	healthbar.health = health
 	set_state(State.HIT)
@@ -186,7 +185,7 @@ func _on_area_2d_body_entered(body):
 		body.take_damage(attack_damage)
 
 func _on_animated_sprite_2d_animation_finished():
-	if anim.animation == "dead":
+	if anim.animation == "death":
 		queue_free()
 	if anim.animation == "hit":
 		set_state(State.WALK)

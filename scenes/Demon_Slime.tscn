@@ -863,7 +863,7 @@ frame_progress = 0.672226
 material = SubResource("ShaderMaterial_lbeyl")
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_wc6y3")
-animation = &"smash"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
