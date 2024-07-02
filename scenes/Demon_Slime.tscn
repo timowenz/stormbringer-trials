@@ -837,7 +837,7 @@ animations = [{
 size = Vector2(65, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5eh6"]
-size = Vector2(46, 20)
+size = Vector2(69, 20)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8olbn"]
 radius = 16.0
@@ -863,8 +863,7 @@ frame_progress = 0.672226
 material = SubResource("ShaderMaterial_lbeyl")
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_wc6y3")
-animation = &"cast"
-frame_progress = 0.421522
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 39)
@@ -890,7 +889,7 @@ offset_bottom = -27.0
 [node name="Area2D" type="Area2D" parent="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(-81, 69)
+position = Vector2(-69.5, 69)
 shape = SubResource("RectangleShape2D_q5eh6")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Area2D"]
@@ -911,7 +910,10 @@ wait_time = 10.0
 [node name="SmashCD" type="Timer" parent="."]
 wait_time = 20.0
 
+[node name="AttackCD" type="Timer" parent="."]
+
 [node name="SmashArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmashArea"]
 position = Vector2(-1.5, 68)

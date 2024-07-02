@@ -14,9 +14,11 @@ const vulnerable = ""
 const resistance = "fire"
 var can_smash = true
 var can_cast_spell = true
+var can_attack = true
 var attack_damage = 20
 var spell_damage = 50
 var smash_damage = 30
+
 
 @onready var anim = $AnimatedSprite2D
 @onready var healthbar = $HealthBar
@@ -25,6 +27,7 @@ var smash_damage = 30
 @onready var cast_audio = $Deamon_Swing
 @onready var smashCD = $SmashCD
 @onready var spellCD = $SpellCD
+@onready var attackCD = $AttackCD
 
 func _ready():
 	$Node2D/Area2D/CollisionShape2D.disabled = true
@@ -33,6 +36,7 @@ func _ready():
 	healthbar.init_health(health)
 	smashCD.connect("timeout", _on_smashcd_timeout)
 	spellCD.connect("timeout", _on_spellcd_timeout)
+	attackCD.connect("timeout", _on_attackcd_timeout)
 
 func _physics_process(delta):
 	match state:
@@ -90,21 +94,32 @@ func cast_state(_delta):
 		can_cast_spell = false
 
 func _on_spellcd_timeout():
+	set_state(State.WALK)
 	can_cast_spell = true
 
 func attack_state(_delta):
 	if player.position.distance_to(position) < 80:
-		if anim.frame == 4:
+		if anim.frame == 1:
+			$Node2D/Area2D/CollisionShape2D.disabled = true
+			$Node2D/Area2D/CollisionShape2D2.disabled = true
+		if anim.frame == 9:
 			$Node2D/Area2D/CollisionShape2D.disabled = false
 			$Node2D/Area2D/CollisionShape2D2.disabled = false
+			can_attack = false
+		if anim.frame == 13:
+			$Node2D/Area2D/CollisionShape2D.disabled = true
+			$Node2D/Area2D/CollisionShape2D2.disabled = true
 	elif player.position.distance_to(position) < 200 and can_cast_spell:
-		set_state(State.CAST)
 		can_cast_spell = false
+		set_state(State.CAST)
 	elif player.position.distance_to(position) < 100 and can_smash:
-		set_state(State.SMASH)
 		can_smash = false
+		set_state(State.SMASH)
 	else:
 		set_state(State.WALK)
+
+func _on_attackcd_timeout():
+	can_attack = true
 
 func walk_state(_delta):
 	var direction = (player.position - position).normalized()
@@ -136,10 +151,10 @@ func idle_state(_delta):
 
 func smash_state(_delta):
 	if player.position.distance_to(position) < 100 and can_smash:
-		set_state(State.SMASH)
 		can_smash = false
 
 func _on_smashcd_timeout():
+	set_state(State.WALK)
 	can_smash = true
 
 func _on_detection_area_2d_body_entered(body):
@@ -151,6 +166,7 @@ func get_health():
 
 func take_damage(damage):
 	if health <= 0:
+		%Player.can_win = true
 		set_state(State.DEAD)
 		return
 	health -= damage
@@ -170,7 +186,9 @@ func _on_animated_sprite_2d_animation_finished():
 		"hit":
 			set_state(State.WALK)
 		"attack":
-			player.take_damage(ENEMEY_DAMAGE)
+			#player.take_damage(ENEMEY_DAMAGE)
+			$Node2D/Area2D/CollisionShape2D.disabled = true
+			$Node2D/Area2D/CollisionShape2D2.disabled = true
 		"cast":
 			spell.queue_free()
 			set_state(State.WALK)
