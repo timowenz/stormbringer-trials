@@ -854,7 +854,6 @@ collision_layer = 5
 script = ExtResource("1_tw0mv")
 
 [node name="AnimatedSprite2D_slime" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_phdh6")
 animation = &"walk"
 frame_progress = 0.672226
@@ -863,7 +862,7 @@ frame_progress = 0.672226
 material = SubResource("ShaderMaterial_lbeyl")
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_wc6y3")
-animation = &"death"
+animation = &"transform"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
@@ -900,7 +899,6 @@ position = Vector2(-96, 36)
 shape = SubResource("CapsuleShape2D_8olbn")
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -924,6 +922,7 @@ autostart = true
 position = Vector2(-1.5, 68)
 shape = SubResource("RectangleShape2D_ipwpt")
 
+[connection signal="animation_finished" from="AnimatedSprite2D_slime" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]
