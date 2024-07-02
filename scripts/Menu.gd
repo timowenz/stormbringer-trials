@@ -23,4 +23,8 @@ func _on_close_button_pressed():
 
 func _on_reset_pressed():
 	GlobalVariables.coins = 0
+	GlobalVariables.health = 100
+	GlobalVariables.damage = 20
+	GlobalVariables.speed = 190
+	GlobalVariables.mana = 100
 	pass 

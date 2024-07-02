@@ -6,7 +6,7 @@ const JUMP_HEIGHT = 400
 var health = 200
 var player = null
 var player_chase = false
-var damage = 15
+var damage = 25
 signal dead
 @onready var healthbar = $HealthBar
 const vulnerable = "lightning"
@@ -47,6 +47,7 @@ func set_health(value):
 	health = value
 
 func take_damage(damage):
+	
 	health -= damage
 	healthbar.health = get_health()
 	if (health <= 0):

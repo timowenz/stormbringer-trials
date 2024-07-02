@@ -2852,6 +2852,7 @@ transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 
 [node name="Shop" type="Panel" parent="Player/CanvasLayer2"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3053,6 +3054,9 @@ position = Vector2(641, 237)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("30_l1psa")]
 position = Vector2(641, 209)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("30_l1psa")]
+position = Vector2(21, 40)
 
 [node name="Trader" type="Area2D" parent="."]
 position = Vector2(1224, 376)

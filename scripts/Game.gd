@@ -27,6 +27,7 @@ func _ready():
 	$WonGame.hide()
 
 func add_boss_killed():
+	print("boss killed")
 	$Player.bosses_killed += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

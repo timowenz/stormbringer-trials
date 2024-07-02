@@ -8943,5 +8943,4 @@ shape = SubResource("RectangleShape2D_fofox")
 
 [connection signal="pressed" from="Player/Shop/Sprite2D4/Button" to="Player" method="_on_shop1_pressed" binds= [3]]
 [connection signal="pressed" from="Player/Shop/Sprite2D/Button2" to="Player" method="_on_shop2_pressed" binds= [3]]
-[connection signal="pressed" from="Player/Shop/Sprite2D2/Button3" to="Player" method="_on_button_3_pressed" binds= [3]]
 [connection signal="pressed" from="Player/Shop/Sprite2D3/Button2" to="Player" method="_on_shop4_pressed" binds= [3]]

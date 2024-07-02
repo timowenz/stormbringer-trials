@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 enum State {FLIGHT, ATTACK, DEAD, HIT}
 
-const SPEED = 100
-const ENEMEY_DAMAGE = 15
+const SPEED = 110
+const ENEMEY_DAMAGE = 25
 var health = 100
 var state = State.FLIGHT
 var player = null

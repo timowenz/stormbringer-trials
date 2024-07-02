@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 enum State {IDLE, WALK, ATTACK, DEAD, HIT, CAST}
 
-const SPEED = 100
+const SPEED = 130
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
 const ENEMEY_DAMAGE = 15
-var health = 100
+var health = 120
 var state = State.IDLE
 var player = null
 var player_chase = false

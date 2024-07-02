@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #var state_machine
-var SPEED = 190
+var SPEED = GlobalVariables.speed
 const JUMP_VELOCITY = -450.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -46,9 +46,9 @@ var last_direction: float = 0
 
 func _ready():
 	effects.play("RESET")
-	health = 100
-	mana = 100
-	damage = 20
+	health = GlobalVariables.health 
+	mana = GlobalVariables.mana
+	damage = GlobalVariables.damage
 	can_jump = true
 	is_crouching = false
 	anim_tree.active = true
@@ -358,26 +358,25 @@ func _on_trader_body_exited(body):
 func _on_shop1_pressed(extra_arg_0):
 	if (GlobalVariables.coins >= extra_arg_0):
 		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		damage = damage * 1.2
+		GlobalVariables.damage = GlobalVariables.damage * 1.2
+		damage = GlobalVariables.damage
 		$BuySound.play()
 	pass # Replace with function body.
 
 func _on_shop2_pressed(extra_arg_0):
 	if (GlobalVariables.coins >= extra_arg_0):
 		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		health = health * 1.2
-	pass # Replace with function body.
-
-func _on_button_3_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		health = health * 1.4
+		GlobalVariables.health = GlobalVariables.health * 1.2
+		health = GlobalVariables.health
+		$BuySound.play()
 	pass # Replace with function body.
 
 func _on_shop4_pressed(extra_arg_0):
 	if (GlobalVariables.coins >= extra_arg_0):
 		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		SPEED = SPEED * 1.2
+		GlobalVariables.speed = GlobalVariables.speed * 1.2
+		SPEED = GlobalVariables.speed
+		$BuySound.play()
 	pass # Replace with function body.
 
 func _on_attack_timer_timeout():
@@ -403,7 +402,9 @@ func add_friction():
 func _on_shop3_pressed(extra_arg_0):
 	if (GlobalVariables.coins >= extra_arg_0):
 		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		mana = mana * 1.2
+		GlobalVariables.mana = GlobalVariables.mana * 1.2
+		mana = GlobalVariables.mana
+		$BuySound.play()
 	pass # Replace with function body.
 	pass # Replace with function body.
 

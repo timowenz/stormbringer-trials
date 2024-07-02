@@ -9444,7 +9444,6 @@ position = Vector2(1184, 264)
 [connection signal="pressed" from="Player/CanvasLayer3/WeatherButton" to="WeatherMechanics" method="_on_weather_button_pressed"]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item1/Button" to="Player" method="_on_shop1_pressed" binds= [3]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed" binds= [3]]
-[connection signal="pressed" from="Player/CanvasLayer2/Shop/Item3/Button3" to="Player" method="_on_button_3_pressed" binds= [3]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item4/Button4" to="Player" method="_on_shop4_pressed" binds= [3]]
 [connection signal="body_entered" from="Coins/Coin" to="Player" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Coins/Coin2" to="Player" method="_on_coin_body_entered"]
