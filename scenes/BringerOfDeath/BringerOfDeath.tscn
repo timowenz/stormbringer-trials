@@ -231,7 +231,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y60ey"]
-size = Vector2(24, 38)
+size = Vector2(24, 33)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uv06c"]
 radius = 15.0
@@ -250,7 +250,7 @@ animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 26)
+position = Vector2(0, 23.5)
 shape = SubResource("RectangleShape2D_y60ey")
 
 [node name="HealthBar" parent="." instance=ExtResource("40_pryr0")]
