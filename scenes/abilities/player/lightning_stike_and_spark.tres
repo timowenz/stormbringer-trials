@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://blb2ogxps8r1r"]
+[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://cpdftqu0rjcei"]
 
 [ext_resource type="Texture2D" uid="uid://br2vywoo87df0" path="res://assets/SpellAssets/Magic Pack 9 files/spritesheets/Lightning.png" id="1_h4ccv"]
 [ext_resource type="Texture2D" uid="uid://bshqmt0j4csqu" path="res://assets/SpellAssets/Magic Pack 9 files/spritesheets/spark.png" id="2_itjgd"]

@@ -2701,7 +2701,6 @@ animations = [{
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8yes0")
-nextLevel = "res://scenes/Game.tscn"
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -3070,6 +3069,7 @@ shape = SubResource("RectangleShape2D_uhvea")
 
 [node name="EndGame" parent="." instance=ExtResource("2_4l62g")]
 position = Vector2(3064, 96)
+sceneName = "LevelTwo"
 
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
 position = Vector2(2600, 360)

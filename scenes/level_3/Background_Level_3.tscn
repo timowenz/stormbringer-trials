@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck003hduftie7"]
+
+[ext_resource type="Texture2D" uid="uid://yc5bx8xl5eca" path="res://assets/Platformer - desert/Background/BG-sky.png" id="1_bampb"]
+[ext_resource type="Texture2D" uid="uid://d138p4rkp8qpf" path="res://assets/Platformer - desert/Background/BG-mountains.png" id="2_juh51"]
+[ext_resource type="Texture2D" uid="uid://1v2lsjxasij6" path="res://assets/Platformer - desert/Background/BG-sun.png" id="3_5fx8j"]
+[ext_resource type="Texture2D" uid="uid://dkr2a6gejr256" path="res://assets/Platformer - desert/Background/BG-ruins.png" id="4_j8ex8"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(-11, -144)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(725, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(373.5, 160.5)
+scale = Vector2(2.83203, 1.52734)
+texture = ExtResource("1_bampb")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(-11, -144)
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(725, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(373.5, 160.5)
+scale = Vector2(2.83203, 1.52734)
+texture = ExtResource("2_juh51")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(-11, -144)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(725, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(43, -6)
+texture = ExtResource("3_5fx8j")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(-11, -144)
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(725, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(373.5, 160.5)
+scale = Vector2(2.83203, 1.52734)
+texture = ExtResource("4_j8ex8")

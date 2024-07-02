@@ -54,7 +54,7 @@ func main_menu():
 	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 
 func new_game():
-	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	get_tree().reload_current_scene()
 
 func resume():
 	$Pause.hide()
