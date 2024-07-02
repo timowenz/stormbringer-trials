@@ -334,6 +334,17 @@ func _on_animation_tree_animation_finished(anim_name):
 		anim_tree["parameters/conditions/idle"] = true
 		is_damaged = false
 
+
+func player():
+	pass
+
+func give_damage():
+	pass
+
+
+func _on_deamon_damage_area_entered(area):
+	if area.has_method("give_damage_to_player_from_deamon"):
+		take_damage(45)
 func _on_dash_timer_timeout() -> void:
 	dashing = false
 
