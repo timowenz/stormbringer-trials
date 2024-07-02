@@ -3077,7 +3077,7 @@ position = Vector2(3064, 96)
 sceneName = "LevelTwo"
 
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
-position = Vector2(299, 177)
+position = Vector2(2611, 309)
 
 [node name="Sandwich" parent="." instance=ExtResource("36_wro8r")]
 position = Vector2(692, 229)
