@@ -1,0 +1,81 @@
+[gd_scene load_steps=18 format=3 uid="uid://chpmp7jqm08t2"]
+
+[ext_resource type="Texture2D" uid="uid://olqpiaeqjudd" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_1.png" id="1_82u40"]
+[ext_resource type="Texture2D" uid="uid://qabsacf1q0jj" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_2.png" id="2_vs61u"]
+[ext_resource type="Texture2D" uid="uid://lna4cnx7728y" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_3.png" id="3_ptp3e"]
+[ext_resource type="Texture2D" uid="uid://ds8ejt0cqe0ic" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_4.png" id="4_lr1tg"]
+[ext_resource type="Texture2D" uid="uid://bswo8qx7rurxy" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_5.png" id="5_yuqsp"]
+[ext_resource type="Texture2D" uid="uid://vynuvca4denu" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_6.png" id="6_enh3x"]
+[ext_resource type="Texture2D" uid="uid://cpt4mm7qaei86" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_7.png" id="7_6tbp5"]
+[ext_resource type="Texture2D" uid="uid://dwkiufbrkvyak" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_8.png" id="8_j7uh3"]
+[ext_resource type="Texture2D" uid="uid://g847ju1600r" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_9.png" id="9_0qcyj"]
+[ext_resource type="Texture2D" uid="uid://dr57s0c883ftj" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_10.png" id="10_g63br"]
+[ext_resource type="Texture2D" uid="uid://d3xa4b1tx6gjy" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_11.png" id="11_av3ig"]
+[ext_resource type="Texture2D" uid="uid://cjex7adt7myno" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_12.png" id="12_ucghb"]
+[ext_resource type="Texture2D" uid="uid://chdb54ofawawf" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_13.png" id="13_c17if"]
+[ext_resource type="Texture2D" uid="uid://ewcp1cwrl8sj" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_14.png" id="14_qteyf"]
+[ext_resource type="Texture2D" uid="uid://c1msyxioeyump" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_15.png" id="15_hbvxq"]
+[ext_resource type="Texture2D" uid="uid://7ma2dhsxind5" path="res://assets/enemy_asset/Bringer-Of-Death/Individual Sprite/Spell/Bringer-of-Death_Spell_16.png" id="16_5xbm2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gxyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_82u40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vs61u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ptp3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lr1tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yuqsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_enh3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6tbp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j7uh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0qcyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g63br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_av3ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ucghb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c17if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qteyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hbvxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5xbm2")
+}],
+"loop": false,
+"name": &"spell",
+"speed": 5.0
+}]
+
+[node name="AnimatedSpell" type="AnimatedSprite2D"]
+position = Vector2(1, -22)
+scale = Vector2(0.88172, 0.88172)
+sprite_frames = SubResource("SpriteFrames_1gxyd")
+animation = &"spell"
+autoplay = "spell"

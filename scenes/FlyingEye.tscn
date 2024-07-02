@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://b4ahma1cub6ar"]
+[gd_scene load_steps=34 format=3 uid="uid://b4ahma1cub6ar"]
 
 [ext_resource type="Script" path="res://scripts/FlyingEye.gd" id="1_abbvh"]
 [ext_resource type="Texture2D" uid="uid://rgtvpqodun4h" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Attack.png" id="2_kprva"]
 [ext_resource type="Texture2D" uid="uid://dxnnnluavnixx" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Flight.png" id="2_rugrf"]
 [ext_resource type="Texture2D" uid="uid://clyvbpcu0nfjr" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Death.png" id="3_6o33v"]
 [ext_resource type="Texture2D" uid="uid://dg1muwc3mckew" path="res://assets/enemy_asset/Monsters_Creatures_Fantasy/Flying eye/Take Hit.png" id="5_bnfnu"]
+[ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="6_bfymn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhiec"]
 atlas = ExtResource("2_kprva")
@@ -146,7 +147,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t627b")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -192,29 +193,32 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l35no")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut0kv"]
-size = Vector2(29, 37)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_lf8gk"]
 radius = 186.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut0kv"]
+size = Vector2(29, 37)
+
 [node name="FlyingEye" type="CharacterBody2D"]
-position = Vector2(65, 63)
+position = Vector2(65, 64)
+collision_layer = 5
 script = ExtResource("1_abbvh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bympy")
-animation = &"attack"
+animation = &"flight"
 autoplay = "flight"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 1.5)
-shape = SubResource("RectangleShape2D_ut0kv")
+[node name="HealthBar" parent="." instance=ExtResource("6_bfymn")]
+offset_left = -20.0
+offset_top = -28.0
+offset_right = 26.0
+offset_bottom = -24.0
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -222,6 +226,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
 shape = SubResource("CircleShape2D_lf8gk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 1.5)
+shape = SubResource("RectangleShape2D_ut0kv")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]

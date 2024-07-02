@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4btkxk16lt28"]
+
+[sub_resource type="GDScript" id="GDScript_x6lq3"]
+script/source = "extends Node2D
+
+@onready var dashTimer = $DashTimer
+
+func start_dash(duration):
+	dashTimer.wait_time = duration
+	dashTimer.start()
+
+func is_dashing():
+	return dashTimer.is_stopped()
+"
+
+[node name="Dash" type="Node2D"]
+script = SubResource("GDScript_x6lq3")
+
+[node name="DashTimer" type="Timer" parent="."]
+one_shot = true
