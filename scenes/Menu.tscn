@@ -112,9 +112,8 @@ texture_pressed = ExtResource("7_185el")
 [node name="Label" type="Label" parent="BottomControl/Credits"]
 layout_mode = 0
 offset_left = 15.0
-offset_top = 0.367785
 offset_right = 155.0
-offset_bottom = 50.3678
+offset_bottom = 50.0
 scale = Vector2(0.35, 0.35)
 theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 50
@@ -129,10 +128,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 134.0
-offset_top = 189.0
-offset_right = -134.0
-offset_bottom = -45.0
+offset_left = 136.0
+offset_top = 168.0
+offset_right = -132.0
+offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1qdgf")
@@ -150,11 +149,11 @@ texture_pressed = ExtResource("7_7f0j4")
 [node name="CreditsLabel" type="Label" parent="CreditSheet"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0189243
-anchor_top = 0.0241228
-anchor_right = 0.108566
-anchor_bottom = 0.114035
-theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
+anchor_left = 0.454751
+anchor_top = 0.02657
+anchor_right = 0.549774
+anchor_bottom = 0.116482
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1hjbe")
 theme_override_font_sizes/font_size = 30
 text = "CREDITS"
@@ -171,7 +170,7 @@ anchor_bottom = 0.929952
 offset_right = 1.28746e-05
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/default_color = Color(0.421731, 0.421731, 0.421731, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_1hjbe")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -180,19 +179,27 @@ text = "- Tileset: [url]https://aamatniekss.itch.io/free-pixelart-tileset-cute-f
 - Enemy Asset: [url]https://luizmelo.itch.io/monsters-creatures-fantasy[/url]
 - Boss Assets: [url]https://creativekind.itch.io/necromancer-free[/url] [url]https://creativekind.itch.io/nightborne-warrior[/url] 
 - Music Assets: [url]https://pixabay.com/music/search/platformer/[/url]
-- Font Asset: [url]https://fonts.google.com/specimen/VT323?preview.text=Hel[/url]"
+- Font Asset: [url]https://fonts.google.com/specimen/VT323?preview.text=Hel[/url]
+- Tileset Level 2: [url]https://oisougabo.itch.io/free-platformer-16x16[/url]
+- Decoration tilest: [url]https://gandalfhardcore.itch.io/free-pixel-art-male-and-female-character[/url]
+- Trader Icons: [url]https://ssugmi.itch.io/16x16-rpg-assets[/url]
+- Bringer of Death Sprites: [url]https://clembod.itch.io/bringer-of-death-free[/url]
+- Trader Sprites: [url]https://clembod.itch.io/warrior-free-animation-set[/url]
+- Demond Slime Sprites: [url]https://chierit.itch.io/boss-demon-slime[/url]
+- Fire Spell Sprites: [url]https://pimen.itch.io/fire-spell[/url]
+- Dark Speel Effect Sprites: [url]https://pimen.itch.io/dark-spell-effect[/url]"
 metadata/_edit_use_anchors_ = true
 
 [node name="MaintainersLabel" type="Label" parent="CreditSheet"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.126697
-anchor_top = 0.0169082
-anchor_right = 0.79638
-anchor_bottom = 0.111111
-theme_override_colors/font_color = Color(0.423529, 0.423529, 0.423529, 1)
+anchor_left = 0.0622172
+anchor_top = 0.103865
+anchor_right = 0.7319
+anchor_bottom = 0.198068
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1hjbe")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "Maintainers: Slaven Dzinic, Niels Kochert, Philipp Mestenhauser, Timo Wenz 
 "
 horizontal_alignment = 1
