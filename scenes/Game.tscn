@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_j35hs"]
 [ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="21_othxk"]
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="22_y4sap"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="30_l1psa"]
+[ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="30_l1psa"]
 [ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="31_to8xw"]
 [ext_resource type="Texture2D" uid="uid://bbv5nb1mfntfm" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="32_1n3u1"]
 [ext_resource type="Texture2D" uid="uid://bw7oy1ufe55pg" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="33_6gr14"]
@@ -2744,11 +2744,8 @@ layer_0/tile_data = PackedInt32Array(655525, 65536, 0, 655526, 131072, 0, 655527
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="NightBorn" parent="Enemies" instance=ExtResource("8_s60dt")]
+unique_name_in_owner = true
 position = Vector2(1722, 453)
-
-[node name="Necromancer" parent="Enemies" instance=ExtResource("7_btixl")]
-visible = false
-position = Vector2(2124, 223)
 
 [node name="FlyingEye" parent="Enemies" instance=ExtResource("9_vhevj")]
 position = Vector2(720, 554)
@@ -2768,6 +2765,7 @@ offset = Vector2(0, 50)
 transform = Transform2D(1, 0, 0, 1, 0, 50)
 
 [node name="Player" parent="." instance=ExtResource("2_i6stb")]
+unique_name_in_owner = true
 position = Vector2(94, 256)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -3077,10 +3075,12 @@ position = Vector2(3064, 96)
 sceneName = "LevelTwo"
 
 [node name="Necromancer" parent="." instance=ExtResource("7_btixl")]
+unique_name_in_owner = true
 position = Vector2(2611, 309)
 
 [node name="Sandwich" parent="." instance=ExtResource("36_wro8r")]
-position = Vector2(692, 229)
+unique_name_in_owner = true
+position = Vector2(2600, 360)
 
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item1/Button" to="Player" method="_on_shop1_pressed" binds= [4]]
 [connection signal="pressed" from="Player/CanvasLayer2/Shop/Item2/Button2" to="Player" method="_on_shop2_pressed" binds= [4]]

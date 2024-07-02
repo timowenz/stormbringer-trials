@@ -50,6 +50,10 @@ func take_damage(damage):
 	health -= damage
 	healthbar.health = health
 	if (health <= 0):
+		# if nightborn dies and necromancer is health <= 0, player wins
+
+		if (!is_instance_valid( %Nightborn)):
+			%Player.can_win = true
 		dead.emit()
 		queue_free()
 

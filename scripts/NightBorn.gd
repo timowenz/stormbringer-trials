@@ -51,6 +51,8 @@ func take_damage(damage):
 	health -= damage
 	healthbar.health = get_health()
 	if (health <= 0):
+		if (!is_instance_valid( %Necromancer)):
+			%Player.can_win = true
 		dead.emit()
 		queue_free()
 
