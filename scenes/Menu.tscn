@@ -215,6 +215,7 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("3_qoq06")
 volume_db = -15.0
 autoplay = true
+bus = &"Music"
 
 [node name="CanvasLayer" type="Panel" parent="."]
 layout_mode = 0

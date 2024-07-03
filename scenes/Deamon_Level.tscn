@@ -1064,10 +1064,10 @@ position = Vector2(896, 320)
 stream = ExtResource("16_imyl8")
 volume_db = -20.0
 autoplay = true
+bus = &"Music"
 
 [node name="WonGame" parent="." instance=ExtResource("19_8lwd6")]
 process_mode = 2
-visible = false
 
 [node name="GameOver" parent="." instance=ExtResource("18_wmm0y")]
 process_mode = 2

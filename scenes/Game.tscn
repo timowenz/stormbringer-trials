@@ -3015,6 +3015,7 @@ texture = ExtResource("5_cdtrw")
 stream = ExtResource("7_fenwb")
 volume_db = -20.0
 autoplay = true
+bus = &"Music"
 
 [node name="WonGame" parent="." instance=ExtResource("14_h6jtw")]
 process_mode = 2

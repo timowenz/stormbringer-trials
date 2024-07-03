@@ -328,7 +328,7 @@ func _on_attack_area_body_entered(body):
 	print(body)
 	if body.name == "EndGame":
 		return
-	if body.name != "TileMap" and body.name != "EndGame":
+	if body.name != "TileMap" and body.name != "EndGame" and body.name != "Border1" and body.name != "Border2":
 		body.take_damage(damage)
 
 func hit():

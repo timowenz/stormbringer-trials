@@ -9872,6 +9872,7 @@ position = Vector2(-1626, 1266)
 stream = ExtResource("30_6wr1m")
 volume_db = -20.0
 autoplay = true
+bus = &"Music"
 
 [node name="WonGame" parent="." instance=ExtResource("31_bqmjh")]
 process_mode = 2
