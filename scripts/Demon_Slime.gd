@@ -164,18 +164,19 @@ func _on_attackcd_timeout():
 	can_attack = true
 
 func walk_state(_delta):
-	var direction = (player.position - position).normalized()
-	velocity.y += GRAVITY
-	velocity.x = direction.x * SPEED
-
-	if player.position.x < position.x:
-		anim.flip_h = false
-		anim.offset.x = 0
-		$Node2D.scale.x = 1
-	else:
-		anim.flip_h = true
-		anim.offset.x = 0
-		$Node2D.scale.x = -1
+	if phase_two:
+		var direction = (player.position - position).normalized()
+		velocity.y += GRAVITY
+		velocity.x = direction.x * SPEED
+		
+		if player.position.x < position.x:
+			anim.flip_h = false
+			anim.offset.x = 0
+			$Node2D.scale.x = 1
+		else:
+			anim.flip_h = true
+			anim.offset.x = 0
+			$Node2D.scale.x = -1
 
 	if phase_two:
 		if player.position.distance_to(position) < 80:
