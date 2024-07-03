@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3gfcx77pf1" path="res://assets/Jozo2assets/AlchemyBundle.png" id="2_sxy8h"]
 [ext_resource type="Texture2D" uid="uid://by1iq2w3y7stt" path="res://assets/Jozo2assets/TilesetJozo2.png" id="3_fekj1"]
 [ext_resource type="PackedScene" uid="uid://c60h63oqga3qw" path="res://scenes/Player.tscn" id="3_tbw5e"]
-[ext_resource type="PackedScene" uid="uid://dwkkdfol3lso7" path="res://scenes/Background_Cave_Deamon.tscn" id="3_vfy14"]
+[ext_resource type="PackedScene" uid="uid://dakcrga62rygg" path="res://scenes/Background_Cave_Deamon.tscn" id="3_vfy14"]
 [ext_resource type="PackedScene" uid="uid://6tlbttjrpqk0" path="res://scenes/Demon_Slime.tscn" id="4_410s6"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="5_u41fu"]
 [ext_resource type="Texture2D" uid="uid://nw8du8dg1b56" path="res://selfdrawn/coin_anim.png" id="6_yk7da"]
@@ -804,11 +804,11 @@ layer_0/tile_data = PackedInt32Array(1966195, 0, 0, 2031731, 0, 1, 2097267, 0, 2
 [node name="Parallax_Cave" parent="." instance=ExtResource("3_vfy14")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_410s6")]
-position = Vector2(1975, 339)
+position = Vector2(2018, 339)
 
 [node name="Player" parent="." instance=ExtResource("3_tbw5e")]
 unique_name_in_owner = true
-position = Vector2(80, 475)
+position = Vector2(2308, 385)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -3)

@@ -9394,6 +9394,7 @@ autostart = true
 unique_name_in_owner = true
 stream = ExtResource("30_tvloa")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Mockup2x" type="Sprite2D" parent="."]
 visible = false

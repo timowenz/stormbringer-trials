@@ -9621,6 +9621,7 @@ text = "00"
 [node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("8_xi6yo")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="Player"]
 scale = Vector2(0.2, 0.2)
@@ -9772,6 +9773,7 @@ text = "Greetings, warrior! Fancy some new equipment?"
 unique_name_in_owner = true
 stream = ExtResource("14_7jt2i")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Decor" type="TileMap" parent="."]
 z_index = -1

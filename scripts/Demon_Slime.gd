@@ -52,6 +52,7 @@ func _ready():
 func phase_two_handler():
 	anim = anim1
 	phase_one = false
+	phase_two = true
 	health = 300
 	healthbar.health = health
 	$AnimatedSprite2D.show()
