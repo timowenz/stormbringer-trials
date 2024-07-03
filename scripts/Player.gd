@@ -373,37 +373,50 @@ func _on_coin_body_entered():
 func _on_trader_body_entered(body):
 	if (body.name == "Player"):
 		%Shop.visible = true
-	pass # Replace with function body.
-
+		if(!GlobalVariables.damage<=GlobalVariables.damageCAP):
+			$CanvasLayer2/Shop/Item1/Button.text = "Sold Out"
+		if(!GlobalVariables.health<=GlobalVariables.healthCAP):
+			$CanvasLayer2/Shop/Item2/Button2.text = "Sold Out"
+		if(!GlobalVariables.speed<=GlobalVariables.speedCAP):
+			$CanvasLayer2/Shop/Item4/Button4.text = "Sold Out"
+		if(!GlobalVariables.mana<=GlobalVariables.manaCAP):
+			$CanvasLayer2/Shop/Item3/Button3.text = "Sold Out"
 func _on_trader_body_exited(body):
 	if (body.name == "Player"):
 		%Shop.visible = false
 	pass # Replace with function body.
 
 func _on_shop1_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		GlobalVariables.damage = GlobalVariables.damage * 1.2
-		damage = GlobalVariables.damage
-		$BuySound.play()
-	pass # Replace with function body.
+	if(GlobalVariables.damage<=GlobalVariables.damageCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.damage = GlobalVariables.damage * 1.2
+			damage = GlobalVariables.damage
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item1/Button.text = "Sold Out"
 
 func _on_shop2_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		GlobalVariables.health = GlobalVariables.health * 1.2
-		health = GlobalVariables.health
-		$BuySound.play()
-	pass # Replace with function body.
-
+	if(GlobalVariables.health<=GlobalVariables.healthCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.health = GlobalVariables.health * 1.2
+			health = GlobalVariables.health
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item2/Button2.text = "Sold Out"
 func _on_shop4_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		GlobalVariables.speed = GlobalVariables.speed * 1.2
-		SPEED = GlobalVariables.speed
-		$BuySound.play()
-	pass # Replace with function body.
-
+	if(GlobalVariables.speed<=GlobalVariables.speedCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.speed = GlobalVariables.speed * 1.2
+			SPEED = GlobalVariables.speed
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item4/Button4.text = "Sold Out"
 func _on_attack_timer_timeout():
 	can_attack = true
 
@@ -425,11 +438,13 @@ func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
 
 func _on_shop3_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		GlobalVariables.mana = GlobalVariables.mana * 1.2
-		mana = GlobalVariables.mana
-		$BuySound.play()
-	pass # Replace with function body.
-	pass # Replace with function body.
+	if(GlobalVariables.mana<=GlobalVariables.manaCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.mana = GlobalVariables.mana * 1.2
+			mana = GlobalVariables.mana
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item3/Button3.text = "Sold Out"
 
