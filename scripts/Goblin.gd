@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100
+const SPEED = 120
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
 var health = 150
@@ -9,6 +9,8 @@ var player_chase = false
 var damage = 20
 signal dead
 @onready var healthbar = $HealthBar
+const vulnerable = "arcane"
+const resistance = "fire"
 
 func _ready():
 	$AnimatedSprite2D.play("goblin_idle")
@@ -46,6 +48,7 @@ func set_health(value):
 	health = value
 
 func take_damage(damage):
+	$HurtSound.play()
 	health -= damage
 	healthbar.health = health
 	if (health <= 0):

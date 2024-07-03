@@ -27,6 +27,7 @@ func _ready():
 	$WonGame.hide()
 
 func add_boss_killed():
+	print("boss killed")
 	$Player.bosses_killed += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,13 +48,15 @@ func quit():
 	get_tree().quit()
 
 func next_level():
+	get_tree().paused = false
 	get_tree().change_scene_to_file(nextLevel)
 
 func main_menu():
-	get_tree().change_scene_to_file("res://scenes/Main.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 
 func new_game():
-	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	get_tree().reload_current_scene()
 
 func resume():
 	$Pause.hide()
@@ -61,3 +64,11 @@ func resume():
 
 func _on_game_over_timer_timeout():
 	can_game_over = true
+
+
+func _on_shop4_pressed(extra_arg_0):
+	pass # Replace with function body.
+
+
+func _on_trader_body_exited(body):
+	pass # Replace with function body.

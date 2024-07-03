@@ -18,7 +18,7 @@ The game is a 2D platformer where you can walk, jump and fight against creatures
 - [Slaven](https://github.com/Dzino3)
 - [Timo](https://github.com/timowenz)
 - [Niels](https://github.com/vescito)
-- [Philipp]()
+- [Philipp](https://github.com/xXMestiXx)
 
 ## License
 

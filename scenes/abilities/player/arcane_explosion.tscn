@@ -8,7 +8,7 @@
 [sub_resource type="Curve" id="Curve_6ac5l"]
 min_value = 1.0
 max_value = 3.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.479077, 1.10234), 0.0, 0.0, 0, 0, Vector2(0.643579, 1.15636), 0.0, 0.0, 0, 0, Vector2(0.828283, 1.14961), 0.0, 0.0, 0, 0, Vector2(0.994228, 1.28468), 3.37395, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.479077, 1.10234), 0.0, 0.0, 0, 0, Vector2(0.643579, 1.15636), 0.0, 0.0, 0, 0, Vector2(0.828283, 1.14961), 0.0, 0.0, 0, 0, Vector2(0.945166, 1.40623), 3.37395, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_imcj1"]
@@ -27,6 +27,7 @@ autoplay = "ArcaneExplosion"
 
 [node name="HitBoxArea" type="Area2D" parent="GrowthOverTime" node_paths=PackedStringArray("damage_tick_timer")]
 script = ExtResource("3_eclnp")
+damage_per_tick = 10
 damage_tick_timer = NodePath("DamageTickTimer")
 damage_type = "arcane"
 

@@ -1,0 +1,930 @@
+[gd_scene load_steps=173 format=3 uid="uid://6tlbttjrpqk0"]
+
+[ext_resource type="Texture2D" uid="uid://d4mbexbyuip8n" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="1_70j47"]
+[ext_resource type="Script" path="res://scripts/Demon_Slime.gd" id="1_tw0mv"]
+[ext_resource type="Texture2D" uid="uid://bvx2a26fobg7u" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/03_take_hit/take_hit_1.png" id="2_4bbwl"]
+[ext_resource type="Texture2D" uid="uid://n0j6gqcc7vwh" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_1.png" id="2_q776y"]
+[ext_resource type="Shader" uid="uid://cw6d1wjv8qbmc" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/hitflashDemon_Slime.tres" id="2_wcevf"]
+[ext_resource type="Texture2D" uid="uid://bl2uem0hvteb3" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/03_take_hit/take_hit_2.png" id="3_7natg"]
+[ext_resource type="Texture2D" uid="uid://dkdlem8uwk5c3" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_2.png" id="3_h1x7q"]
+[ext_resource type="Texture2D" uid="uid://d2jfohiym1fh2" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/03_take_hit/take_hit_3.png" id="4_51acg"]
+[ext_resource type="Texture2D" uid="uid://d4i1x5bphkjmk" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/10_demon_cast_spell/demon_cast_spell_1.png" id="4_g0l7v"]
+[ext_resource type="Texture2D" uid="uid://qvixtdyyx8jk" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_3.png" id="4_kvxaw"]
+[ext_resource type="Texture2D" uid="uid://cp22u1drbb74e" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/03_take_hit/take_hit_4.png" id="5_1kfra"]
+[ext_resource type="Texture2D" uid="uid://c1a5wrpgy5g6l" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/10_demon_cast_spell/demon_cast_spell_2.png" id="5_am23u"]
+[ext_resource type="Texture2D" uid="uid://6vttuuyo7ygp" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_4.png" id="5_dfkax"]
+[ext_resource type="Texture2D" uid="uid://cdfduf6etghck" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/10_demon_cast_spell/demon_cast_spell_3.png" id="6_1lf0a"]
+[ext_resource type="Texture2D" uid="uid://c1ipxy55ea4qx" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_5.png" id="6_eipgf"]
+[ext_resource type="Texture2D" uid="uid://ipn3yjv6ya4k" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/03_take_hit/take_hit_5.png" id="6_xix52"]
+[ext_resource type="Texture2D" uid="uid://bp8oi7fcgnwm2" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/10_demon_cast_spell/demon_cast_spell_4.png" id="7_dg7j7"]
+[ext_resource type="Texture2D" uid="uid://viqvw1gi7de2" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/03_take_hit/take_hit_6.png" id="7_kg63t"]
+[ext_resource type="Texture2D" uid="uid://cn7t5dyjotmun" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_6.png" id="7_ygo1x"]
+[ext_resource type="Texture2D" uid="uid://dxukhud7jc21y" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_1.png" id="8_bkfi5"]
+[ext_resource type="Texture2D" uid="uid://bthixturvhx3c" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/10_demon_cast_spell/demon_cast_spell_5.png" id="8_jrvw8"]
+[ext_resource type="Texture2D" uid="uid://bn0skujquapgj" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/01_idle/idle_1.png" id="8_p5oj8"]
+[ext_resource type="Texture2D" uid="uid://u4ofoebhsonv" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/10_demon_cast_spell/demon_cast_spell_6.png" id="9_7ggf3"]
+[ext_resource type="Texture2D" uid="uid://bjstf6uaxsqki" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_2.png" id="9_uu5r2"]
+[ext_resource type="Texture2D" uid="uid://7gbfjskiqapu" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/01_idle/idle_2.png" id="9_yuvdf"]
+[ext_resource type="Texture2D" uid="uid://bmtxu6sefpr1o" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_3.png" id="10_f0xlv"]
+[ext_resource type="Texture2D" uid="uid://b5k83h347a4bo" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/01_idle/idle_3.png" id="10_qa5vu"]
+[ext_resource type="Texture2D" uid="uid://mfito1smyt3d" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/01_idle/idle_4.png" id="11_3lexj"]
+[ext_resource type="Texture2D" uid="uid://b0raf6osltf5o" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_4.png" id="11_ix70y"]
+[ext_resource type="Texture2D" uid="uid://bsmyl7h4bve6i" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/01_idle/idle_5.png" id="12_lhcog"]
+[ext_resource type="Texture2D" uid="uid://dix7ioqcg12wq" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_5.png" id="12_qktq4"]
+[ext_resource type="Texture2D" uid="uid://ensgywle768v" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/01_idle/idle_6.png" id="13_0qwyl"]
+[ext_resource type="Texture2D" uid="uid://cl8v0fhp2kbmh" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_6.png" id="13_nx5fv"]
+[ext_resource type="Texture2D" uid="uid://741r0dvuabgp" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_1.png" id="14_3586d"]
+[ext_resource type="Texture2D" uid="uid://dhomwuxva6a2b" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_7.png" id="14_yy3wl"]
+[ext_resource type="Texture2D" uid="uid://cdmkdrejgrrk" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_8.png" id="15_wvwub"]
+[ext_resource type="Texture2D" uid="uid://ds0nueyfdk8eb" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_2.png" id="15_x2s6k"]
+[ext_resource type="Texture2D" uid="uid://chfqosyafnh6t" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_1.png" id="16_espsw"]
+[ext_resource type="Texture2D" uid="uid://cdmmdpr3oot2j" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_9.png" id="16_wrbu3"]
+[ext_resource type="Texture2D" uid="uid://bejljsa8v0j5k" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_3.png" id="16_yp0nl"]
+[ext_resource type="Texture2D" uid="uid://tn81ogyuidmq" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_4.png" id="17_5eacm"]
+[ext_resource type="Texture2D" uid="uid://70mblcdd0cyj" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_10.png" id="17_jfsjs"]
+[ext_resource type="Texture2D" uid="uid://cswthk8cgysv3" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_2.png" id="17_od12b"]
+[ext_resource type="Texture2D" uid="uid://c7riwd1vvsdwm" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_5.png" id="18_3ae48"]
+[ext_resource type="Texture2D" uid="uid://ctewbxtx6hjaa" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_11.png" id="18_3tea5"]
+[ext_resource type="Texture2D" uid="uid://cpvg6sg1klsu3" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_3.png" id="18_kfhbu"]
+[ext_resource type="Texture2D" uid="uid://cmtnuu2bkbete" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_4.png" id="19_tge80"]
+[ext_resource type="Texture2D" uid="uid://btoqx2ndo27wr" path="res://assets/enemy_asset/boss_demon_slime_FREE_v1.0/individual sprites/02_demon_walk/demon_walk_12.png" id="19_uuh1f"]
+[ext_resource type="Texture2D" uid="uid://bytpdacft7a7p" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_6.png" id="19_vewqf"]
+[ext_resource type="Texture2D" uid="uid://b3h8yyu1kl1rw" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_7.png" id="20_h8oag"]
+[ext_resource type="Texture2D" uid="uid://c3uah5bob0c66" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_5.png" id="20_rmmv0"]
+[ext_resource type="Texture2D" uid="uid://dnhuf8sgbg3mx" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/02_move/move_8.png" id="21_c85av"]
+[ext_resource type="Texture2D" uid="uid://be8ya5p6321lc" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_6.png" id="21_tlyed"]
+[ext_resource type="Texture2D" uid="uid://3i1qkxnwi5bq" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_7.png" id="22_8c2rc"]
+[ext_resource type="AudioStream" uid="uid://l54kh5s3suiw" path="res://assets/music/Deamon_death.mp3" id="22_u5s2l"]
+[ext_resource type="AudioStream" uid="uid://d3m4txpjqnx6h" path="res://assets/music/Deamon_Hit.mp3" id="23_k1plq"]
+[ext_resource type="Texture2D" uid="uid://ctnisvnilb4m1" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_8.png" id="23_rfqqt"]
+[ext_resource type="Texture2D" uid="uid://bcxtmtbtim1q7" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_9.png" id="24_7mgnb"]
+[ext_resource type="AudioStream" uid="uid://bdg2lrqj4bid6" path="res://assets/music/Deamon_Swing.mp3" id="24_edgwx"]
+[ext_resource type="Texture2D" uid="uid://c8qww1y7cw3lx" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_10.png" id="25_ptwt2"]
+[ext_resource type="Texture2D" uid="uid://b6jwub4gmymg1" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_11.png" id="26_74rqg"]
+[ext_resource type="Texture2D" uid="uid://dv7ojmusflha8" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_12.png" id="27_wi61o"]
+[ext_resource type="Texture2D" uid="uid://oa34jsdvcwq8" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_13.png" id="28_4cdnc"]
+[ext_resource type="Texture2D" uid="uid://dvcvgm7i4a0c6" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_14.png" id="29_bsjwp"]
+[ext_resource type="Texture2D" uid="uid://c4nk24fd82kg6" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_15.png" id="30_rg6s2"]
+[ext_resource type="Texture2D" uid="uid://gal3fhmxdrju" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_1.png" id="30_st2pc"]
+[ext_resource type="Texture2D" uid="uid://vh70t6iq8ov7" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_2.png" id="31_41c5l"]
+[ext_resource type="Texture2D" uid="uid://bjxji28d8udbj" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_16.png" id="31_d04yu"]
+[ext_resource type="PackedScene" uid="uid://bfnmde8f8404r" path="res://scenes/HealthBar.tscn" id="31_lshrt"]
+[ext_resource type="Texture2D" uid="uid://ckcd8bwo3sxvj" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_3.png" id="32_2nahy"]
+[ext_resource type="Texture2D" uid="uid://cj5k2rl8jl660" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_17.png" id="32_q4l48"]
+[ext_resource type="Texture2D" uid="uid://bk28bf4m33phn" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/08_demon_smash/demon_smash_18.png" id="33_23t0l"]
+[ext_resource type="Texture2D" uid="uid://divuicej8pq76" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_4.png" id="33_xrs44"]
+[ext_resource type="Texture2D" uid="uid://d4m6dvkwj3ltw" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_5.png" id="34_lpxax"]
+[ext_resource type="Texture2D" uid="uid://dbwxc58tqwj8s" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_1.png" id="34_uacst"]
+[ext_resource type="Texture2D" uid="uid://cuituuxhjmhdv" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_6.png" id="35_1a37l"]
+[ext_resource type="Texture2D" uid="uid://ca3oyxjg7y48h" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_2.png" id="35_idehs"]
+[ext_resource type="Texture2D" uid="uid://d3r26hcd7lwdd" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_7.png" id="36_aixvl"]
+[ext_resource type="Texture2D" uid="uid://bx70ythle52ks" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_3.png" id="36_h6qdf"]
+[ext_resource type="Texture2D" uid="uid://duxh2lmdknuf3" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_4.png" id="37_amyng"]
+[ext_resource type="Texture2D" uid="uid://b7o8ckx8ehk6v" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_8.png" id="37_yeqjx"]
+[ext_resource type="Texture2D" uid="uid://byawgqw3ukvvu" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_5.png" id="38_cc2s1"]
+[ext_resource type="Texture2D" uid="uid://bxa0lmm5v1xcr" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_9.png" id="38_nbpnr"]
+[ext_resource type="Texture2D" uid="uid://bmdfyqx6gwq4g" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_6.png" id="39_kyso1"]
+[ext_resource type="Texture2D" uid="uid://dhikbktdur381" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_10.png" id="39_m12uu"]
+[ext_resource type="Texture2D" uid="uid://b2udjpxx0tyf7" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_11.png" id="40_lgcvf"]
+[ext_resource type="Texture2D" uid="uid://dtbyfwonb1hh7" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_7.png" id="40_p3pbl"]
+[ext_resource type="Texture2D" uid="uid://q6eiicl3sfu4" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_8.png" id="41_gouel"]
+[ext_resource type="Texture2D" uid="uid://dh8l4o885ohvs" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_12.png" id="41_lhirn"]
+[ext_resource type="Texture2D" uid="uid://b16k3q4gchb30" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_9.png" id="42_7vdgf"]
+[ext_resource type="Texture2D" uid="uid://bt5k8ktns1tgg" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_13.png" id="42_8sids"]
+[ext_resource type="Texture2D" uid="uid://bhfpl7fbuccpc" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_14.png" id="43_mf4ha"]
+[ext_resource type="Texture2D" uid="uid://b4q7gern0aue1" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_10.png" id="43_nnpp4"]
+[ext_resource type="Texture2D" uid="uid://dljtaxbq4kam8" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_11.png" id="44_8gncn"]
+[ext_resource type="Texture2D" uid="uid://cm7762i3uee8d" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_15.png" id="44_e6vjv"]
+[ext_resource type="Texture2D" uid="uid://bhw4g0wifjlji" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_12.png" id="45_2rv3r"]
+[ext_resource type="Texture2D" uid="uid://cwb7w2pcau0l8" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_16.png" id="45_6hcxs"]
+[ext_resource type="Texture2D" uid="uid://pl5udivjbkc7" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_17.png" id="46_a3n61"]
+[ext_resource type="Texture2D" uid="uid://de610i0pd1p66" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_13.png" id="46_gisav"]
+[ext_resource type="Texture2D" uid="uid://coix8ba4ca3dq" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_18.png" id="47_7fhey"]
+[ext_resource type="Texture2D" uid="uid://cohmlrtsr0rsd" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_14.png" id="47_t17mc"]
+[ext_resource type="Texture2D" uid="uid://dhhk3kso2msfi" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_15.png" id="48_5vu6a"]
+[ext_resource type="Texture2D" uid="uid://bpt5kw4s82p50" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_19.png" id="48_c8xnn"]
+[ext_resource type="Texture2D" uid="uid://chacf1xrwdbcn" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_16.png" id="49_c4blj"]
+[ext_resource type="Texture2D" uid="uid://bdn88jswajumd" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_20.png" id="49_ntrt8"]
+[ext_resource type="Texture2D" uid="uid://dqcpsha8asqje" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_17.png" id="50_mqmph"]
+[ext_resource type="Texture2D" uid="uid://vgh62vyb7nk" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/09_demon_fire_breath/demon_fire_breath_21.png" id="50_stpuc"]
+[ext_resource type="Texture2D" uid="uid://c8pbwt346va3u" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_18.png" id="51_iqmew"]
+[ext_resource type="Texture2D" uid="uid://d3s7hs33q6mbm" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_19.png" id="52_2a6k2"]
+[ext_resource type="Texture2D" uid="uid://bc4dd3m23q1c6" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_20.png" id="53_hhfu5"]
+[ext_resource type="Texture2D" uid="uid://pajeir5o4x6s" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_21.png" id="54_74tpf"]
+[ext_resource type="Texture2D" uid="uid://crjaiuujbp8ct" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_22.png" id="55_wndwo"]
+[ext_resource type="Texture2D" uid="uid://d3uk1bnoecu7v" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_23.png" id="56_ovjar"]
+[ext_resource type="Texture2D" uid="uid://nvqp6h01l2q2" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_24.png" id="57_j70p6"]
+[ext_resource type="Texture2D" uid="uid://byei4g5godp4t" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_25.png" id="58_8qul8"]
+[ext_resource type="Texture2D" uid="uid://dipkiprvn0w1l" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_26.png" id="59_h0fr1"]
+[ext_resource type="Texture2D" uid="uid://dluh3p8018v8o" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_27.png" id="60_2vmhh"]
+[ext_resource type="Texture2D" uid="uid://8imqvhw0c63i" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_28.png" id="61_xpruq"]
+[ext_resource type="Texture2D" uid="uid://nxcs1n8wagqu" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_29.png" id="62_dxbic"]
+[ext_resource type="Texture2D" uid="uid://bibm0fhq66txe" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_30.png" id="63_k3y7v"]
+[ext_resource type="Texture2D" uid="uid://dwl8rnxu67gkn" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_31.png" id="64_rvgnj"]
+[ext_resource type="Texture2D" uid="uid://b7wule481iwj8" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/individual sprites/04_transform/transform_32.png" id="65_4ntkr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phdh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4bbwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7natg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_51acg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1kfra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xix52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kg63t")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p5oj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yuvdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qa5vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3lexj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lhcog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0qwyl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_3586d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_x2s6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yp0nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5eacm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3ae48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vewqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_h8oag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_c85av")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lbeyl"]
+shader = ExtResource("2_wcevf")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg5oe"]
+atlas = ExtResource("1_70j47")
+region = Rect2(0, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5533j"]
+atlas = ExtResource("1_70j47")
+region = Rect2(288, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j06x"]
+atlas = ExtResource("1_70j47")
+region = Rect2(576, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsdc6"]
+atlas = ExtResource("1_70j47")
+region = Rect2(864, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23jla"]
+atlas = ExtResource("1_70j47")
+region = Rect2(1152, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyiho"]
+atlas = ExtResource("1_70j47")
+region = Rect2(1440, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2onss"]
+atlas = ExtResource("1_70j47")
+region = Rect2(1728, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1lhl"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2016, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xomln"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2304, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5alni"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2592, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8coo8"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2880, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5laiu"]
+atlas = ExtResource("1_70j47")
+region = Rect2(3168, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dogdk"]
+atlas = ExtResource("1_70j47")
+region = Rect2(3456, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip0i"]
+atlas = ExtResource("1_70j47")
+region = Rect2(3744, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjyfg"]
+atlas = ExtResource("1_70j47")
+region = Rect2(4032, 320, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwfep"]
+atlas = ExtResource("1_70j47")
+region = Rect2(0, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycxxq"]
+atlas = ExtResource("1_70j47")
+region = Rect2(288, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqdc5"]
+atlas = ExtResource("1_70j47")
+region = Rect2(576, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxubx"]
+atlas = ExtResource("1_70j47")
+region = Rect2(864, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixevd"]
+atlas = ExtResource("1_70j47")
+region = Rect2(1152, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svw6p"]
+atlas = ExtResource("1_70j47")
+region = Rect2(1440, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8opyr"]
+atlas = ExtResource("1_70j47")
+region = Rect2(1728, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yat8j"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2016, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1djv"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2304, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jibxy"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2592, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyl2a"]
+atlas = ExtResource("1_70j47")
+region = Rect2(2880, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0d0j"]
+atlas = ExtResource("1_70j47")
+region = Rect2(3168, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3agu"]
+atlas = ExtResource("1_70j47")
+region = Rect2(3456, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvgp7"]
+atlas = ExtResource("1_70j47")
+region = Rect2(3744, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up8gt"]
+atlas = ExtResource("1_70j47")
+region = Rect2(4032, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1178d"]
+atlas = ExtResource("1_70j47")
+region = Rect2(4320, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cldk"]
+atlas = ExtResource("1_70j47")
+region = Rect2(4608, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eix2w"]
+atlas = ExtResource("1_70j47")
+region = Rect2(4896, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfab8"]
+atlas = ExtResource("1_70j47")
+region = Rect2(5184, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gouhd"]
+atlas = ExtResource("1_70j47")
+region = Rect2(5472, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kpou"]
+atlas = ExtResource("1_70j47")
+region = Rect2(5760, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3djw"]
+atlas = ExtResource("1_70j47")
+region = Rect2(6048, 640, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ev8f"]
+atlas = ExtResource("1_70j47")
+region = Rect2(0, 480, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_engma"]
+atlas = ExtResource("1_70j47")
+region = Rect2(288, 480, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_442t6"]
+atlas = ExtResource("1_70j47")
+region = Rect2(576, 480, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvmvt"]
+atlas = ExtResource("1_70j47")
+region = Rect2(864, 480, 288, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0ip6"]
+atlas = ExtResource("1_70j47")
+region = Rect2(1152, 480, 288, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wc6y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg5oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5533j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j06x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsdc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23jla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyiho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2onss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1lhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xomln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5alni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8coo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5laiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dogdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bip0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjyfg")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g0l7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_am23u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1lf0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dg7j7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jrvw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ggf3")
+}],
+"loop": false,
+"name": &"cast",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwfep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycxxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqdc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxubx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixevd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svw6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8opyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yat8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1djv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jibxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyl2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0d0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3agu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvgp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up8gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1178d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cldk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eix2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfab8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gouhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kpou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3djw")
+}],
+"loop": false,
+"name": &"death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_st2pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_41c5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_2nahy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xrs44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lpxax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1a37l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_aixvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_yeqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_nbpnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_m12uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_lgcvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_lhirn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_8sids")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_mf4ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_e6vjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_6hcxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_a3n61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7fhey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_c8xnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ntrt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_stpuc")
+}],
+"loop": false,
+"name": &"fire_breath",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ev8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_engma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_442t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvmvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0ip6")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q776y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h1x7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kvxaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dfkax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eipgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ygo1x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_espsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_od12b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kfhbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tge80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rmmv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tlyed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8c2rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_rfqqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7mgnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ptwt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_74rqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wi61o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4cdnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bsjwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_rg6s2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_d04yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_q4l48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_23t0l")
+}],
+"loop": false,
+"name": &"smash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_uacst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_idehs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_h6qdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_amyng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_cc2s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_kyso1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_p3pbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_gouel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_7vdgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_nnpp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_8gncn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_2rv3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_gisav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_t17mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5vu6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_c4blj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_mqmph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_iqmew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_2a6k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_hhfu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_74tpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_wndwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ovjar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_j70p6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_8qul8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_h0fr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2vmhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_xpruq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_dxbic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_k3y7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rvgnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_4ntkr")
+}],
+"loop": false,
+"name": &"transform",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bkfi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uu5r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f0xlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ix70y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qktq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nx5fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yy3wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wvwub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wrbu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jfsjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3tea5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_uuh1f")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbihp"]
+size = Vector2(65, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5eh6"]
+size = Vector2(69, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8olbn"]
+radius = 16.0
+height = 70.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nlct"]
+radius = 269.067
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipwpt"]
+size = Vector2(215, 20)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 5
+script = ExtResource("1_tw0mv")
+
+[node name="AnimatedSprite2D_slime" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_phdh6")
+animation = &"walk"
+frame_progress = 0.672226
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_lbeyl")
+position = Vector2(2, 0)
+sprite_frames = SubResource("SpriteFrames_wc6y3")
+animation = &"transform"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(2.5, 39)
+shape = SubResource("RectangleShape2D_jbihp")
+one_way_collision = true
+
+[node name="Death_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_u5s2l")
+
+[node name="Deamon_Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_k1plq")
+
+[node name="Deamon_Swing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_edgwx")
+
+[node name="HealthBar" parent="." instance=ExtResource("31_lshrt")]
+offset_left = -32.0
+offset_top = -31.0
+offset_right = 43.0
+offset_bottom = -27.0
+max_value = 2000.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(-69.5, 69)
+shape = SubResource("RectangleShape2D_q5eh6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(-96, 36)
+shape = SubResource("CapsuleShape2D_8olbn")
+
+[node name="DetectionArea2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
+shape = SubResource("CircleShape2D_6nlct")
+
+[node name="SpellCD" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="SmashCD" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="AttackCD" type="Timer" parent="."]
+autostart = true
+
+[node name="SmashArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmashArea"]
+position = Vector2(-1.5, 68)
+shape = SubResource("RectangleShape2D_ipwpt")
+
+[connection signal="animation_finished" from="AnimatedSprite2D_slime" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="DetectionArea2D" to="." method="_on_detection_area_2d_body_entered"]
+[connection signal="body_entered" from="SmashArea" to="." method="_on_smash_area_body_entered_smash"]

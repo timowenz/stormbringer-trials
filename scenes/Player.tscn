@@ -1,4 +1,4 @@
-[gd_scene load_steps=291 format=3 uid="uid://c60h63oqga3qw"]
+[gd_scene load_steps=293 format=3 uid="uid://c60h63oqga3qw"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ys2wg"]
 [ext_resource type="Texture2D" uid="uid://cr5obrqcf1smj" path="res://assets/player_asset/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_4gxhw"]
@@ -55,6 +55,7 @@
 [ext_resource type="AudioStream" uid="uid://m3q3svan4p5l" path="res://assets/SFX/RPG-Essentials-SFX/8_Atk_Magic_SFX/04_Fire_explosion_04_medium.wav" id="53_55rnp"]
 [ext_resource type="AudioStream" uid="uid://dpg6ndq08npoo" path="res://assets/SFX/RPG-Essentials-SFX/8_Atk_Magic_SFX/13_Ice_explosion_01.wav" id="54_kprx8"]
 [ext_resource type="AudioStream" uid="uid://d06idusl3dpgk" path="res://assets/SFX/RPG-Essentials-SFX/8_Atk_Magic_SFX/18_Thunder_02.wav" id="55_vuohq"]
+[ext_resource type="PackedScene" uid="uid://b074tg14e8t5x" path="res://scenes/mana_bar.tscn" id="56_0x4ld"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekyxk"]
 atlas = ExtResource("2_4gxhw")
@@ -2213,6 +2214,9 @@ _data = {
 "hurtBlink": SubResource("Animation_e6t6t")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ng8p"]
+height = 40.0
+
 [sub_resource type="Resource" id="Resource_ktbtv"]
 script = ExtResource("42_k0782")
 projectile_scene = ExtResource("45_j2apn")
@@ -2252,6 +2256,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_llg3l")
+}
 tree_root = SubResource("AnimationNodeStateMachine_oxf18")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
@@ -2286,6 +2293,18 @@ position = Vector2(108.5, 6)
 scale = Vector2(2.8875, 2.7)
 texture = ExtResource("33_fl1cf")
 
+[node name="ManaBar" parent="CanvasLayer" instance=ExtResource("56_0x4ld")]
+offset_left = 23.0
+offset_top = 616.0
+offset_right = 250.0
+offset_bottom = 625.0
+scale = Vector2(1, 1.48)
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/ManaBar"]
+position = Vector2(113, 4.05406)
+scale = Vector2(2.8875, 1.82432)
+texture = ExtResource("33_fl1cf")
+
 [node name="SkillBar" type="BoxContainer" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
@@ -2294,41 +2313,49 @@ offset_top = -48.0
 offset_right = 260.0
 grow_vertical = 0
 
-[node name="SpellButton" parent="CanvasLayer" node_paths=PackedStringArray("timer") instance=ExtResource("34_3xn8x")]
-offset_left = 392.0
-offset_top = 564.0
-offset_right = 440.0
-offset_bottom = 612.0
+[node name="SpellButton" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
+offset_left = 390.0
+offset_top = 576.0
+offset_right = 438.0
+offset_bottom = 624.0
 texture_normal = ExtResource("35_8emvr")
 Spellkey = "E"
 timer = NodePath("../../PlayerUseAbilityComponent/FireSpinSpellCD")
+user = NodePath("../..")
+mana_cost = 20
 
-[node name="SpellButton2" parent="CanvasLayer" node_paths=PackedStringArray("timer") instance=ExtResource("34_3xn8x")]
-offset_left = 451.0
-offset_top = 564.0
-offset_right = 499.0
-offset_bottom = 612.0
+[node name="SpellButton2" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
+offset_left = 449.0
+offset_top = 576.0
+offset_right = 497.0
+offset_bottom = 624.0
 texture_normal = ExtResource("36_3vfsl")
 Spellkey = "R"
 timer = NodePath("../../FireBallSpell/FireBallSpellCD")
+user = NodePath("../..")
+mana_cost = 30
 
-[node name="SpellButton3" parent="CanvasLayer" node_paths=PackedStringArray("timer") instance=ExtResource("34_3xn8x")]
-offset_left = 274.0
-offset_top = 564.0
-offset_right = 322.0
-offset_bottom = 612.0
+[node name="SpellButton3" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
+offset_left = 272.0
+offset_top = 576.0
+offset_right = 320.0
+offset_bottom = 624.0
 texture_normal = ExtResource("37_0icme")
 Spellkey = "Q"
 timer = NodePath("../../ArcaneSpell/ArcaneSpellCD")
+user = NodePath("../..")
+mana_cost = 25
 
-[node name="SpellButton4" parent="CanvasLayer" node_paths=PackedStringArray("timer") instance=ExtResource("34_3xn8x")]
-offset_left = 333.0
-offset_top = 564.0
-offset_right = 381.0
-offset_bottom = 612.0
+[node name="SpellButton4" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
+offset_left = 331.0
+offset_top = 576.0
+offset_right = 379.0
+offset_bottom = 624.0
 texture_normal = ExtResource("38_v5hr5")
 Spellkey = "W"
 timer = NodePath("../../LightningStrike/LightningStrikeCD")
+user = NodePath("../..")
+mana_cost = 10
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -2352,6 +2379,12 @@ libraries = {
 wait_time = 0.5
 one_shot = true
 
+[node name="Deamon_damage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deamon_damage"]
+position = Vector2(4, 1)
+shape = SubResource("CapsuleShape2D_2ng8p")
+
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
@@ -2363,11 +2396,20 @@ one_shot = true
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.6
 
+[node name="ManaRegenTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="HealthRegenTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [node name="PlayerUseAbilityComponent" type="Node" parent="." node_paths=PackedStringArray("user", "cooldown")]
 script = ExtResource("33_s0sr5")
 ability = ExtResource("34_adecb")
 user = NodePath("..")
 cooldown = NodePath("FireSpinSpellCD")
+mana_cost = 20
 
 [node name="FireSpinSpellCD" type="Timer" parent="PlayerUseAbilityComponent"]
 wait_time = 10.0
@@ -2377,6 +2419,7 @@ script = ExtResource("35_wklvx")
 ability = ExtResource("36_jabmn")
 user = NodePath("..")
 cooldown = NodePath("FireBallSpellCD")
+mana_cost = 30
 
 [node name="FireBallSpellCD" type="Timer" parent="FireBallSpell"]
 wait_time = 15.0
@@ -2386,6 +2429,7 @@ script = ExtResource("41_82rog")
 ability = ExtResource("42_4hdc4")
 user = NodePath("..")
 cooldown = NodePath("ArcaneSpellCD")
+mana_cost = 25
 
 [node name="ArcaneSpellCD" type="Timer" parent="ArcaneSpell"]
 wait_time = 5.0
@@ -2395,6 +2439,7 @@ script = ExtResource("44_ard5x")
 ability = SubResource("Resource_ktbtv")
 user = NodePath("..")
 cooldown = NodePath("LightningStrikeCD")
+mana_cost = 10
 
 [node name="LightningStrikeCD" type="Timer" parent="LightningStrike"]
 wait_time = 10.0
@@ -2435,8 +2480,11 @@ stream = ExtResource("54_kprx8")
 [node name="SoundLightningStrikeSpell" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("55_vuohq")
 
+[connection signal="child_entered_tree" from="StandCol" to="." method="_on_stand_col_child_entered_tree"]
+[connection signal="child_entered_tree" from="CrouchCol" to="." method="_on_crouch_col_child_entered_tree"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="Node2D/AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="area_entered" from="Deamon_damage" to="." method="_on_deamon_damage_area_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="CanDashTimer" to="." method="_on_can_dash_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

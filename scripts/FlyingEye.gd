@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 enum State {FLIGHT, ATTACK, DEAD, HIT}
 
-const SPEED = 100
-const ENEMEY_DAMAGE = 15
+const SPEED = 110
+const ENEMEY_DAMAGE = 25
 var health = 100
 var state = State.FLIGHT
 var player = null
@@ -29,9 +29,10 @@ func _physics_process(delta):
 
 func hit_state(_delta):
 	if (health <= 0):
+		$CollisionShape2D.disabled = true
 		set_state(State.DEAD)
 	else:
-		set_state(State.FLIGHT)
+		set_state(State.HIT)
 
 func set_state(new_state):
 	state = new_state

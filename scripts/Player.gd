@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #var state_machine
-var SPEED = 190
+var SPEED = GlobalVariables.speed
 const JUMP_VELOCITY = -450.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,13 +14,17 @@ var direction2: Vector2 = Vector2.ZERO
 @onready var anim = get_node("AnimationPlayer")
 @onready var anim_tree: AnimationTree = $AnimationTree
 @onready var healthbar = $CanvasLayer/HealthBar
+@onready var manabar = $CanvasLayer/ManaBar
 @onready var effects = $Effects
 @onready var hurtTimer = $HurtTimer
+@onready var manaregentimer = $ManaRegenTimer
+@onready var healthregentimer = $HealthRegenTimer
 
 var is_attacking: bool = false;
 var is_crouching: bool = false;
 var can_jump: bool = true
 var health
+var mana
 var damage
 var jump_count = 0
 var max_jumps = 1
@@ -42,16 +46,22 @@ const friction = 50
 var last_direction: float = 0
 
 func _ready():
+	can_win = false
+	bosses_killed = 0
 	effects.play("RESET")
-	health = 100
-	damage = 20
+	health = GlobalVariables.health 
+	mana = GlobalVariables.mana
+	damage = GlobalVariables.damage
 	can_jump = true
 	is_crouching = false
 	anim_tree.active = true
 	#state_machine = $AnimationTree.get("parameters/playback")
 	healthbar.init_health(health)
+	manabar.init_mana(mana)
 	$Node2D/AttackArea/AttackCol.disabled = true
 	$Node2D/AttackArea/AttackCol2.disabled = true
+	manaregentimer.connect("timeout", _on_timeout_mana_regen)
+	healthregentimer.connect("timeout", _on_timeout_health_regen)
 
 func _process(delta):
 	if ($CanvasLayer3/Label):
@@ -138,6 +148,7 @@ func _heal(value):
 	if health + value > 100:
 		health = 100
 	health = health + value
+	healthbar.health = health
 
 func _set_damage(value):
 	damage = value
@@ -145,6 +156,36 @@ func _set_damage(value):
 func _increase_damage(value):
 	damage = damage + value
 
+func _set_mana(value):
+	mana = value
+	if mana <= 0:
+		mana = 0
+	manabar.mana = mana
+
+func reduce_mana(value):
+	mana -= value
+	if mana <= 0:
+		mana = 0
+	manabar.mana = mana
+
+func _regen_mana(value):
+	mana += value
+	if mana > 100:
+		mana= 100
+	manabar.mana = mana
+
+func _regen_health(value):
+	health += value
+	if health > 100:
+		health = 100
+	healthbar.health = health
+
+func _on_timeout_mana_regen():
+	_regen_mana(5)
+
+func _on_timeout_health_regen():
+	_regen_health(5)
+	
 func die():
 	if has_died:
 		$SFX/SoundDie.play()
@@ -287,7 +328,7 @@ func _on_attack_area_body_entered(body):
 	print(body)
 	if body.name == "EndGame":
 		return
-	if body.name != "TileMap":
+	if body.name != "TileMap" and body.name != "EndGame" and body.name != "Border1" and body.name != "Border2":
 		body.take_damage(damage)
 
 func hit():
@@ -307,6 +348,17 @@ func _on_animation_tree_animation_finished(anim_name):
 		anim_tree["parameters/conditions/idle"] = true
 		is_damaged = false
 
+
+func player():
+	pass
+
+func give_damage():
+	pass
+
+
+func _on_deamon_damage_area_entered(area):
+	if area.has_method("give_damage_to_player_from_deamon"):
+		take_damage(45)
 func _on_dash_timer_timeout() -> void:
 	dashing = false
 
@@ -321,38 +373,50 @@ func _on_coin_body_entered():
 func _on_trader_body_entered(body):
 	if (body.name == "Player"):
 		%Shop.visible = true
-	pass # Replace with function body.
-
+		if(!GlobalVariables.damage<=GlobalVariables.damageCAP):
+			$CanvasLayer2/Shop/Item1/Button.text = "Sold Out"
+		if(!GlobalVariables.health<=GlobalVariables.healthCAP):
+			$CanvasLayer2/Shop/Item2/Button2.text = "Sold Out"
+		if(!GlobalVariables.speed<=GlobalVariables.speedCAP):
+			$CanvasLayer2/Shop/Item4/Button4.text = "Sold Out"
+		if(!GlobalVariables.mana<=GlobalVariables.manaCAP):
+			$CanvasLayer2/Shop/Item3/Button3.text = "Sold Out"
 func _on_trader_body_exited(body):
 	if (body.name == "Player"):
 		%Shop.visible = false
 	pass # Replace with function body.
 
 func _on_shop1_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		damage = damage * 1.2
-		$BuySound.play()
-	pass # Replace with function body.
+	if(GlobalVariables.damage<=GlobalVariables.damageCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.damage = GlobalVariables.damage * 1.2
+			damage = GlobalVariables.damage
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item1/Button.text = "Sold Out"
 
 func _on_shop2_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		health = health * 1.2
-	pass # Replace with function body.
-
-func _on_button_3_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		health = health * 1.4
-	pass # Replace with function body.
-
+	if(GlobalVariables.health<=GlobalVariables.healthCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.health = GlobalVariables.health * 1.2
+			health = GlobalVariables.health
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item2/Button2.text = "Sold Out"
 func _on_shop4_pressed(extra_arg_0):
-	if (GlobalVariables.coins >= extra_arg_0):
-		GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
-		SPEED = SPEED * 1.2
-	pass # Replace with function body.
-
+	if(GlobalVariables.speed<=GlobalVariables.speedCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.speed = GlobalVariables.speed * 1.2
+			SPEED = GlobalVariables.speed
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item4/Button4.text = "Sold Out"
 func _on_attack_timer_timeout():
 	can_attack = true
 
@@ -372,3 +436,15 @@ func accelerate(direction):
 
 func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
+
+func _on_shop3_pressed(extra_arg_0):
+	if(GlobalVariables.mana<=GlobalVariables.manaCAP):
+		if (GlobalVariables.coins >= extra_arg_0):
+			GlobalVariables.coins = GlobalVariables.coins - extra_arg_0
+			GlobalVariables.mana = GlobalVariables.mana * 1.2
+			mana = GlobalVariables.mana
+			$BuySound.play()
+		pass # Replace with function body.
+	else:
+		$CanvasLayer2/Shop/Item3/Button3.text = "Sold Out"
+
