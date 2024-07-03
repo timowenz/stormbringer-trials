@@ -53,6 +53,7 @@ text = "Restart
 "
 
 [node name="Restart" type="TextureButton" parent="."]
+visible = false
 offset_left = 376.0
 offset_top = 248.0
 offset_right = 456.0
