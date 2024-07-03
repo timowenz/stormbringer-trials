@@ -9015,9 +9015,9 @@ follow_viewport_enabled = true
 
 [node name="Tutorial1" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 225.0
-offset_top = 910.0
+offset_top = 675.0
 offset_right = 1025.0
-offset_bottom = 1066.0
+offset_bottom = 884.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
@@ -9027,26 +9027,26 @@ on the numpad
 Jump using the spacebar"
 
 [node name="Tutorial2" type="Label" parent="TutorialCanvasLayer"]
-offset_left = 1360.0
-offset_top = 1130.0
-offset_right = 2380.0
-offset_bottom = 1233.0
+offset_left = 1480.0
+offset_top = 995.0
+offset_right = 2880.0
+offset_bottom = 1098.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
-text = "Oh look! Someone lost their money.
+text = "Oh look! Someone lost their money. 
 You can use it to buy useful items."
 
 [node name="Tutorial3" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 3000.0
-offset_top = 930.0
-offset_right = 4000.0
-offset_bottom = 1033.0
+offset_top = 780.0
+offset_right = 4020.0
+offset_bottom = 883.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
 text = "Be careful around here!
-Click the left mouse button or press upwards to attack!"
+Click the mouse buttons or press upwards to attack!"
 
 [node name="Tutorial4" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 7840.0
@@ -9062,10 +9062,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Tutorial5" type="Label" parent="TutorialCanvasLayer"]
-offset_left = 4850.0
-offset_top = 1150.0
-offset_right = 5480.0
-offset_bottom = 1253.0
+offset_left = 4845.0
+offset_top = 1050.0
+offset_right = 5475.0
+offset_bottom = 1153.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
@@ -9386,7 +9386,7 @@ theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 100
 text = "Greetings, warrior! Fancy some new equipment?"
 
-[node name="HealthRegenTimer" type="Timer" parent="Player"]
+[node name="HealthRegenTimer2" type="Timer" parent="Player"]
 wait_time = 10.0
 autostart = true
 
