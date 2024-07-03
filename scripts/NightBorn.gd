@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 150
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
-var health = 200
+var health = 600
 var player = null
 var player_chase = false
 var damage = 25

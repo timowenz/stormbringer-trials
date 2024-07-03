@@ -6,7 +6,7 @@ const SPEED = 130
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
 const ENEMEY_DAMAGE = 15
-var health = 120
+var health = 700
 var state = State.IDLE
 var player = null
 var player_chase = false
@@ -132,7 +132,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_animated_sprite_2d_animation_finished():
 	if anim.animation == "dead":
-		if(spell):
+		if (spell):
 			spell.queue_free()
 		queue_free()
 	if anim.animation == "hit":

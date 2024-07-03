@@ -53,7 +53,7 @@ func phase_two_handler():
 	anim = anim1
 	phase_one = false
 	phase_two = true
-	health = 300
+	health = 1000
 	healthbar.health = health
 	$AnimatedSprite2D.show()
 	$AnimatedSprite2D_slime.hide()
@@ -61,10 +61,10 @@ func phase_two_handler():
 	set_state(State.TRANSFORM)
 
 func _physics_process(delta):
-	if health <= 0 && phase_two:
+	if health <= 0&&phase_two:
 		%Player.can_win = true
 		return set_state(State.DEAD)
-	if phase_one && health <= 0:
+	if phase_one&&health <= 0:
 		phase_two_handler()
 	if phase_two:
 		match state:
@@ -88,7 +88,6 @@ func _physics_process(delta):
 				walk_state(delta)
 			State.HIT:
 				hit_state(delta)
-		
 
 func hit_state(_delta):
 	if health <= 0:

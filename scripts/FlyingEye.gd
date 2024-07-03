@@ -29,6 +29,7 @@ func _physics_process(delta):
 
 func hit_state(_delta):
 	if (health <= 0):
+		$CollisionShape2D.disabled = true
 		set_state(State.DEAD)
 	else:
 		set_state(State.HIT)

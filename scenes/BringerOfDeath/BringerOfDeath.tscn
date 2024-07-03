@@ -244,8 +244,8 @@ collision_layer = 5
 script = ExtResource("1_f35kd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-22, 12)
-scale = Vector2(0.604839, 0.604839)
+position = Vector2(-33, -3.93749)
+scale = Vector2(0.947581, 0.947581)
 sprite_frames = SubResource("SpriteFrames_0aohk")
 animation = &"hit"
 autoplay = "idle"
@@ -256,11 +256,12 @@ shape = SubResource("RectangleShape2D_y60ey")
 
 [node name="HealthBar" parent="." instance=ExtResource("40_pryr0")]
 offset_left = -21.0
-offset_top = -2.0
+offset_top = -19.0
 offset_right = 21.0
-offset_bottom = 2.0
+offset_bottom = -15.0
 
 [node name="Node2D" type="Node2D" parent="."]
+visible = false
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
 
@@ -269,6 +270,7 @@ position = Vector2(-14, 24)
 shape = SubResource("CircleShape2D_uv06c")
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
