@@ -885,6 +885,7 @@ offset_left = -32.0
 offset_top = -31.0
 offset_right = 43.0
 offset_bottom = -27.0
+max_value = 2000.0
 
 [node name="Node2D" type="Node2D" parent="."]
 
