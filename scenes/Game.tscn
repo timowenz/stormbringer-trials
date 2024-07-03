@@ -2639,7 +2639,7 @@ region = Rect2(96, 0, 16, 16)
 atlas = ExtResource("14_xa5ne")
 region = Rect2(112, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t1a45"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgxun"]
 resource_name = "Blink"
 animations = [{
 "frames": [{
@@ -2801,22 +2801,24 @@ lifetime = 5.0
 scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 
+[node name="Coin" type="AnimatedSprite2D" parent="Player/CanvasLayer3"]
+position = Vector2(5440, 250)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_mgxun")
+script = ExtResource("15_lix2k")
+
 [node name="Label" type="Label" parent="Player/CanvasLayer3"]
-offset_left = 5160.0
-offset_top = 160.0
-offset_right = 5240.0
-offset_bottom = 260.0
+offset_left = 5360.0
+offset_top = 145.0
+offset_right = 5440.0
+offset_bottom = 245.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_sb8b8")
 theme_override_font_sizes/font_size = 100
 text = "00"
-
-[node name="Coin" type="AnimatedSprite2D" parent="Player/CanvasLayer3"]
-position = Vector2(5440, 250)
-scale = Vector2(15, 15)
-sprite_frames = SubResource("SpriteFrames_t1a45")
-script = ExtResource("15_lix2k")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WeatherButton" type="Button" parent="Player/CanvasLayer3"]
 visible = false
