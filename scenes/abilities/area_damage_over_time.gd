@@ -17,7 +17,7 @@ func _on_timeout():
 func apply_damage(p_tick_damage : int):
 	var extra_damage = damage_per_tick
 	for target in targets_in_area:
- 		if target.vulnerable == damage_type:
+		if target.vulnerable == damage_type:
 			extra_damage = extra_damage * 2
 		if target.resistance == damage_type:
 			extra_damage = extra_damage / 2

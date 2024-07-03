@@ -17,6 +17,9 @@ var player_chase = false
 @onready var attack_audio = $AttackAudio
 @onready var cast_audio = $CastAudio
 
+const vulnerable = "fire"
+const resistance = "arcane"
+
 func _ready():
 	set_state(State.IDLE)
 	healthbar.init_health(health)
@@ -36,6 +39,7 @@ func _physics_process(delta):
 
 func hit_state(_delta):
 	if (health <= 0):
+		%Player.can_win = true
 		set_state(State.DEAD)
 	else:
 		set_state(State.WALK)
@@ -114,6 +118,7 @@ func get_health():
 	return health
 
 func take_damage(damage):
+	print("taken damage")
 	if (health <= 0):
 		%Player.can_win = true
 		return set_state(State.DEAD)
@@ -127,6 +132,8 @@ func _on_area_2d_body_entered(body):
 
 func _on_animated_sprite_2d_animation_finished():
 	if anim.animation == "dead":
+		if(spell):
+			spell.queue_free()
 		queue_free()
 	if anim.animation == "hit":
 		set_state(State.WALK)

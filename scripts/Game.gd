@@ -7,9 +7,6 @@ var playerhealth
 @export var nextLevel: String
 var can_game_over: bool = false
 
-const vulnerable = "fire"
-const resistance = "arcane"
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	can_game_over = false
