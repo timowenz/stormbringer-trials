@@ -312,12 +312,12 @@ text = "Reset progress"
 
 [node name="Lvl3" type="Button" parent="AdminMenu"]
 layout_mode = 0
-offset_left = 833.0
+offset_left = 560.0
 offset_top = 624.0
-offset_right = 1016.0
+offset_right = 743.0
 offset_bottom = 655.0
 scale = Vector2(0.7, 0.7)
-text = "Jump to level 3"
+text = "Jump to level 1"
 
 [node name="Lvl4" type="Button" parent="AdminMenu"]
 layout_mode = 0
@@ -326,13 +326,13 @@ offset_top = 624.0
 offset_right = 879.0
 offset_bottom = 655.0
 scale = Vector2(0.7, 0.7)
-text = "Jump to level 3"
+text = "Jump to level 2"
 
 [node name="Lvl5" type="Button" parent="AdminMenu"]
 layout_mode = 0
-offset_left = 560.0
+offset_left = 833.0
 offset_top = 624.0
-offset_right = 743.0
+offset_right = 1016.0
 offset_bottom = 655.0
 scale = Vector2(0.7, 0.7)
 text = "Jump to level 3"
