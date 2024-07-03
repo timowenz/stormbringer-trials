@@ -6,13 +6,6 @@
 
 The game is a 2D platformer where you can walk, jump and fight against creatures. The game has a simple combat system where you can attack and crouch. The game has a simple level design with a few enemies and a boss fight at the end.
 
-## Controls (Currently)
-
-- `Left Arrow` - Move left
-- `Right Arrow` - Move right
-- `Space` - Jump
-- `Q`, `W` - Attack
-
 ## Credits
 
 - [Slaven](https://github.com/Dzino3)
