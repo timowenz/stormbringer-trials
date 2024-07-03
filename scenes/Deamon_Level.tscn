@@ -18,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="13_ctqf4"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="14_htipc"]
 [ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="15_3ge6t"]
-[ext_resource type="AudioStream" uid="uid://swdeyex32o80" path="res://assets/music/Platformer Music 158815.mp3" id="16_imyl8"]
 [ext_resource type="AudioStream" uid="uid://cpho7p70xpgd7" path="res://assets/SFX/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav" id="18_w21y2"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="18_wmm0y"]
 [ext_resource type="PackedScene" uid="uid://k4vsxqmldmyy" path="res://scenes/FinalWonScreen.tscn" id="19_8lwd6"]
 [ext_resource type="PackedScene" uid="uid://cmva44s7chgwy" path="res://scenes/PauseScreen.tscn" id="19_v3six"]
+[ext_resource type="AudioStream" uid="uid://dhaeep4kaakio" path="res://assets/enemy_asset/boss_demon_slime_FULL_v1.0/boss-intro-02-72039.mp3" id="20_pwbdh"]
 [ext_resource type="Texture2D" uid="uid://omar7axahmq8" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="20_stkpy"]
 [ext_resource type="Texture2D" uid="uid://bbv5nb1mfntfm" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="21_h44y0"]
 [ext_resource type="Texture2D" uid="uid://bw7oy1ufe55pg" path="res://assets/Warrior-V1.3/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="22_vae71"]
@@ -808,7 +808,7 @@ position = Vector2(2018, 339)
 
 [node name="Player" parent="." instance=ExtResource("3_tbw5e")]
 unique_name_in_owner = true
-position = Vector2(2096, 312)
+position = Vector2(104, 470)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -3)
@@ -1061,7 +1061,7 @@ position = Vector2(808, 536)
 position = Vector2(896, 320)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_imyl8")
+stream = ExtResource("20_pwbdh")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"

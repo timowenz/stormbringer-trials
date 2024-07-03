@@ -123,7 +123,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CreditSheet" type="Panel" parent="."]
-visible = false
 z_index = 100
 layout_mode = 1
 anchors_preset = 15
@@ -186,12 +185,13 @@ text = "- Tileset Level 1: [url]https://aamatniekss.itch.io/free-pixelart-tilese
 - Trader Icons: [url]https://ssugmi.itch.io/16x16-rpg-assets[/url]
 - Bringer of Death Sprites: [url]https://clembod.itch.io/bringer-of-death-free[/url]
 - Trader Sprites: [url]https://clembod.itch.io/warrior-free-animation-set[/url]
-- Demond Slime Sprites: [url]https://chierit.itch.io/boss-demon-slime[/url]
+- Daemon Slime Sprites: [url]https://chierit.itch.io/boss-demon-slime[/url]
 - Fire Spell Sprites: [url]https://pimen.itch.io/fire-spell[/url]
 - Dark Spell Effect Sprites: [url]https://pimen.itch.io/dark-spell-effect[/url]
 - Tileset Level 3: [url]https://anokolisa.itch.io/legacy-adventure-pack-cemetery[/url]
 - Background Level 3: [url]https://lil-cthulhu.itch.io/pixel-art-cave-background[/url]
 - Thunder Icon: [url]https://iconduck.com/icons/191337/thunder[/url]
+- Boss Sound Daemon[url]https://pixabay.com/de/sound-effects/search/boss/[/url]
 - Itch.io game icon: ChatGPT"
 metadata/_edit_use_anchors_ = true
 
