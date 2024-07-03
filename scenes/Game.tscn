@@ -2846,11 +2846,13 @@ text = "00"
 [node name="BuySound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("22_y4sap")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="SandwichSound" type="AudioStreamPlayer2D" parent="Player"]
 unique_name_in_owner = true
 stream = ExtResource("18_3imye")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="Player"]
 scale = Vector2(0.2, 0.2)
