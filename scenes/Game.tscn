@@ -3078,6 +3078,7 @@ position = Vector2(21, 40)
 
 [node name="Trader" type="Area2D" parent="."]
 position = Vector2(1224, 376)
+collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trader"]
 position = Vector2(0, 3)
