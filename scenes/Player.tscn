@@ -2315,9 +2315,9 @@ offset_right = 260.0
 grow_vertical = 0
 
 [node name="SpellButton" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 381.0
+offset_left = 326.0
 offset_top = 576.0
-offset_right = 429.0
+offset_right = 374.0
 offset_bottom = 624.0
 texture_normal = ExtResource("35_8emvr")
 Spellkey = "E"
@@ -2326,9 +2326,9 @@ user = NodePath("../..")
 mana_cost = 20
 
 [node name="SpellButton2" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 327.0
+offset_left = 380.0
 offset_top = 576.0
-offset_right = 375.0
+offset_right = 428.0
 offset_bottom = 624.0
 texture_normal = ExtResource("36_3vfsl")
 Spellkey = "R"
