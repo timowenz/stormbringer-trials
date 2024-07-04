@@ -1,6 +1,6 @@
 extends Node
 
-@export var use_ability_action_name = "spell_w"
+@export var use_ability_action_name = "spell_t"
 @export var ability : Ability
 @export var user : Node2D
 @export var cooldown : Timer

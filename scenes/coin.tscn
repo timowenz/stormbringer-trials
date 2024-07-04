@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctjkmcum0r7bm"]
+[gd_scene load_steps=14 format=3 uid="uid://bnexwee5awchc"]
 
 [ext_resource type="Script" path="res://scenes/CollectableCoin.gd" id="1_fb62h"]
 [ext_resource type="Texture2D" uid="uid://nw8du8dg1b56" path="res://selfdrawn/coin_anim.png" id="1_jb85l"]
@@ -71,6 +71,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8oxeu"]
 
 [node name="Coin" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_fb62h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

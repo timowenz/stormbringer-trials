@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y5dmf"]
 [ext_resource type="FontFile" uid="uid://dcb0ubutt01q4" path="res://assets/fonts/VT323 font/VT323-Regular.ttf" id="3_1hjbe"]
 [ext_resource type="AudioStream" uid="uid://hkm203sc233e" path="res://assets/music/Platformer Music 8-bit Arcade Mode.mp3" id="3_qoq06"]
-[ext_resource type="PackedScene" uid="uid://gv80ord7mbd1" path="res://scenes/SoundSlider.tscn" id="5_qlpxr"]
+[ext_resource type="PackedScene" path="res://scenes/SoundSlider.tscn" id="5_qlpxr"]
 [ext_resource type="Texture2D" uid="uid://dwknuv7od1kme" path="res://selfdrawn/credits_x.png" id="6_016xs"]
 [ext_resource type="Texture2D" uid="uid://bfxt4brevb38m" path="res://selfdrawn/button2.png" id="6_p3mso"]
 [ext_resource type="Texture2D" uid="uid://cy2j51gne2s4i" path="res://selfdrawn/credits_x_pressed.png" id="7_7f0j4"]

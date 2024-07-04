@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="12_oyhv3"]
 [ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="13_ctqf4"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="14_htipc"]
-[ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="15_3ge6t"]
+[ext_resource type="PackedScene" uid="uid://bnexwee5awchc" path="res://scenes/coin.tscn" id="15_3ge6t"]
 [ext_resource type="AudioStream" uid="uid://cpho7p70xpgd7" path="res://assets/SFX/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav" id="18_w21y2"]
 [ext_resource type="PackedScene" uid="uid://b0vo331jnx4uy" path="res://scenes/GameOver.tscn" id="18_wmm0y"]
 [ext_resource type="PackedScene" uid="uid://k4vsxqmldmyy" path="res://scenes/FinalWonScreen.tscn" id="19_8lwd6"]
@@ -808,7 +808,7 @@ position = Vector2(2238, 334)
 
 [node name="Player" parent="." instance=ExtResource("3_tbw5e")]
 unique_name_in_owner = true
-position = Vector2(102, 461)
+position = Vector2(1874, 361)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -3)
