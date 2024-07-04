@@ -10,7 +10,13 @@
 
 [node name="Pause" type="CanvasLayer"]
 
-[node name="Resume" type="TextureButton" parent="."]
+[node name="MainButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resume" type="TextureButton" parent="MainButtons"]
 offset_left = 376.0
 offset_top = 152.0
 offset_right = 456.0
@@ -19,7 +25,7 @@ scale = Vector2(5, 3.399)
 texture_normal = ExtResource("2_t18na")
 texture_pressed = ExtResource("3_vnn5i")
 
-[node name="Label" type="Label" parent="Resume"]
+[node name="Label" type="Label" parent="MainButtons/Resume"]
 layout_mode = 0
 offset_left = 16.0
 offset_right = 136.0
@@ -29,7 +35,7 @@ theme_override_fonts/font = ExtResource("1_v4oni")
 theme_override_font_sizes/font_size = 50
 text = "Resume"
 
-[node name="Restart" type="TextureButton" parent="."]
+[node name="RestartButton" type="TextureButton" parent="MainButtons"]
 offset_left = 376.0
 offset_top = 240.0
 offset_right = 456.0
@@ -38,7 +44,7 @@ scale = Vector2(5, 3.399)
 texture_normal = ExtResource("4_uo5n8")
 texture_pressed = ExtResource("5_8wljl")
 
-[node name="Label" type="Label" parent="Restart"]
+[node name="Label" type="Label" parent="MainButtons/RestartButton"]
 layout_mode = 0
 offset_left = 12.8
 offset_right = 152.8
@@ -49,7 +55,7 @@ theme_override_font_sizes/font_size = 50
 text = "Restart
 "
 
-[node name="MainMenu" type="TextureButton" parent="."]
+[node name="MainMenuButton" type="TextureButton" parent="MainButtons"]
 offset_left = 376.0
 offset_top = 328.0
 offset_right = 456.0
@@ -58,7 +64,7 @@ scale = Vector2(5, 3.399)
 texture_normal = ExtResource("6_xy1xx")
 texture_pressed = ExtResource("7_vc5c1")
 
-[node name="Label" type="Label" parent="MainMenu"]
+[node name="Label" type="Label" parent="MainButtons/MainMenuButton"]
 layout_mode = 0
 offset_left = 12.8
 offset_top = 2.35364
@@ -70,7 +76,7 @@ theme_override_font_sizes/font_size = 50
 text = "Main Menu
 "
 
-[node name="Quit" type="TextureButton" parent="."]
+[node name="QuitButton" type="TextureButton" parent="MainButtons"]
 offset_left = 376.0
 offset_top = 416.0
 offset_right = 456.0
@@ -79,7 +85,7 @@ scale = Vector2(5, 3.399)
 texture_normal = ExtResource("6_xy1xx")
 texture_pressed = ExtResource("7_vc5c1")
 
-[node name="Label" type="Label" parent="Quit"]
+[node name="Label" type="Label" parent="MainButtons/QuitButton"]
 layout_mode = 0
 offset_left = 19.2
 offset_right = 139.2
@@ -92,14 +98,200 @@ text = "Quit
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="."]
-offset_left = 336.0
+[node name="Label2" type="Label" parent="MainButtons"]
+offset_left = 216.0
 offset_top = 72.0
-offset_right = 816.0
+offset_right = 936.0
 offset_bottom = 122.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_v4oni")
 theme_override_font_sizes/font_size = 50
 text = "|| The game is paused ||"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartConfirm" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="RestartConfirm"]
+offset_left = 216.0
+offset_top = 72.0
+offset_right = 936.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "|| Do you really want to restart? ||"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoRestart" type="TextureButton" parent="RestartConfirm"]
+offset_left = 376.0
+offset_top = 240.0
+offset_right = 456.0
+offset_bottom = 280.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("2_t18na")
+texture_pressed = ExtResource("3_vnn5i")
+
+[node name="Label" type="Label" parent="RestartConfirm/NoRestart"]
+layout_mode = 0
+offset_left = 14.4
+offset_right = 134.4
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="TextureButton" parent="RestartConfirm"]
+offset_left = 376.0
+offset_top = 152.0
+offset_right = 456.0
+offset_bottom = 192.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("4_uo5n8")
+texture_pressed = ExtResource("5_8wljl")
+
+[node name="Label" type="Label" parent="RestartConfirm/Restart"]
+layout_mode = 0
+offset_left = 11.2
+offset_right = 151.2
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "Yes
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuConfirm" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="MainMenuConfirm"]
+offset_left = 216.0
+offset_top = 72.0
+offset_right = 936.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "|| Do you really want to restart? ||"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoMainMenu" type="TextureButton" parent="MainMenuConfirm"]
+offset_left = 376.0
+offset_top = 240.0
+offset_right = 456.0
+offset_bottom = 280.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("2_t18na")
+texture_pressed = ExtResource("3_vnn5i")
+
+[node name="Label" type="Label" parent="MainMenuConfirm/NoMainMenu"]
+layout_mode = 0
+offset_left = 14.4
+offset_right = 134.4
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="TextureButton" parent="MainMenuConfirm"]
+offset_left = 376.0
+offset_top = 152.0
+offset_right = 456.0
+offset_bottom = 192.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("4_uo5n8")
+texture_pressed = ExtResource("5_8wljl")
+
+[node name="Label" type="Label" parent="MainMenuConfirm/MainMenu"]
+layout_mode = 0
+offset_left = 11.2
+offset_right = 151.2
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "Yes
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitConfirm" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="QuitConfirm"]
+offset_left = 104.0
+offset_top = 72.0
+offset_right = 1044.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "|| Do you really want to quit? ||"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoQuit" type="TextureButton" parent="QuitConfirm"]
+offset_left = 376.0
+offset_top = 240.0
+offset_right = 456.0
+offset_bottom = 280.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("2_t18na")
+texture_pressed = ExtResource("3_vnn5i")
+
+[node name="Label" type="Label" parent="QuitConfirm/NoQuit"]
+layout_mode = 0
+offset_left = 14.4
+offset_right = 134.4
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="QuitConfirm"]
+offset_left = 376.0
+offset_top = 152.0
+offset_right = 456.0
+offset_bottom = 192.0
+scale = Vector2(5, 3.399)
+texture_normal = ExtResource("4_uo5n8")
+texture_pressed = ExtResource("5_8wljl")
+
+[node name="Label" type="Label" parent="QuitConfirm/Quit"]
+layout_mode = 0
+offset_left = 11.2
+offset_right = 151.2
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("1_v4oni")
+theme_override_font_sizes/font_size = 50
+text = "Yes
+"
 horizontal_alignment = 1
 vertical_alignment = 1

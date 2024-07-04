@@ -14,10 +14,16 @@ func _ready():
 	$GameOver.get_node("MainMenu").pressed.connect(main_menu)
 	$GameOver.get_node("Restart").pressed.connect(new_game)
 	$GameOver.get_node("Quit").pressed.connect(quit)
-	$Pause.get_node("Resume").pressed.connect(resume)
-	$Pause.get_node("MainMenu").pressed.connect(main_menu)
-	$Pause.get_node("Restart").pressed.connect(new_game)
-	$Pause.get_node("Quit").pressed.connect(quit)
+	$Pause.get_node("MainButtons/Resume").pressed.connect(resume)
+	$Pause.get_node("MainMenuConfirm/MainMenu").pressed.connect(main_menu)
+	$Pause.get_node("RestartConfirm/Restart").pressed.connect(new_game)
+	$Pause.get_node("QuitConfirm/Quit").pressed.connect(quit)
+	$Pause.get_node("MainButtons/RestartButton").pressed.connect(restart_Clicked)
+	$Pause.get_node("MainButtons/MainMenuButton").pressed.connect(mainmenu_Clicked)
+	$Pause.get_node("MainButtons/QuitButton").pressed.connect(quit_Clicked)
+	$Pause.get_node("RestartConfirm/NoRestart").pressed.connect(no_Clicked)
+	$Pause.get_node("MainMenuConfirm/NoMainMenu").pressed.connect(no_Clicked)
+	$Pause.get_node("QuitConfirm/NoQuit").pressed.connect(no_Clicked)
 	$WonGame.get_node("Continue").pressed.connect(next_level)
 	$WonGame.get_node("MainMenu").pressed.connect(main_menu)
 	$WonGame.get_node("Restart").pressed.connect(new_game)
@@ -57,6 +63,24 @@ func main_menu():
 
 func new_game():
 	get_tree().reload_current_scene()
+
+func no_Clicked():
+	$Pause.get_node("MainButtons").visible = true
+	$Pause.get_node("RestartConfirm").visible = false
+	$Pause.get_node("MainMenuConfirm").visible = false
+	$Pause.get_node("QuitConfirm").visible = false
+
+func restart_Clicked():
+	$Pause.get_node("RestartConfirm").visible = true
+	$Pause.get_node("MainButtons").visible = false
+	
+func mainmenu_Clicked():
+	$Pause.get_node("MainMenuConfirm").visible = true
+	$Pause.get_node("MainButtons").visible = false
+	
+func quit_Clicked():
+	$Pause.get_node("QuitConfirm").visible = true
+	$Pause.get_node("MainButtons").visible = false
 
 func resume():
 	$Pause.hide()
