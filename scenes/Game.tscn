@@ -2763,6 +2763,7 @@ position = Vector2(565, 198)
 [node name="ViodStatic" parent="." instance=ExtResource("5_j8iaf")]
 visible = false
 position = Vector2(-1626, 1266)
+collision_mask = 3
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_72u3p")]
 offset = Vector2(0, 50)

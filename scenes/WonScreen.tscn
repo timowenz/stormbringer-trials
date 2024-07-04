@@ -35,6 +35,7 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Label"]
 z_index = -1
+layout_mode = 0
 offset_left = 16.0
 offset_top = 12.0
 offset_right = 282.0
