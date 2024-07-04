@@ -208,7 +208,7 @@ func update_anim_params():
 			else:
 				add_friction()
 				idle()
-			if Input.is_action_just_pressed("stand_up"):
+			if Input.is_action_just_pressed("jump") || Input.is_action_just_pressed("stand_up") || Input.is_action_just_released("jump") :
 				stand_up()
 				can_jump = true
 			if Input.is_action_just_pressed("crouch")||is_crouching:
