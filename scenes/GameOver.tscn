@@ -30,6 +30,14 @@ Wanna try again?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="Label"]
+z_index = -1
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 278.0
+offset_bottom = 96.0
+color = Color(0.968627, 0.968627, 0.968627, 0.807843)
+
 [node name="Restart" type="TextureButton" parent="."]
 offset_left = 376.0
 offset_top = 248.0

@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="9_gvaxi"]
 [ext_resource type="PackedScene" uid="uid://cb06f586f51m3" path="res://scenes/EndGameCollision.tscn" id="10_3vnkf"]
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="10_qhj7n"]
-[ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="11_gg8wo"]
+[ext_resource type="PackedScene" uid="uid://bnexwee5awchc" path="res://scenes/coin.tscn" id="11_gg8wo"]
 [ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="11_rctrm"]
 [ext_resource type="PackedScene" uid="uid://b4ahma1cub6ar" path="res://scenes/FlyingEye.tscn" id="12_cpwkv"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="12_j6tod"]
