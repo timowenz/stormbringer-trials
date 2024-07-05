@@ -9029,11 +9029,12 @@ Jump using the spacebar"
 
 [node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial1"]
 z_index = -1
-layout_mode = 0
-offset_left = -35.0
-offset_top = -10.0
-offset_right = 820.0
-offset_bottom = 245.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Tutorial2" type="Label" parent="TutorialCanvasLayer"]
@@ -9049,11 +9050,12 @@ You can use it to buy useful items."
 
 [node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial2"]
 z_index = -1
-layout_mode = 0
-offset_left = -35.0
-offset_top = -10.0
-offset_right = 725.0
-offset_bottom = 145.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Tutorial3" type="Label" parent="TutorialCanvasLayer"]
@@ -9071,18 +9073,19 @@ and L and Right mouse button is heavy attack"
 
 [node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial3"]
 z_index = -1
-layout_mode = 0
-offset_left = -35.0
-offset_top = -10.0
-offset_right = 1060.0
-offset_bottom = 245.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Tutorial4" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 7840.0
-offset_top = 675.0
+offset_top = 590.0
 offset_right = 8470.0
-offset_bottom = 778.0
+offset_bottom = 693.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
@@ -9093,11 +9096,12 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial4"]
 z_index = -1
-layout_mode = 0
-offset_left = -35.0
-offset_top = -10.0
-offset_right = 650.0
-offset_bottom = 140.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Tutorial5" type="Label" parent="TutorialCanvasLayer"]
@@ -9115,11 +9119,12 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial5"]
 z_index = -1
-layout_mode = 0
-offset_left = 145.0
-offset_top = -10.0
-offset_right = 505.0
-offset_bottom = 120.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Trader" type="Area2D" parent="."]

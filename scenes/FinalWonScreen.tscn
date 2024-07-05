@@ -24,20 +24,20 @@ grow_vertical = 2
 scale = Vector2(2.04, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_i2v1f")
-theme_override_font_sizes/font_size = 25
-text = "Congratulations!
-You beat the game!
+theme_override_font_sizes/font_size = 20
+text = "Congratulations! You beat the game!
 Thanks for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Label"]
 z_index = -1
-layout_mode = 0
-offset_left = 51.0
-offset_top = 12.0
-offset_right = 247.0
-offset_bottom = 92.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Continue" type="TextureButton" parent="."]

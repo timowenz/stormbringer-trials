@@ -32,10 +32,12 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Label"]
 z_index = -1
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 278.0
-offset_bottom = 96.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Restart" type="TextureButton" parent="."]

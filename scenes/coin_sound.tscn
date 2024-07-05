@@ -6,3 +6,4 @@
 stream = ExtResource("1_2auy0")
 volume_db = 10.0
 autoplay = true
+max_distance = 8000.0
