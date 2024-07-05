@@ -9,6 +9,7 @@ size = Vector2(20, 39)
 size = Vector2(37, 47)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_uwvvh")
 
