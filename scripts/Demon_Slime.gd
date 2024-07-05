@@ -6,7 +6,7 @@ const SPEED = 130
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
 const ENEMEY_DAMAGE = 15
-var health = 1000
+var health = 900
 var state = State.IDLE
 var player = null
 var player_chase = false
@@ -16,8 +16,8 @@ var can_smash = true
 var can_cast_spell = true
 var can_attack = true
 var attack_damage = 20
-var spell_damage = 50
-var smash_damage = 30
+var spell_damage = 20
+var smash_damage = 40
 var phase_one
 var phase_two
 
@@ -53,7 +53,7 @@ func phase_two_handler():
 	anim = anim1
 	phase_one = false
 	phase_two = true
-	health = 1000
+	health = 900
 	healthbar.health = health
 	$AnimatedSprite2D.show()
 	$AnimatedSprite2D_slime.hide()
@@ -149,6 +149,12 @@ func attack_state(_delta):
 		can_cast_spell = false
 		set_state(State.CAST)
 	elif player.position.distance_to(position) < 100 and can_smash:
+		if anim.frame == 1:
+			$SmashArea/CollisionShape2D.disabled = true
+		if anim.frame == 10:
+			$SmashArea/CollisionShape2D.disabled = false
+		if anim.frame == 16:
+			$SmashArea/CollisionShape2D.disabled = true
 		can_smash = false
 		set_state(State.SMASH)
 	else:
@@ -158,18 +164,19 @@ func _on_attackcd_timeout():
 	can_attack = true
 
 func walk_state(_delta):
-	var direction = (player.position - position).normalized()
-	velocity.y += GRAVITY
-	velocity.x = direction.x * SPEED
-
-	if player.position.x < position.x:
-		anim.flip_h = false
-		anim.offset.x = 0
-		$Node2D.scale.x = 1
-	else:
-		anim.flip_h = true
-		anim.offset.x = 0
-		$Node2D.scale.x = -1
+	if phase_two:
+		var direction = (player.position - position).normalized()
+		velocity.y += GRAVITY
+		velocity.x = direction.x * SPEED
+		
+		if player.position.x < position.x:
+			anim.flip_h = false
+			anim.offset.x = 0
+			$Node2D.scale.x = 1
+		else:
+			anim.flip_h = true
+			anim.offset.x = 0
+			$Node2D.scale.x = -1
 
 	if phase_two:
 		if player.position.distance_to(position) < 80:
@@ -188,12 +195,7 @@ func idle_state(_delta):
 
 func smash_state(_delta):
 	if player.position.distance_to(position) < 100:
-		if anim.frame == 1:
-			$SmashArea/CollisionShape2D.disabled = true
-		if anim.frame == 10:
-			$SmashArea/CollisionShape2D.disabled = false
-		if anim.frame == 16:
-			$SmashArea/CollisionShape2D.disabled = true
+		can_smash = false 
 
 func _on_smashcd_timeout():
 	set_state(State.WALK)
@@ -216,7 +218,7 @@ func take_damage(damage):
 		return set_state(State.DEAD)
 	health -= damage
 	healthbar.health = health
-	set_state(State.HIT)
+	#set_state(State.HIT)
 
 func _on_area_2d_body_entered(body):
 	if body.name == "TileMap":

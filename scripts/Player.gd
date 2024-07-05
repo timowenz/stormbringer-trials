@@ -208,7 +208,7 @@ func update_anim_params():
 			else:
 				add_friction()
 				idle()
-			if Input.is_action_just_pressed("stand_up"):
+			if Input.is_action_just_pressed("jump") || Input.is_action_just_pressed("stand_up") || Input.is_action_just_released("jump") :
 				stand_up()
 				can_jump = true
 			if Input.is_action_just_pressed("crouch")||is_crouching:
@@ -325,14 +325,16 @@ func handle_fall_jump():
 		jump()
 
 func _on_attack_area_body_entered(body):
-	print(body)
 	if body.name == "EndGame":
 		return
 	if body.name != "TileMap" and body.name != "EndGame" and body.name != "Border1" and body.name != "Border2":
-		body.take_damage(damage)
+		if $Node2D/AttackArea/AttackCol.disabled == false:
+			body.take_damage(damage + 8)
+		else:
+			body.take_damage(damage)
+		
 
 func hit():
-	
 	if is_damaged:
 		anim_tree["parameters/conditions/hit"] = true
 		anim_tree["parameters/conditions/idle"] = false

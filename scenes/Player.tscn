@@ -2223,7 +2223,8 @@ projectile_scene = ExtResource("45_j2apn")
 instancing_offset = Vector2(0, -30)
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ys2wg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -2314,9 +2315,9 @@ offset_right = 260.0
 grow_vertical = 0
 
 [node name="SpellButton" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 390.0
+offset_left = 326.0
 offset_top = 576.0
-offset_right = 438.0
+offset_right = 374.0
 offset_bottom = 624.0
 texture_normal = ExtResource("35_8emvr")
 Spellkey = "E"
@@ -2325,9 +2326,9 @@ user = NodePath("../..")
 mana_cost = 20
 
 [node name="SpellButton2" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 449.0
+offset_left = 380.0
 offset_top = 576.0
-offset_right = 497.0
+offset_right = 428.0
 offset_bottom = 624.0
 texture_normal = ExtResource("36_3vfsl")
 Spellkey = "R"
@@ -2347,19 +2348,21 @@ user = NodePath("../..")
 mana_cost = 25
 
 [node name="SpellButton4" parent="CanvasLayer" node_paths=PackedStringArray("timer", "user") instance=ExtResource("34_3xn8x")]
-offset_left = 331.0
+offset_left = 435.0
 offset_top = 576.0
-offset_right = 379.0
+offset_right = 483.0
 offset_bottom = 624.0
 texture_normal = ExtResource("38_v5hr5")
-Spellkey = "W"
+Spellkey = "T"
 timer = NodePath("../../LightningStrike/LightningStrikeCD")
 user = NodePath("../..")
-mana_cost = 10
+mana_cost = 15
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="AttackArea" type="Area2D" parent="Node2D"]
+collision_layer = 5
+collision_mask = 5
 
 [node name="AttackCol" type="CollisionShape2D" parent="Node2D/AttackArea"]
 position = Vector2(43, -3)
@@ -2439,7 +2442,7 @@ script = ExtResource("44_ard5x")
 ability = SubResource("Resource_ktbtv")
 user = NodePath("..")
 cooldown = NodePath("LightningStrikeCD")
-mana_cost = 10
+mana_cost = 15
 
 [node name="LightningStrikeCD" type="Timer" parent="LightningStrike"]
 wait_time = 10.0

@@ -14,7 +14,7 @@ radius = 165.37
 [node name="Projectile" type="CharacterBody2D"]
 scale = Vector2(1, 1.08995)
 collision_layer = 0
-collision_mask = 0
+collision_mask = 3
 script = ExtResource("1_oxu41")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,17 +22,16 @@ scale = Vector2(0.35901, 0.35901)
 texture = ExtResource("2_hwg1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_10gp5")
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
-visible = false
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
 shape = SubResource("CircleShape2D_3diyn")
 
 [node name="HitArea2D" type="Area2D" parent="."]
-visible = false
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 shape = SubResource("CircleShape2D_a0icw")

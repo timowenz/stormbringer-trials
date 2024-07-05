@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_s4tpv"]
 
 [node name="Sandwich" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_uajns")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

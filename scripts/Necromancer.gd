@@ -26,11 +26,10 @@ func _physics_process(_delta):
 		else:
 			$AnimatedSprite2D.flip_h = false
 		
-		if (player.position.distance_to(position) < 150 && projectileCD.time_left == 10):
+		if (player.position.distance_to(position) < 150&&projectileCD.time_left == 10):
 			anim.play("attack")
 			# stop chasing
 			player_chase = false
-			
 			
 		else:
 			anim.play("flight")
@@ -63,9 +62,9 @@ func _on_animated_sprite_2d_animation_finished():
 		queue_free()
 
 func _on_projectile_cd_timeout():
-	var projectile = projectile_instance.instantiate()
-	add_child(projectile)
-
+	if (player_chase):
+		var projectile = projectile_instance.instantiate()
+		add_child(projectile)
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":

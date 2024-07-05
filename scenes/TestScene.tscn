@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cc85jtm84cf0r" path="res://assets/Free RPG asset Pack/PACK/separate files/sword_01.png" id="18_wtltt"]
 [ext_resource type="Texture2D" uid="uid://dpkrkbln7nuvg" path="res://assets/Free RPG asset Pack/PACK/separate files/iron_armor.png" id="20_n4hm8"]
 [ext_resource type="Texture2D" uid="uid://blvv1w5y2dak4" path="res://assets/Free RPG asset Pack/PACK/separate files/leather_boots_01.png" id="21_k0kxb"]
-[ext_resource type="PackedScene" uid="uid://ctjkmcum0r7bm" path="res://scenes/coin.tscn" id="22_ij715"]
+[ext_resource type="PackedScene" uid="uid://bnexwee5awchc" path="res://scenes/coin.tscn" id="22_ij715"]
 [ext_resource type="AudioStream" uid="uid://mbxgm3x5d60m" path="res://sfx_selfmade/buy.mp3" id="28_su8pe"]
 [ext_resource type="Texture2D" uid="uid://caa8pj6wag8o4" path="res://assets/Free RPG asset Pack/PACK/separate files/mana_potion.png" id="28_x1m5b"]
 [ext_resource type="AudioStream" uid="uid://cpho7p70xpgd7" path="res://assets/SFX/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav" id="30_tvloa"]
@@ -9009,6 +9009,7 @@ script = ExtResource("1_kvokn")
 nextLevel = "res://scenes/Game.tscn"
 
 [node name="TutorialCanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 follow_viewport_enabled = true
@@ -9026,6 +9027,16 @@ on your keyboard or press left and right
 on the numpad
 Jump using the spacebar"
 
+[node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial1"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.968627, 0.968627, 0.807843)
+
 [node name="Tutorial2" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 1480.0
 offset_top = 995.0
@@ -9037,6 +9048,16 @@ theme_override_font_sizes/font_size = 50
 text = "Oh look! Someone lost their money. 
 You can use it to buy useful items."
 
+[node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial2"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.968627, 0.968627, 0.807843)
+
 [node name="Tutorial3" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 3000.0
 offset_top = 780.0
@@ -9046,13 +9067,25 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
 text = "Be careful around here!
-Click the mouse buttons or press upwards to attack!"
+Click the left/right mouse buttons or K/L to attack!
+K and Left mouse button is light attack
+and L and Right mouse button is heavy attack"
+
+[node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial3"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Tutorial4" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 7840.0
-offset_top = 675.0
+offset_top = 590.0
 offset_right = 8470.0
-offset_bottom = 778.0
+offset_bottom = 693.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("16_of5bn")
 theme_override_font_sizes/font_size = 50
@@ -9060,6 +9093,16 @@ text = "Defeat all bosses in the
  world to access the next level"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial4"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.968627, 0.968627, 0.807843)
 
 [node name="Tutorial5" type="Label" parent="TutorialCanvasLayer"]
 offset_left = 4845.0
@@ -9074,8 +9117,19 @@ using sandwiches"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="TutorialCanvasLayer/Tutorial5"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.968627, 0.968627, 0.807843)
+
 [node name="Trader" type="Area2D" parent="."]
 position = Vector2(472, 264)
+collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trader"]
 position = Vector2(0, 3)
@@ -9189,23 +9243,25 @@ lifetime = 5.0
 scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 
-[node name="Label" type="Label" parent="Player/CanvasLayer3"]
-offset_left = 5160.0
-offset_top = 160.0
-offset_right = 5240.0
-offset_bottom = 260.0
-scale = Vector2(2, 2)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("16_of5bn")
-theme_override_font_sizes/font_size = 100
-text = "00"
-
 [node name="Coin" type="AnimatedSprite2D" parent="Player/CanvasLayer3"]
 position = Vector2(5440, 250)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_xsv2o")
 frame_progress = 0.656223
 script = ExtResource("15_um8nq")
+
+[node name="Label" type="Label" parent="Player/CanvasLayer3"]
+offset_left = 5360.0
+offset_top = 145.0
+offset_right = 5440.0
+offset_bottom = 245.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_of5bn")
+theme_override_font_sizes/font_size = 100
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WeatherButton" type="Button" parent="Player/CanvasLayer3"]
 visible = false
@@ -9425,7 +9481,7 @@ visible = false
 wait_time = 0.3
 
 [node name="FlyingEye" parent="." instance=ExtResource("35_g0qrb")]
-position = Vector2(952, 210)
+position = Vector2(921, 209)
 
 [node name="Border1" type="StaticBody2D" parent="."]
 

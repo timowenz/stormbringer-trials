@@ -833,8 +833,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbihp"]
-size = Vector2(65, 80)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddywx"]
+radius = 23.5
+height = 76.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5eh6"]
 size = Vector2(69, 20)
@@ -850,7 +851,8 @@ radius = 269.067
 size = Vector2(215, 20)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_layer = 5
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_tw0mv")
 
 [node name="AnimatedSprite2D_slime" type="AnimatedSprite2D" parent="."]
@@ -862,14 +864,15 @@ frame_progress = 0.672226
 material = SubResource("ShaderMaterial_lbeyl")
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_wc6y3")
-animation = &"transform"
+animation = &"idle"
+frame = 1
+frame_progress = 0.338013
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(2.5, 39)
-shape = SubResource("RectangleShape2D_jbihp")
-one_way_collision = true
+shape = SubResource("CapsuleShape2D_ddywx")
 
 [node name="Death_Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_u5s2l")

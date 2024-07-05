@@ -5,7 +5,7 @@ enum State {IDLE, WALK, ATTACK, DEAD, HIT, CAST}
 const SPEED = 130
 const GRAVITY = 25
 const JUMP_HEIGHT = 400
-const ENEMEY_DAMAGE = 15
+const ENEMEY_DAMAGE = 25
 var health = 700
 var state = State.IDLE
 var player = null
